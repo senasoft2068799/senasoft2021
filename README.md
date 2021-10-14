@@ -3,7 +3,7 @@
 <h1>Para instalar:</h1>
 <small>(Se debe tener laravel 8 y vue 3 instalados previamente)</small>
 <ul>
-    <li>git clone https://github.com/senasoft2068799/senasoft2021.git</li>
+    <li>git clone -b «branchname» https://github.com/senasoft2068799/senasoft2021.git</li>
     <li>cd senasoft2021</li>
     <li>composer install</li>
     <li>npm install</li>
