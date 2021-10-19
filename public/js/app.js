@@ -2218,7 +2218,9 @@ var Storage = /*#__PURE__*/function () {
     _classCallCheck(this, Storage);
 
     this.storage = localStorage;
-  }
+  } // Método para guardar los datos en el local storage
+  // Se reciben 3 parametros, la key (nombre), el valor a guardar y la opción json (Por si quiere que se retorne los datos en ese formato)
+
 
   _createClass(Storage, [{
     key: "record",
@@ -2230,12 +2232,14 @@ var Storage = /*#__PURE__*/function () {
       } else {
         this.storage.setItem(key, value);
       }
-    }
+    } // Método para comprobar si existe un dato
+
   }, {
     key: "has",
     value: function has(key) {
       return this.storage.getItem(key) !== null;
-    }
+    } // Método para obtener un dato almacenado
+
   }, {
     key: "get",
     value: function get(key) {
@@ -2246,12 +2250,14 @@ var Storage = /*#__PURE__*/function () {
       } else {
         return this.storage.getItem(key);
       }
-    }
+    } // Método para eliminar un dato almacenado
+
   }, {
     key: "remove",
     value: function remove(key) {
       this.storage.removeItem(key);
-    }
+    } // Método para eliminar todos los datos
+
   }, {
     key: "clear",
     value: function clear() {
