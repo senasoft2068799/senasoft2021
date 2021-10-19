@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Al entrar desde cualquier ruta, automáticamente se redirige a la vista welcome
+// donde se tiene establecido el template de Vue
+Route::get('/{any}', function () {
     return view('welcome');
-});
+})->where('any', '.*');
