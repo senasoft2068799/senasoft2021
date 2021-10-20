@@ -24,6 +24,9 @@ class UserPartidaFactory extends Factory
     public function definition()
     {
         return [
+            /*
+        Se generan datos aleatorios para los campos respectivos de la tabla UserPartidas a través de php faker
+        */
             'user_nickname' => User::inRandomOrder()->first()->nickname,
             'partida_id' => Partida::inRandomOrder()->first()->id
         ];

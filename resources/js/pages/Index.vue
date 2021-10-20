@@ -13,12 +13,8 @@
                   <p>Hola</p>
                   <button>
                     <router-link
-                      style="
-                        color: #fff;
-                        text-decoration: none;
-                        font-weight: 400;
-                      "
-                      :to="{ name: 'categorias.index' }"
+                      style="color: #fff; text-decoration: none; font-weight: 400;"
+                      :to="{ name: 'modelo.index' }"
                       >Botón</router-link
                     >
                   </button>
