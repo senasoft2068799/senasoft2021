@@ -2182,6 +2182,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2317,41 +2323,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
-=======
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2383,7 +2354,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 });
->>>>>>> e547c16ee97d9f350d470135ff594cbbf06b5090
 
 /***/ }),
 
@@ -42403,7 +42373,6 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-<<<<<<< HEAD
   return _c("div", [
     _c(
       "form",
@@ -42413,47 +42382,12 @@ var render = function() {
           submit: function($event) {
             $event.preventDefault()
             return _vm.auth()
-=======
-  return _c(
-    "form",
-    {
-      on: {
-        submit: function($event) {
-          $event.preventDefault()
-          return _vm.auth()
-        }
-      }
-    },
-    [
-      _c("div", [
-        _c("label", { attrs: { for: "nickname" } }, [_vm._v("Nick")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.user.nickname,
-              expression: "user.nickname"
-            }
-          ],
-          attrs: { type: "text", id: "nickname" },
-          domProps: { value: _vm.user.nickname },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.$set(_vm.user, "nickname", $event.target.value)
-            }
->>>>>>> e547c16ee97d9f350d470135ff594cbbf06b5090
           }
         }
       },
       [
         _c("h2", { staticClass: "form-title" }, [_vm._v("¡Bienvenido!")]),
         _vm._v(" "),
-<<<<<<< HEAD
         _c("div", { staticClass: "form-container" }, [
           _c("div", { staticClass: "form-group" }, [
             _c("input", {
@@ -42461,19 +42395,19 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.formData.nickname,
-                  expression: "formData.nickname"
+                  value: _vm.user.nickname,
+                  expression: "user.nickname"
                 }
               ],
               staticClass: "form-input",
               attrs: { type: "text", id: "nickname", placeholder: " " },
-              domProps: { value: _vm.formData.nickname },
+              domProps: { value: _vm.user.nickname },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.$set(_vm.formData, "nickname", $event.target.value)
+                  _vm.$set(_vm.user, "nickname", $event.target.value)
                 }
               }
             }),
@@ -42485,41 +42419,6 @@ var render = function() {
             ),
             _vm._v(" "),
             _c("span", { staticClass: "form-line" }),
-=======
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.user.password,
-              expression: "user.password"
-            }
-          ],
-          attrs: { type: "password", id: "password" },
-          domProps: { value: _vm.user.password },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.$set(_vm.user, "password", $event.target.value)
-            }
-          }
-        }),
-        _vm._v(" "),
-        _vm.errors.has("password")
-          ? _c("small", { staticClass: "text-danger" }, [
-              _vm._v("\n      " + _vm._s(_vm.errors.get("password")) + "\n    ")
-            ])
-          : _vm._e()
-      ]),
-      _vm._v(" "),
-      _vm.newUser
-        ? _c("div", [
-            _c("label", { attrs: { for: "password" } }, [
-              _vm._v("Confirmar contraseña")
-            ]),
->>>>>>> e547c16ee97d9f350d470135ff594cbbf06b5090
             _vm._v(" "),
             _vm.errors.has("nickname")
               ? _c("p", { staticClass: "form-p" }, [
@@ -42540,36 +42439,19 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-<<<<<<< HEAD
-                  value: _vm.formData.password,
-                  expression: "formData.password"
+                  value: _vm.user.password,
+                  expression: "user.password"
                 }
               ],
               staticClass: "form-input",
               attrs: { type: "password", id: "password", placeholder: " " },
-              domProps: { value: _vm.formData.password },
-=======
-                  value: _vm.user.password_confirmation,
-                  expression: "user.password_confirmation"
-                }
-              ],
-              attrs: { type: "password", id: "password" },
-              domProps: { value: _vm.user.password_confirmation },
->>>>>>> e547c16ee97d9f350d470135ff594cbbf06b5090
+              domProps: { value: _vm.user.password },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-<<<<<<< HEAD
-                  _vm.$set(_vm.formData, "password", $event.target.value)
-=======
-                  _vm.$set(
-                    _vm.user,
-                    "password_confirmation",
-                    $event.target.value
-                  )
->>>>>>> e547c16ee97d9f350d470135ff594cbbf06b5090
+                  _vm.$set(_vm.user, "password", $event.target.value)
                 }
               }
             }),
@@ -42603,8 +42485,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.password_confirmation,
-                        expression: "formData.password_confirmation"
+                        value: _vm.user.password_confirmation,
+                        expression: "user.password_confirmation"
                       }
                     ],
                     staticClass: "form-input",
@@ -42613,14 +42495,14 @@ var render = function() {
                       id: "passwordConfirm",
                       placeholder: " "
                     },
-                    domProps: { value: _vm.formData.password_confirmation },
+                    domProps: { value: _vm.user.password_confirmation },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
                         _vm.$set(
-                          _vm.formData,
+                          _vm.user,
                           "password_confirmation",
                           $event.target.value
                         )
@@ -42654,47 +42536,50 @@ var render = function() {
           : _vm._e(),
         _vm._v(" "),
         _c("div", [
-          _c("label", { staticStyle: { float: "left" } }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.newUser,
-                  expression: "newUser"
-                }
-              ],
-              staticClass: "form-check",
-              attrs: { type: "checkbox" },
-              domProps: {
-                checked: Array.isArray(_vm.newUser)
-                  ? _vm._i(_vm.newUser, null) > -1
-                  : _vm.newUser
-              },
-              on: {
-                change: function($event) {
-                  var $$a = _vm.newUser,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = null,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.newUser = $$a.concat([$$v]))
+          _c(
+            "label",
+            { staticClass: "form-check", staticStyle: { float: "left" } },
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newUser,
+                    expression: "newUser"
+                  }
+                ],
+                attrs: { type: "checkbox" },
+                domProps: {
+                  checked: Array.isArray(_vm.newUser)
+                    ? _vm._i(_vm.newUser, null) > -1
+                    : _vm.newUser
+                },
+                on: {
+                  change: function($event) {
+                    var $$a = _vm.newUser,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = null,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && (_vm.newUser = $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          (_vm.newUser = $$a
+                            .slice(0, $$i)
+                            .concat($$a.slice($$i + 1)))
+                      }
                     } else {
-                      $$i > -1 &&
-                        (_vm.newUser = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
+                      _vm.newUser = $$c
                     }
-                  } else {
-                    _vm.newUser = $$c
                   }
                 }
-              }
-            }),
-            _vm._v("Crear usuario")
-          ])
+              }),
+              _vm._v("Crear\n        usuario")
+            ]
+          )
         ]),
         _vm._v(" "),
         _c(
@@ -42800,149 +42685,6 @@ render._withStripped = true
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Index.vue?vue&type=template&id=71c33819&":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Index.vue?vue&type=template&id=71c33819& ***!
-  \************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row d-flex" }, [
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "contenedor" }, [
-            _c("div", { staticClass: "carta" }, [
-              _c("div", { staticClass: "box" }, [
-                _c("div", { staticClass: "content" }, [
-                  _c("h2", [_vm._v("1")]),
-                  _vm._v(" "),
-                  _c("img", { staticClass: "rounded", attrs: { alt: "..." } }),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("Carta 1")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Hola")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticStyle: {
-                            color: "#fff",
-                            "text-decoration": "none",
-                            "font-weight": "400"
-                          },
-                          attrs: { to: { name: "modelo.index" } }
-                        },
-                        [_vm._v("Botón")]
-                      )
-                    ],
-                    1
-                  )
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "contenedor" }, [
-            _c("div", { staticClass: "carta" }, [
-              _c("div", { staticClass: "box" }, [
-                _c("div", { staticClass: "content" }, [
-                  _c("h2", [_vm._v("2")]),
-                  _vm._v(" "),
-                  _c("img", { staticClass: "rounded", attrs: { alt: "..." } }),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("Carta 2")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("no sé 2")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticStyle: {
-                            color: "#fff",
-                            "text-decoration": "none",
-                            "font-weight": "400"
-                          },
-                          attrs: { to: { name: "categorias.index" } }
-                        },
-                        [_vm._v("Botón 2")]
-                      )
-                    ],
-                    1
-                  )
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "contenedor" }, [
-            _c("div", { staticClass: "carta" }, [
-              _c("div", { staticClass: "box" }, [
-                _c("div", { staticClass: "content" }, [
-                  _c("h2", [_vm._v("3")]),
-                  _vm._v(" "),
-                  _c("img", { staticClass: "rounded", attrs: { alt: "..." } }),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("Carta 3")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Hola 3")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticStyle: {
-                            color: "#fff",
-                            "text-decoration": "none",
-                            "font-weight": "400"
-                          },
-                          attrs: { to: { name: "categorias.index" } }
-                        },
-                        [_vm._v("Botón 3")]
-                      )
-                    ],
-                    1
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-=======
->>>>>>> e547c16ee97d9f350d470135ff594cbbf06b5090
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -58324,11 +58066,7 @@ Vue.compile = compileToFunctions;
 /***/ ((module) => {
 
 "use strict";
-<<<<<<< HEAD
 module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\xampp\\\\htdocs\\\\senasoft2\\\\senasoft2021"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\xampp\\\\htdocs\\\\senasoft2\\\\senasoft2021","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
-=======
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\xampp\\\\htdocs\\\\senasoft2021\\\\senasoft2021"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\xampp\\\\htdocs\\\\senasoft2021\\\\senasoft2021","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
->>>>>>> e547c16ee97d9f350d470135ff594cbbf06b5090
 
 /***/ })
 

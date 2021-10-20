@@ -7,7 +7,7 @@
           <input
             type="text"
             id="nickname"
-            v-model="formData.nickname"
+            v-model="user.nickname"
             class="form-input"
             placeholder=" "
           />
@@ -20,7 +20,13 @@
       </div>
       <div class="form-container">
         <div class="form-group">
-          <input type="password" id="password" v-model="formData.password" class="form-input" placeholder=" "/>
+          <input
+            type="password"
+            id="password"
+            v-model="user.password"
+            class="form-input"
+            placeholder=" "
+          />
           <label for="password" class="form-label">Contraseña</label>
           <span class="form-line"></span>
           <p class="form-p" v-if="errors.has('password')">
@@ -34,7 +40,7 @@
             <input
               type="password"
               id="passwordConfirm"
-              v-model="formData.password_confirmation"
+              v-model="user.password_confirmation"
               class="form-input"
               placeholder=" "
             />
@@ -42,17 +48,17 @@
               >Confirmar contraseña</label
             >
             <span class="form-line"></span>
-            <p
-              class="form-p"
-              v-if="errors.has('password_confirmation')"
-            >
+            <p class="form-p" v-if="errors.has('password_confirmation')">
               {{ errors.get("password_confirmation") }}
             </p>
           </div>
         </div>
       </div>
       <div>
-        <label style="float: left;"><input type="checkbox" v-model="newUser" class="form-check"/>Crear usuario</label>
+        <label style="float: left" class="form-check"
+          ><input type="checkbox" v-model="newUser"/>Crear
+          usuario</label
+        >
       </div>
       <button type="submit" class="form-submit">Entrar</button>
     </form>
