@@ -44,11 +44,12 @@ class AuthController extends Controller
                 'nickname' => ['Los datos de acceso son incorrectos.'],
             ]);
         }
-        info("Correcto hasta aquí");
+
         //Se genera un token en la bd que almacene el dispositivo actual del usuario y se retorna este
         $token = $user->createToken($request->device_name)->plainTextToken;
         return $token;
     }
+
 
     public function logout(Request $request)
     {
