@@ -1,6 +1,5 @@
 import Index from "./pages/Index.vue";
 import Login from "./pages/Auth/Login.vue"
-import Login from "./pages/Auth/Register.vue"
 
 export const routes = [
     {
@@ -12,11 +11,6 @@ export const routes = [
     {
         name: "login",
         path: "/login",
-        component: Login
+        component: Login,
     },
-    {
-        name: "register",
-        path: "/register",
-        component: Register
-    }
 ];
