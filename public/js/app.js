@@ -2089,6 +2089,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _utilities_Errors_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utilities/Errors.js */ "./resources/js/utilities/Errors.js");
+/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2117,15 +2124,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       newUser: false,
       errors: new _utilities_Errors_js__WEBPACK_IMPORTED_MODULE_0__["default"](),
-      user: {
+      formData: {
         nickname: null,
         password: null,
-        password_confirmation: null
+        password_confirmation: null,
+        device_name: "browser"
       }
     };
   },
@@ -2135,39 +2144,13 @@ __webpack_require__.r(__webpack_exports__);
       this.newUser ? this.register() : this.login();
     },
     login: function login() {
-      console.log("logeando"); //   axios
-      //     .post("/api/login", this.user)
-      //     .then((response) => {
-      //       // Si todo sale bien, se guarda el token de login en el localstorage, y se envía a la ruta principal
-      //       this.errors.clearAll();
-      //       Storage.record("token", res.data, false);
-      //       this.$router.push("/");
-      //     })
-      //     .catch((err) => {
-      //       // Si el error es 422, significa, que un campo no es válido
-      //       if (err.response.status === 422) {
-      //         this.errors.record(err.response.data.errors);
-      //         this.$swal({
-      //           icon: "error",
-      //           title: "Los campos ingresados no son válidos.",
-      //         });
-      //       } else {
-      //         // De lo contrario, puede ser un error no planeado
-      //         this.$swal({
-      //           icon: "error",
-      //           title: "Ha ocurrido un error:\n" + err,
-      //         });
-      //       }
-      //     });
-    },
-    register: function register() {
       var _this = this;
 
-      axios.post("/api/register", this.user).then(function (response) {
+      axios.post("/api/login", this.formData).then(function (res) {
         // Si todo sale bien, se guarda el token de login en el localstorage, y se envía a la ruta principal
         _this.errors.clearAll();
 
-        _this.login();
+        _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__["default"].record("token", res.data, false); // this.$router.push("/");
       })["catch"](function (err) {
         // Si el error es 422, significa, que un campo no es válido
         if (err.response.status === 422) {
@@ -2180,6 +2163,30 @@ __webpack_require__.r(__webpack_exports__);
         } else {
           // De lo contrario, puede ser un error no planeado
           _this.$swal({
+            icon: "error",
+            title: "Ha ocurrido un error:\n" + err
+          });
+        }
+      });
+    },
+    register: function register() {
+      var _this2 = this;
+
+      axios.post("/api/register", this.formData).then(function (response) {
+        // Si todo sale bien, el jugador se logea automáticamente
+        _this2.login();
+      })["catch"](function (err) {
+        // Si el error es 422, significa, que un campo no es válido
+        if (err.response.status === 422) {
+          _this2.errors.record(err.response.data.errors);
+
+          _this2.$swal({
+            icon: "error",
+            title: "Los campos ingresados no son válidos."
+          });
+        } else {
+          // De lo contrario, puede ser un error no planeado
+          _this2.$swal({
             icon: "error",
             title: "Ha ocurrido un error:\n" + err
           });
@@ -42236,26 +42243,27 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.user.nickname,
-              expression: "user.nickname"
+              value: _vm.formData.nickname,
+              expression: "formData.nickname"
             }
           ],
           attrs: { type: "text", id: "nickname" },
-          domProps: { value: _vm.user.nickname },
+          domProps: { value: _vm.formData.nickname },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.$set(_vm.user, "nickname", $event.target.value)
+              _vm.$set(_vm.formData, "nickname", $event.target.value)
             }
           }
         }),
         _vm._v(" "),
-        _c("p", {
-          staticClass: "text-danger",
-          domProps: { textContent: _vm._s(_vm.errors.nickname) }
-        })
+        _vm.errors.has("nickname")
+          ? _c("small", { staticClass: "text-danger" }, [
+              _vm._v("\n      " + _vm._s(_vm.errors.get("nickname")) + "\n    ")
+            ])
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c("div", [
@@ -42266,26 +42274,27 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.user.password,
-              expression: "user.password"
+              value: _vm.formData.password,
+              expression: "formData.password"
             }
           ],
           attrs: { type: "password", id: "password" },
-          domProps: { value: _vm.user.password },
+          domProps: { value: _vm.formData.password },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.$set(_vm.user, "password", $event.target.value)
+              _vm.$set(_vm.formData, "password", $event.target.value)
             }
           }
         }),
         _vm._v(" "),
-        _c("p", {
-          staticClass: "text-danger",
-          domProps: { textContent: _vm._s(_vm.errors.password) }
-        })
+        _vm.errors.has("password")
+          ? _c("small", { staticClass: "text-danger" }, [
+              _vm._v("\n      " + _vm._s(_vm.errors.get("password")) + "\n    ")
+            ])
+          : _vm._e()
       ]),
       _vm._v(" "),
       _vm.newUser
@@ -42299,19 +42308,19 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.user.password_confirmation,
-                  expression: "user.password_confirmation"
+                  value: _vm.formData.password_confirmation,
+                  expression: "formData.password_confirmation"
                 }
               ],
               attrs: { type: "password", id: "password" },
-              domProps: { value: _vm.user.password_confirmation },
+              domProps: { value: _vm.formData.password_confirmation },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
                   _vm.$set(
-                    _vm.user,
+                    _vm.formData,
                     "password_confirmation",
                     $event.target.value
                   )
@@ -42319,12 +42328,15 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("p", {
-              staticClass: "text-danger",
-              domProps: {
-                textContent: _vm._s(_vm.errors.password_confirmation)
-              }
-            })
+            _vm.errors.has("password_confirmation")
+              ? _c("small", { staticClass: "text-danger" }, [
+                  _vm._v(
+                    "\n      " +
+                      _vm._s(_vm.errors.get("password_confirmation")) +
+                      "\n    "
+                  )
+                ])
+              : _vm._e()
           ])
         : _vm._e(),
       _vm._v(" "),
