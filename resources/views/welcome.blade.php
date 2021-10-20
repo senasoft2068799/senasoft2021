@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/f483bbf11c.js" crossorigin="anonymous"></script>
     <title>Encuentra el bug - SenaSOFT</title>
     <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('css/styles.css') }}" type="text/css" rel="stylesheet" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
