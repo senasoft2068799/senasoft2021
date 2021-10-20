@@ -17,10 +17,10 @@ class CreatePartidasTable extends Migration
             $table->id();
             $table->timestamp("fecha_inicio");
             $table->timestamp("fecha_fin")->nullable();
-            $table->integer("carta_programador_id");
-            $table->integer("carta_modulo_id");
-            $table->integer("carta_error_id");
-            $table->boolean("estado")->default(true);
+            $table->integer("programador_carta_id");
+            $table->integer("modulo_carta_id");
+            $table->integer("error_carta_id");
+            $table->tinyInteger("estado")->default(1);
             $table->timestamps();
         });
     }

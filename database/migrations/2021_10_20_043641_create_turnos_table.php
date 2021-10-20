@@ -15,9 +15,13 @@ class CreateTurnosTable extends Migration
     {
         Schema::create('turnos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("partida_id")->nullable();
-            $table->unsignedBigInteger("jugador_pregunta_id")->nullable();
-            $table->unsignedBigInteger("jugador_respuesta_id")->nullable();
+            $table->unsignedBigInteger("partida_id");
+            $table->foreign("partida_id")
+                ->references("id")->on("partidas")
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->tinyInteger("pregunta_user_id")->default(1);
+            $table->tinyInteger("respuesta_user_id")->default(1);
             $table->timestamps();
         });
     }
