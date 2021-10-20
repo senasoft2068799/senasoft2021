@@ -2345,10 +2345,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -42740,7 +42736,7 @@ var render = function() {
                             "text-decoration": "none",
                             "font-weight": "400"
                           },
-                          attrs: { to: { name: "categorias.index" } }
+                          attrs: { to: { name: "modelo.index" } }
                         },
                         [_vm._v("Botón")]
                       )
