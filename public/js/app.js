@@ -2306,6 +2306,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -42625,107 +42642,115 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row d-flex" }, [
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "contenedor" }, [
-          _c("div", { staticClass: "carta" }, [
-            _c("div", { staticClass: "box" }, [
-              _c("div", { staticClass: "content" }, [
-                _c("h2", [_vm._v("1")]),
-                _vm._v(" "),
-                _c("h3", [_vm._v("Carta 1")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Hola")]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticStyle: {
-                          color: "#fff",
-                          "text-decoration": "none",
-                          "font-weight": "400"
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row d-flex" }, [
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "contenedor" }, [
+            _c("div", { staticClass: "carta" }, [
+              _c("div", { staticClass: "box" }, [
+                _c("div", { staticClass: "content" }, [
+                  _c("h2", [_vm._v("1")]),
+                  _vm._v(" "),
+                  _c("img", { staticClass: "rounded", attrs: { alt: "..." } }),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("Carta 1")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Hola")]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticStyle: {
+                            color: "#fff",
+                            "text-decoration": "none",
+                            "font-weight": "400"
+                          },
+                          attrs: { to: { name: "categorias.index" } }
                         },
-                        attrs: { to: { name: "categorias.index" } }
-                      },
-                      [_vm._v("Botón")]
-                    )
-                  ],
-                  1
-                )
+                        [_vm._v("Botón")]
+                      )
+                    ],
+                    1
+                  )
+                ])
               ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "contenedor" }, [
-          _c("div", { staticClass: "carta" }, [
-            _c("div", { staticClass: "box" }, [
-              _c("div", { staticClass: "content" }, [
-                _c("h2", [_vm._v("2")]),
-                _vm._v(" "),
-                _c("h3", [_vm._v("Carta 2")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("no sé 2")]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticStyle: {
-                          color: "#fff",
-                          "text-decoration": "none",
-                          "font-weight": "400"
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "contenedor" }, [
+            _c("div", { staticClass: "carta" }, [
+              _c("div", { staticClass: "box" }, [
+                _c("div", { staticClass: "content" }, [
+                  _c("h2", [_vm._v("2")]),
+                  _vm._v(" "),
+                  _c("img", { staticClass: "rounded", attrs: { alt: "..." } }),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("Carta 2")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("no sé 2")]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticStyle: {
+                            color: "#fff",
+                            "text-decoration": "none",
+                            "font-weight": "400"
+                          },
+                          attrs: { to: { name: "categorias.index" } }
                         },
-                        attrs: { to: { name: "categorias.index" } }
-                      },
-                      [_vm._v("Botón 2")]
-                    )
-                  ],
-                  1
-                )
+                        [_vm._v("Botón 2")]
+                      )
+                    ],
+                    1
+                  )
+                ])
               ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "contenedor" }, [
-          _c("div", { staticClass: "carta" }, [
-            _c("div", { staticClass: "box" }, [
-              _c("div", { staticClass: "content" }, [
-                _c("h2", [_vm._v("3")]),
-                _vm._v(" "),
-                _c("h3", [_vm._v("Carta 3")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Hola 3")]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticStyle: {
-                          color: "#fff",
-                          "text-decoration": "none",
-                          "font-weight": "400"
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "contenedor" }, [
+            _c("div", { staticClass: "carta" }, [
+              _c("div", { staticClass: "box" }, [
+                _c("div", { staticClass: "content" }, [
+                  _c("h2", [_vm._v("3")]),
+                  _vm._v(" "),
+                  _c("img", { staticClass: "rounded", attrs: { alt: "..." } }),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("Carta 3")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Hola 3")]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticStyle: {
+                            color: "#fff",
+                            "text-decoration": "none",
+                            "font-weight": "400"
+                          },
+                          attrs: { to: { name: "categorias.index" } }
                         },
-                        attrs: { to: { name: "categorias.index" } }
-                      },
-                      [_vm._v("Botón 3")]
-                    )
-                  ],
-                  1
-                )
+                        [_vm._v("Botón 3")]
+                      )
+                    ],
+                    1
+                  )
+                ])
               ])
             ])
           ])

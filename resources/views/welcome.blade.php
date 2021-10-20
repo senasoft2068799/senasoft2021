@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style=" height: auto;">
     <div id="app">
     </div>
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
