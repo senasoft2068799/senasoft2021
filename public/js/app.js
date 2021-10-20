@@ -2211,6 +2211,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
 //
 //
 //
@@ -2258,6 +2259,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2274,8 +2276,8 @@ __webpack_require__.r(__webpack_exports__);
         title: "Creando partida..."
       });
       this.$swal.showLoading();
-      axios.post("/api/partida", this.partida).then(function (res) {
-        Storage.record("partida", res.data, false);
+      axios.post("/api/partidas", this.partida).then(function (res) {
+        _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].record("partida", res.data, false);
 
         _this.$swal.close();
 

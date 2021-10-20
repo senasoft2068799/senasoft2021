@@ -46,6 +46,7 @@
   </div>
 </template>
 <script>
+import Storage from "../utilities/Storage.js";
 export default {
   data() {
     return {
@@ -61,7 +62,7 @@ export default {
       });
       this.$swal.showLoading();
       axios
-        .post("/api/partida", this.partida)
+        .post("/api/partidas", this.partida)
         .then((res) => {
           Storage.record("partida", res.data, false);
           this.$swal.close();
