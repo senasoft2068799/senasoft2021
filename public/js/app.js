@@ -2130,7 +2130,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       newUser: false,
       errors: new _utilities_Errors_js__WEBPACK_IMPORTED_MODULE_0__["default"](),
-      formData: {
+      user: {
         nickname: null,
         password: null,
         password_confirmation: null,
@@ -2146,11 +2146,13 @@ __webpack_require__.r(__webpack_exports__);
     login: function login() {
       var _this = this;
 
-      axios.post("/api/login", this.formData).then(function (res) {
+      axios.post("/api/login", this.user).then(function (res) {
         // Si todo sale bien, se guarda el token de login en el localstorage, y se envía a la ruta principal
         _this.errors.clearAll();
 
-        _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__["default"].record("token", res.data, false); // this.$router.push("/");
+        _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__["default"].record("token", res.data, false);
+
+        _this.$router.push("/");
       })["catch"](function (err) {
         // Si el error es 422, significa, que un campo no es válido
         if (err.response.status === 422) {
@@ -2172,7 +2174,7 @@ __webpack_require__.r(__webpack_exports__);
     register: function register() {
       var _this2 = this;
 
-      axios.post("/api/register", this.formData).then(function (response) {
+      axios.post("/api/register", this.user).then(function (response) {
         // Si todo sale bien, el jugador se logea automáticamente
         _this2.login();
       })["catch"](function (err) {
@@ -2390,7 +2392,17 @@ Vue.use(vue_axios__WEBPACK_IMPORTED_MODULE_1__["default"], (axios__WEBPACK_IMPOR
 Vue.use(vue_sweetalert2__WEBPACK_IMPORTED_MODULE_3__["default"], swalOptions); // Función autenticación
 
 function loggedIn() {
-  return _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_6__["default"].get("token", false);
+  return _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_6__["default"].get("token", false); // window.axios.defaults.headers.common[
+  //     "Authorization"
+  // ] = `Bearer ${this.token}`;
+  // this.axios
+  //     .get("/api/user")
+  //     .then((res) => {
+  //         this.currentUser = res.data;
+  //     })
+  //     .catch((err) => {
+  //         console.log("Error autenticación: " + err);
+  //     });
 } // Instancia router
 
 
@@ -42455,18 +42467,18 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.formData.nickname,
-              expression: "formData.nickname"
+              value: _vm.user.nickname,
+              expression: "user.nickname"
             }
           ],
           attrs: { type: "text", id: "nickname" },
-          domProps: { value: _vm.formData.nickname },
+          domProps: { value: _vm.user.nickname },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.$set(_vm.formData, "nickname", $event.target.value)
+              _vm.$set(_vm.user, "nickname", $event.target.value)
             }
           }
         }),
@@ -42486,18 +42498,18 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.formData.password,
-              expression: "formData.password"
+              value: _vm.user.password,
+              expression: "user.password"
             }
           ],
           attrs: { type: "password", id: "password" },
-          domProps: { value: _vm.formData.password },
+          domProps: { value: _vm.user.password },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.$set(_vm.formData, "password", $event.target.value)
+              _vm.$set(_vm.user, "password", $event.target.value)
             }
           }
         }),
@@ -42520,19 +42532,19 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.formData.password_confirmation,
-                  expression: "formData.password_confirmation"
+                  value: _vm.user.password_confirmation,
+                  expression: "user.password_confirmation"
                 }
               ],
               attrs: { type: "password", id: "password" },
-              domProps: { value: _vm.formData.password_confirmation },
+              domProps: { value: _vm.user.password_confirmation },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
                   _vm.$set(
-                    _vm.formData,
+                    _vm.user,
                     "password_confirmation",
                     $event.target.value
                   )

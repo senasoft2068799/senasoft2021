@@ -20,7 +20,7 @@ class CreateUserPartidaTable extends Migration
                 ->references("nickname")->on("users")
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger("partida_id");
+            $table->string("partida_id", 6);
             $table->foreign("partida_id")
                 ->references("id")->on("partidas")
                 ->onUpdate('cascade')
