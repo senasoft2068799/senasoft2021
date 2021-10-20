@@ -2218,15 +2218,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -42526,40 +42517,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row row-cols-1 row-cols-md-3 g-4" }, [
-      _c("div", { staticClass: "col" }, [
-        _c("div", { staticClass: "card h-100" }, [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: { src: "", alt: "..." }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(
-                "\n          This is a longer card with supporting text below as a natural\n          lead-in to additional content. This content is a little bit longer.\n        "
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col" }, [
-        _c("div", { staticClass: "card h-100" }, [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: { src: "", alt: "..." }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v("This is a short card.")
-            ])
-          ])
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-6" }, [
+          _c("form", [_c("input", { attrs: { type: "text", value: "hola" } })])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-6" }, [
+          _c("form", [_c("input", { attrs: { type: "text", value: "pass" } })])
         ])
       ])
     ])

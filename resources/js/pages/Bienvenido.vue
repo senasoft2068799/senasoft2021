@@ -1,24 +1,15 @@
 <template>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100">
-        <img src="" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            This is a longer card with supporting text below as a natural
-            lead-in to additional content. This content is a little bit longer.
-          </p>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <form>
+          <input type="text" value="hola" />
+        </form>
       </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a short card.</p>
-        </div>
+      <div class="col-md-6">
+        <form>
+          <input type="text" value="pass" />
+        </form>
       </div>
     </div>
   </div>
