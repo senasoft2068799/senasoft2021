@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Turno;
+use App\models\User;
+use App\models\Partida;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TurnoFactory extends Factory
@@ -22,7 +24,10 @@ class TurnoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id' => $this->faker->unique()->firstName(),
+            'partida_id' => Partida::inRandomOrder()->first()->id,
+            'pregunta_user_id' => User::inRandomOrder()->first()->id,
+            'respuesta_user_id' => User::inRandomOrder()->first()->id
         ];
     }
 }
