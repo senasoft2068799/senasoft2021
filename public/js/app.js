@@ -2225,6 +2225,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -42583,26 +42609,71 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("form", [_c("input", { attrs: { type: "text", value: "hola" } })])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("form", [_c("input", { attrs: { type: "text", value: "pass" } })])
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row d-flex" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "contenedor" }, [
+          _c("div", { staticClass: "carta" }, [
+            _c("div", { staticClass: "box" }, [
+              _c("div", { staticClass: "content" }, [
+                _c("h3", [_vm._v("Crear Partida")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Aquí podrás crear una partida y jugar con tus amigos a encontrar las cartas en secreto."
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: { name: "categorias.index" } } },
+                      [_vm._v("Crear")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "contenedor" }, [
+          _c("div", { staticClass: "carta" }, [
+            _c("div", { staticClass: "box" }, [
+              _c("div", { staticClass: "content" }, [
+                _c("h3", [_vm._v("Unirse a Partida")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Si tienes el código de una partida activa ingresa a ella dando click al siguiente botón"
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: { name: "categorias.index" } } },
+                      [_vm._v("Unirme")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ])
+          ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
