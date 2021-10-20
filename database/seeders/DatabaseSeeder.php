@@ -19,7 +19,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        /* Se instancia los factories para migrar los datos a las tablas correspondientes cuando se genere una
+        migración a la base de datos
+        */
         User::factory(20)->create();
         Partida::factory(1)->create();
         //UserPartida::factory(1)->create();

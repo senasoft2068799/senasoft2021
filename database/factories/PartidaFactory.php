@@ -21,6 +21,9 @@ class PartidaFactory extends Factory
      */
     public function definition()
     {
+        /*
+        Se generan datos aleatorios para los campos respectivos de la tabla Partidas a través de php faker
+        */
         $id = $this->faker->unique()->hexcolor();
         return [
             "id" => str_replace('#', '', $id),

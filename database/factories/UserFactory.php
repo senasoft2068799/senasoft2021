@@ -23,6 +23,9 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        /*
+        Se generan datos aleatorios para los campos respectivos de la tabla Users a través de php faker
+        */
         return [
             'nickname' => $this->faker->unique()->firstName(),
             'password' => Hash::make("1234"),
