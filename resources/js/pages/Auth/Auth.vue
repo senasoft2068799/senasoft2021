@@ -98,7 +98,7 @@ export default {
     return {
       newUser: false,
       errors: new Errors(),
-      formData: {
+      user: {
         nickname: null,
         password: null,
         password_confirmation: null,
@@ -113,12 +113,12 @@ export default {
     },
     login() {
       axios
-        .post("/api/login", this.formData)
+        .post("/api/login", this.user)
         .then((res) => {
           // Si todo sale bien, se guarda el token de login en el localstorage, y se envía a la ruta principal
           this.errors.clearAll();
           Storage.record("token", res.data, false);
-          // this.$router.push("/");
+          this.$router.push("/");
         })
         .catch((err) => {
           // Si el error es 422, significa, que un campo no es válido
@@ -139,7 +139,7 @@ export default {
     },
     register() {
       axios
-        .post("/api/register", this.formData)
+        .post("/api/register", this.user)
         .then((response) => {
           // Si todo sale bien, el jugador se logea automáticamente
           this.login();

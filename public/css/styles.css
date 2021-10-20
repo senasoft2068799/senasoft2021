@@ -109,7 +109,15 @@
 }
 /* Fin de diseño de formulario */
 
-/* Diseño de fondo */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,900&family=Lusitana&display=swap');
+
+:root{
+  --main-font: 'Exo 2', sans-serif;
+  --second-font: 'Lusitana', serif;
+}
+ 
+ /* Diseño de fondo */
 body
 {
   background: linear-gradient(135deg, #00B7D4, #505488, #2F3F80, #161569, #5A4894, #A950A1, #FF7CAE) no-repeat center center fixed;
@@ -144,7 +152,8 @@ body
      align-items: center;
      max-width: 1200px;
      flex-wrap: wrap;
-     padding: 40px 0;
+     margin-top: 5rem;
+     margin-bottom: 1rem;
      overflow: hidden;
    }
 
@@ -217,7 +226,8 @@ body
 
    .contenedor .carta .box .content h3
    {
-     font-size: 1.8em;
+     font-family: var(--main-font);
+     font-size: 2em;
      color: #777;
      z-index: 1;
      transition: 0.5s;
@@ -225,11 +235,12 @@ body
 
    .contenedor .carta .box .content p
    {
-      font-size: 1em;
+      font-family: var(--second-font);
+      font-size: 1.2em;
       font-weight: 300;
       color: #777;
       z-index: 1;
-      transition: 0.5s;
+      transition: .5s;
    }
 
    .contenedor .carta .box .content button
@@ -249,9 +260,12 @@ body
    }
 
    .contenedor .carta .box .content button a{
+    font-family: var(--main-font);
     color: white;
     text-decoration: none;
     font-weight: 400;
    }
+
+
 
 /* Fin de diseño de cards */
