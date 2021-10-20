@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\UserPartida;
+use App\Models\User;
+use App\Models\Partida;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UserPartidaFactory extends Factory
@@ -22,7 +24,8 @@ class UserPartidaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_nickname' => User::inRandomOrder()->first()->nickname,
+            'partida_id' => Partida::inRandomOrder()->first()->id
         ];
     }
 }
