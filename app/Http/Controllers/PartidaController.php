@@ -26,9 +26,11 @@ class PartidaController extends Controller
      */
     public function store(Request $request)
     {
+        info("Iniciando");
         $path = storage_path() . "cartass.json";
         $json = json_decode(file_get_contents($path), true);
         info($json);
+        return "Correcto";
         //$random = sprintf('%06X', mt_rand(0, 0xFFFFFF));
         // $request->validate([
         //     'nickname' => 'required',

@@ -2123,6 +2123,71 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2200,63 +2265,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Bienvenido.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Bienvenido.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Index.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Index.vue?vue&type=script&lang=js& ***!
@@ -2315,39 +2323,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      partida: {
+        jugadore_id: 1
+      }
+    };
+  },
+  methods: {
+    crearPartida: function crearPartida() {
+      var _this = this;
+
+      this.$swal({
+        title: "Creando partida..."
+      });
+      this.$swal.showLoading();
+      axios.post("/api/partida", this.partida).then(function (res) {
+        Storage.record("partida", res.data, false);
+
+        _this.$swal.close();
+
+        _this.$router.push("/sala");
+      })["catch"](function (err) {
+        _this.$swal({
+          icon: "error",
+          title: "Ha ocurrido un error:\n" + err
+        });
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -2580,7 +2586,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _pages_Index_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/Index.vue */ "./resources/js/pages/Index.vue");
 /* harmony import */ var _pages_Auth_Auth_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Auth/Auth.vue */ "./resources/js/pages/Auth/Auth.vue");
-/* harmony import */ var _pages_Bienvenido_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Bienvenido.vue */ "./resources/js/pages/Bienvenido.vue");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './pages/Bienvenido.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _pages_Sala_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Sala.vue */ "./resources/js/pages/Sala.vue");
 
 
@@ -2600,7 +2606,7 @@ var routes = [{
 }, {
   name: "Bienvenido",
   path: "/bienvenido",
-  component: _pages_Bienvenido_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+  component: Object(function webpackMissingModule() { var e = new Error("Cannot find module './pages/Bienvenido.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()),
   meta: {
     requiresAuth: true
   }
@@ -42287,45 +42293,6 @@ component.options.__file = "resources/js/pages/Auth/Auth.vue"
 
 /***/ }),
 
-/***/ "./resources/js/pages/Bienvenido.vue":
-/*!*******************************************!*\
-  !*** ./resources/js/pages/Bienvenido.vue ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Bienvenido_vue_vue_type_template_id_d5dfe4a4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Bienvenido.vue?vue&type=template&id=d5dfe4a4& */ "./resources/js/pages/Bienvenido.vue?vue&type=template&id=d5dfe4a4&");
-/* harmony import */ var _Bienvenido_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Bienvenido.vue?vue&type=script&lang=js& */ "./resources/js/pages/Bienvenido.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Bienvenido_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Bienvenido_vue_vue_type_template_id_d5dfe4a4___WEBPACK_IMPORTED_MODULE_0__.render,
-  _Bienvenido_vue_vue_type_template_id_d5dfe4a4___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/pages/Bienvenido.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
 /***/ "./resources/js/pages/Index.vue":
 /*!**************************************!*\
   !*** ./resources/js/pages/Index.vue ***!
@@ -42436,22 +42403,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Bienvenido.vue?vue&type=script&lang=js&":
-/*!********************************************************************!*\
-  !*** ./resources/js/pages/Bienvenido.vue?vue&type=script&lang=js& ***!
-  \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Bienvenido_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Bienvenido.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Bienvenido.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Bienvenido_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
 /***/ "./resources/js/pages/Index.vue?vue&type=script&lang=js&":
 /*!***************************************************************!*\
   !*** ./resources/js/pages/Index.vue?vue&type=script&lang=js& ***!
@@ -42514,23 +42465,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Auth_vue_vue_type_template_id_138ae716___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Auth_vue_vue_type_template_id_138ae716___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Auth.vue?vue&type=template&id=138ae716& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Auth/Auth.vue?vue&type=template&id=138ae716&");
-
-
-/***/ }),
-
-/***/ "./resources/js/pages/Bienvenido.vue?vue&type=template&id=d5dfe4a4&":
-/*!**************************************************************************!*\
-  !*** ./resources/js/pages/Bienvenido.vue?vue&type=template&id=d5dfe4a4& ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Bienvenido_vue_vue_type_template_id_d5dfe4a4___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Bienvenido_vue_vue_type_template_id_d5dfe4a4___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Bienvenido_vue_vue_type_template_id_d5dfe4a4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Bienvenido.vue?vue&type=template&id=d5dfe4a4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Bienvenido.vue?vue&type=template&id=d5dfe4a4&");
 
 
 /***/ }),
@@ -42610,254 +42544,222 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    {
-      on: {
-        submit: function($event) {
-          $event.preventDefault()
-          return _vm.auth()
+  return _c("div", [
+    _c(
+      "form",
+      {
+        staticClass: "form",
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.auth()
+          }
         }
-      }
-    },
-    [
-      _c("div", [
-        _c("label", { attrs: { for: "nickname" } }, [_vm._v("Nick")]),
+      },
+      [
+        _c("h2", { staticClass: "form-title" }, [_vm._v("¡Bienvenido!")]),
         _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.user.nickname,
-              expression: "user.nickname"
-            }
-          ],
-          attrs: { type: "text", id: "nickname" },
-          domProps: { value: _vm.user.nickname },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.$set(_vm.user, "nickname", $event.target.value)
-            }
-          }
-        }),
-        _vm._v(" "),
-        _vm.errors.has("nickname")
-          ? _c("small", { staticClass: "text-danger" }, [
-              _vm._v("\n      " + _vm._s(_vm.errors.get("nickname")) + "\n    ")
-            ])
-          : _vm._e()
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c("label", { attrs: { for: "password" } }, [_vm._v("Contraseña")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.user.password,
-              expression: "user.password"
-            }
-          ],
-          attrs: { type: "password", id: "password" },
-          domProps: { value: _vm.user.password },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.$set(_vm.user, "password", $event.target.value)
-            }
-          }
-        }),
-        _vm._v(" "),
-        _vm.errors.has("password")
-          ? _c("small", { staticClass: "text-danger" }, [
-              _vm._v("\n      " + _vm._s(_vm.errors.get("password")) + "\n    ")
-            ])
-          : _vm._e()
-      ]),
-      _vm._v(" "),
-      _vm.newUser
-        ? _c("div", [
-            _c("label", { attrs: { for: "password" } }, [
-              _vm._v("Confirmar contraseña")
-            ]),
-            _vm._v(" "),
+        _c("div", { staticClass: "form-container" }, [
+          _c("div", { staticClass: "form-group" }, [
             _c("input", {
               directives: [
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.user.password_confirmation,
-                  expression: "user.password_confirmation"
+                  value: _vm.user.nickname,
+                  expression: "user.nickname"
                 }
               ],
-              attrs: { type: "password", id: "password" },
-              domProps: { value: _vm.user.password_confirmation },
+              staticClass: "form-input",
+              attrs: { type: "text", id: "nickname", placeholder: " " },
+              domProps: { value: _vm.user.nickname },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.$set(
-                    _vm.user,
-                    "password_confirmation",
-                    $event.target.value
-                  )
+                  _vm.$set(_vm.user, "nickname", $event.target.value)
                 }
               }
             }),
             _vm._v(" "),
-            _vm.errors.has("password_confirmation")
-              ? _c("small", { staticClass: "text-danger" }, [
+            _c(
+              "label",
+              { staticClass: "form-label", attrs: { for: "nickname" } },
+              [_vm._v("Nombre de usuario")]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "form-line" }),
+            _vm._v(" "),
+            _vm.errors.has("nickname")
+              ? _c("p", { staticClass: "form-p" }, [
                   _vm._v(
-                    "\n      " +
-                      _vm._s(_vm.errors.get("password_confirmation")) +
-                      "\n    "
+                    "\n          " +
+                      _vm._s(_vm.errors.get("nickname")) +
+                      "\n        "
                   )
                 ])
               : _vm._e()
           ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c("div", [
-        _c("label", [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.newUser,
-                expression: "newUser"
-              }
-            ],
-            attrs: { type: "checkbox" },
-            domProps: {
-              checked: Array.isArray(_vm.newUser)
-                ? _vm._i(_vm.newUser, null) > -1
-                : _vm.newUser
-            },
-            on: {
-              change: function($event) {
-                var $$a = _vm.newUser,
-                  $$el = $event.target,
-                  $$c = $$el.checked ? true : false
-                if (Array.isArray($$a)) {
-                  var $$v = null,
-                    $$i = _vm._i($$a, $$v)
-                  if ($$el.checked) {
-                    $$i < 0 && (_vm.newUser = $$a.concat([$$v]))
-                  } else {
-                    $$i > -1 &&
-                      (_vm.newUser = $$a
-                        .slice(0, $$i)
-                        .concat($$a.slice($$i + 1)))
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-container" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.user.password,
+                  expression: "user.password"
+                }
+              ],
+              staticClass: "form-input",
+              attrs: { type: "password", id: "password", placeholder: " " },
+              domProps: { value: _vm.user.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
                   }
-                } else {
-                  _vm.newUser = $$c
+                  _vm.$set(_vm.user, "password", $event.target.value)
                 }
               }
-            }
-          }),
-          _vm._v("Crear usuario")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("button", { attrs: { type: "submit" } }, [_vm._v("Iniciar")])
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Bienvenido.vue?vue&type=template&id=d5dfe4a4&":
-/*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Bienvenido.vue?vue&type=template&id=d5dfe4a4& ***!
-  \*****************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row d-flex" }, [
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("div", { staticClass: "contenedor" }, [
-          _c("div", { staticClass: "carta" }, [
-            _c("div", { staticClass: "box" }, [
-              _c("div", { staticClass: "content" }, [
-                _c("h3", [_vm._v("Crear Partida")]),
-                _vm._v(" "),
-                _c("p", [
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              { staticClass: "form-label", attrs: { for: "password" } },
+              [_vm._v("Contraseña")]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "form-line" }),
+            _vm._v(" "),
+            _vm.errors.has("password")
+              ? _c("p", { staticClass: "form-p" }, [
                   _vm._v(
-                    "Aquí podrás crear una partida y jugar con tus amigos a encontrar las cartas en secreto."
+                    "\n          " +
+                      _vm._s(_vm.errors.get("password")) +
+                      "\n        "
                   )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: { name: "categorias.index" } } },
-                      [_vm._v("Crear")]
-                    )
-                  ],
-                  1
-                )
+                ])
+              : _vm._e()
+          ])
+        ]),
+        _vm._v(" "),
+        _vm.newUser
+          ? _c("div", [
+              _c("div", { staticClass: "form-container" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.user.password_confirmation,
+                        expression: "user.password_confirmation"
+                      }
+                    ],
+                    staticClass: "form-input",
+                    attrs: {
+                      type: "password",
+                      id: "passwordConfirm",
+                      placeholder: " "
+                    },
+                    domProps: { value: _vm.user.password_confirmation },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.user,
+                          "password_confirmation",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "label",
+                    {
+                      staticClass: "form-label",
+                      attrs: { for: "passwordConfirm" }
+                    },
+                    [_vm._v("Confirmar contraseña")]
+                  ),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "form-line" }),
+                  _vm._v(" "),
+                  _vm.errors.has("password_confirmation")
+                    ? _c("p", { staticClass: "form-p" }, [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.errors.get("password_confirmation")) +
+                            "\n          "
+                        )
+                      ])
+                    : _vm._e()
+                ])
               ])
             ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("div", { staticClass: "contenedor" }, [
-          _c("div", { staticClass: "carta" }, [
-            _c("div", { staticClass: "box" }, [
-              _c("div", { staticClass: "content" }, [
-                _c("h3", [_vm._v("Unirse a Partida")]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Si tienes el código de una partida activa ingresa a ella dando click al siguiente botón"
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: { name: "categorias.index" } } },
-                      [_vm._v("Unirme")]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", [
+          _c(
+            "label",
+            { staticClass: "form-check", staticStyle: { float: "left" } },
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newUser,
+                    expression: "newUser"
+                  }
+                ],
+                attrs: { type: "checkbox" },
+                domProps: {
+                  checked: Array.isArray(_vm.newUser)
+                    ? _vm._i(_vm.newUser, null) > -1
+                    : _vm.newUser
+                },
+                on: {
+                  change: function($event) {
+                    var $$a = _vm.newUser,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = null,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && (_vm.newUser = $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          (_vm.newUser = $$a
+                            .slice(0, $$i)
+                            .concat($$a.slice($$i + 1)))
+                      }
+                    } else {
+                      _vm.newUser = $$c
+                    }
+                  }
+                }
+              }),
+              _vm._v("Crear\n        usuario")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "form-submit", attrs: { type: "submit" } },
+          [_vm._v("Entrar")]
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = []
@@ -42883,115 +42785,62 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row d-flex" }, [
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "contenedor" }, [
-            _c("div", { staticClass: "carta" }, [
-              _c("div", { staticClass: "box" }, [
-                _c("div", { staticClass: "content" }, [
-                  _c("h2", [_vm._v("1")]),
-                  _vm._v(" "),
-                  _c("img", { staticClass: "rounded", attrs: { alt: "..." } }),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("Carta 1")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Hola")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticStyle: {
-                            color: "#fff",
-                            "text-decoration": "none",
-                            "font-weight": "400"
-                          },
-                          attrs: { to: { name: "modelo.index" } }
-                        },
-                        [_vm._v("Botón")]
-                      )
-                    ],
-                    1
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row d-flex" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "contenedor" }, [
+          _c("div", { staticClass: "carta" }, [
+            _c("div", { staticClass: "box" }, [
+              _c("div", { staticClass: "content" }, [
+                _c("h3", [_vm._v("Crear partida")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                Aquí podrás crear una partida y jugar con tus amigos a\n                encontrar las cartas en secreto.\n              "
                   )
-                ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.crearPartida()
+                      }
+                    }
+                  },
+                  [_vm._v("\n                Crear\n                ")]
+                )
               ])
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "contenedor" }, [
-            _c("div", { staticClass: "carta" }, [
-              _c("div", { staticClass: "box" }, [
-                _c("div", { staticClass: "content" }, [
-                  _c("h2", [_vm._v("2")]),
-                  _vm._v(" "),
-                  _c("img", { staticClass: "rounded", attrs: { alt: "..." } }),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("Carta 2")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("no sé 2")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticStyle: {
-                            color: "#fff",
-                            "text-decoration": "none",
-                            "font-weight": "400"
-                          },
-                          attrs: { to: { name: "categorias.index" } }
-                        },
-                        [_vm._v("Botón 2")]
-                      )
-                    ],
-                    1
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "contenedor" }, [
+          _c("div", { staticClass: "carta" }, [
+            _c("div", { staticClass: "box" }, [
+              _c("div", { staticClass: "content" }, [
+                _c("h3", [_vm._v("Unirse a partida")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                Si tienes el código de una partida activa ingresa a ella dando\n                click al siguiente botón\n              "
                   )
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("div", { staticClass: "contenedor" }, [
-            _c("div", { staticClass: "carta" }, [
-              _c("div", { staticClass: "box" }, [
-                _c("div", { staticClass: "content" }, [
-                  _c("h2", [_vm._v("3")]),
-                  _vm._v(" "),
-                  _c("img", { staticClass: "rounded", attrs: { alt: "..." } }),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("Carta 3")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Hola 3")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticStyle: {
-                            color: "#fff",
-                            "text-decoration": "none",
-                            "font-weight": "400"
-                          },
-                          attrs: { to: { name: "categorias.index" } }
-                        },
-                        [_vm._v("Botón 3")]
-                      )
-                    ],
-                    1
-                  )
-                ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: { name: "categorias.index" } } },
+                      [_vm._v("Unirme")]
+                    )
+                  ],
+                  1
+                )
               ])
             ])
           ])
