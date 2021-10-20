@@ -15,14 +15,12 @@ class CreateUserPartidaTable extends Migration
     {
         Schema::create('user_partida', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("user_id");
-            $table->unsignedBigInteger("partida_id");
-
-            $table->foreign("user_id")
-                ->references("id")->on("users")
+            $table->string("user_nickname", 20);
+            $table->foreign("user_nickname")
+                ->references("nickname")->on("users")
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-
+            $table->unsignedBigInteger("partida_id");
             $table->foreign("partida_id")
                 ->references("id")->on("partidas")
                 ->onUpdate('cascade')

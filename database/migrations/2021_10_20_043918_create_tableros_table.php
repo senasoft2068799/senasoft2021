@@ -15,17 +15,17 @@ class CreateTablerosTable extends Migration
     {
         Schema::create('tableros', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("pregunta_jugadore_partida_id")->nullable();
-            // $table->foreign("jugadore_partida_id")
-            //     ->references("id")->on("jugadore_partida")
-            //     ->onUpdate('cascade')
-            //     ->onDelete('cascade');
+            $table->unsignedBigInteger("pregunta_user_partida_id");
+            $table->foreign("pregunta_user_partida_id")
+                ->references("id")->on("user_partida")
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->integer("carta_id");
-            $table->unsignedBigInteger("respuesta_jugadore_partida_id")->nullable();
-            // $table->foreign("jugadore_partida_id")
-            //     ->references("id")->on("jugadore_partida")
-            //     ->onUpdate('cascade')
-            //     ->onDelete('cascade');
+            $table->unsignedBigInteger("respuesta_user_partida_id");
+            $table->foreign("respuesta_user_partida_id")
+                ->references("id")->on("user_partida")
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
