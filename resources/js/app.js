@@ -45,7 +45,7 @@ router.beforeEach((to, from, next) => {
         // De lo contrario, se redirige al login
         if (!loggedIn()) {
             next({
-                path: '/login',
+                path: '/auth',
                 query: { redirect: to.fullPath }
             })
         } else {
