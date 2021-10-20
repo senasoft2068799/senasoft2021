@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Pregunta;
+use App\Models\UserPartida;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PreguntaFactory extends Factory
@@ -22,7 +23,8 @@ class PreguntaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            // "id_jugador_partida" => UserPartida::inRandomOrder()->first()->id,
+            // "programador_id" => $faker->randomElement(['male', 'female']),
         ];
     }
 }

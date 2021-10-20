@@ -9,11 +9,15 @@ class CreatePreguntasTable extends Migration
     public function up()
     {
         Schema::create('preguntas', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('id_jugador_partida');
-            $table->integer('programador');
-            $table->integer('modulo');
-            $table->integer('error');
+            $table->id();
+            $table->unsignedBigInteger('id_user_partida');
+            $table->foreign("id_user_partida")
+                ->references("id")->on("user_partida")
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->integer('programador_id');
+            $table->integer('modulo_id');
+            $table->integer('error_id');
             $table->boolean('tipo_pregunta');
             $table->timestamps();
         });
