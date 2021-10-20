@@ -15,15 +15,15 @@ class CreatePreguntasTable extends Migration
     {
         Schema::create('preguntas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user_partida');
-            $table->foreign("id_user_partida")
+            $table->unsignedBigInteger('user_partida_id');
+            $table->foreign("user_partida_id")
                 ->references("id")->on("user_partida")
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->integer('programador_id');
-            $table->integer('modulo_id');
-            $table->integer('error_id');
-            $table->boolean('tipo_pregunta');
+            $table->integer('programador_carta_id');
+            $table->integer('modulo_carta_id');
+            $table->integer('error_carta_id');
+            $table->boolean('tipo_pregunta')->default(true);
             $table->timestamps();
         });
     }

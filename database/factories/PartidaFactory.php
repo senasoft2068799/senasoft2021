@@ -22,7 +22,12 @@ class PartidaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'fecha_inicio' => now(),
+            'fecha_fin' => now(),
+            'programador_carta_id' => $this->faker->unique()->numberBetween(1, 19),
+            'modulo_carta_id'=> $this->faker->unique()->numberBetween(1, 19),
+            'error_carta_id' => $this->faker->unique()->numberBetween(1, 19),
+            'estado'=> $this->faker->randomElement([0, 1])
         ];
     }
 }
