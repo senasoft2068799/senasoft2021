@@ -23,6 +23,38 @@ Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(VueSweetalert2, swalOptions);
 
+// Autenticación
+function loggedIn() {
+    return Storage.get("token", false);
+}
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        // Se comprueba si el jugador ya inició sesión con el meta (requiresAuth)
+        // De lo contrario, se redirige al login
+        if (!loggedIn()) {
+            next({
+                path: "/login",
+                query: { redirect: to.fullPath }
+            });
+        } else {
+            next();
+        }
+    } else if (to.matched.some(record => record.meta.guest)) {
+        // Este meta (guest) es en caso de que la página no requiera login
+        if (loggedIn()) {
+            next({
+                path: "/",
+                query: { redirect: to.fullPath }
+            });
+        } else {
+            next();
+        }
+    } else {
+        next();
+    }
+});
+
 // Instancias
 
 const router = new VueRouter({
