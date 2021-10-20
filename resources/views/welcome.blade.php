@@ -9,6 +9,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <script src="https://kit.fontawesome.com/f483bbf11c.js" crossorigin="anonymous"></script>
     <title>Encuentra el bug - SenaSOFT</title>
+    <link href="{{ asset('css/bootstrap-grid.min.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" type="text/css" rel="stylesheet" />
 
