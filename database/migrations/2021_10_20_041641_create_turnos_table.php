@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateTurnosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('turnos', function (Blueprint $table) {
             $table->id();
-            $table->string('nickname')->unique();
-            $table->string('password');
-            $table->boolean('estado')->default(true);
-            $table->rememberToken();
+            $table->unsignedBigInteger("partida_id")->nullable();
+            $table->unsignedBigInteger("jugador_pregunta_id")->nullable();
+            $table->unsignedBigInteger("jugador_respuesta_id")->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('turnos');
     }
 }
