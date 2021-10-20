@@ -9,7 +9,7 @@
                 <h2>1</h2>
                 <h3>Carta 1</h3>
                 <p>Hola</p>
-                <button>
+                <button> 
                   <router-link
                     style="color: #fff; text-decoration: none; font-weight: 400"
                     :to="{ name: 'categorias.index' }"
