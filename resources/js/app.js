@@ -26,6 +26,17 @@ Vue.use(VueSweetalert2, swalOptions);
 // Función autenticación
 function loggedIn() {
     return Storage.get("token", false);
+    // window.axios.defaults.headers.common[
+    //     "Authorization"
+    // ] = `Bearer ${this.token}`;
+    // this.axios
+    //     .get("/api/user")
+    //     .then((res) => {
+    //         this.currentUser = res.data;
+    //     })
+    //     .catch((err) => {
+    //         console.log("Error autenticación: " + err);
+    //     });
 }
 
 // Instancia router

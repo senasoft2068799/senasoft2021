@@ -15,7 +15,7 @@ class CreateTurnosTable extends Migration
     {
         Schema::create('turnos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("partida_id");
+            $table->string("partida_id", 6);
             $table->foreign("partida_id")
                 ->references("id")->on("partidas")
                 ->onUpdate('cascade')
