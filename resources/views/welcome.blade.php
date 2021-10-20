@@ -11,6 +11,7 @@
     <title>Encuentra el bug - SenaSOFT</title>
     <link href="{{ asset('css/bootstrap-grid.min.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('css/styles.css') }}" type="text/css" rel="stylesheet" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
