@@ -10,6 +10,7 @@
  body
  {
    background-image: linear-gradient(135deg, #00B7D4, #505488, #2F3F80, #161569, #5A4894, #A950A1, #FF7CAE);
+   background-attachment: fixed;
    background-size: 500%;
    animation:  fanimado 10s infinite;
  }
@@ -130,16 +131,22 @@
     {
       position: relative;
       display: inline-block;
-      padding: 8px 20px;
+      padding: .9rem 3rem;
       background: #03a9f4;
+      color: white;
+      font-family: var(--main-font);
+      font-size: 1rem;
       margin-top: 15px;
       border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
     }
  
     .contenedor .carta:hover .box .content button
     {
       background: #ff568f;
+      opacity: .8;
+      cursor: pointer;
+      transition: .9s;
     }
 
    .contenedor .carta .box .content button a{
@@ -148,13 +155,34 @@
     text-decoration: none;
     font-weight: 400;
    }
+/* Fin de diseño de cards */
 
+/* Diseño de botones ganador */
+.botonGanador
+{
+  position: relative;
+  display: inline-block;
+  font-size: 25px;
+  padding: 0.7rem 2.5rem;
+  background: white;
+  margin-top: 15px;
+  border-radius: 5rem;
+  color: black;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: .5s;
+}
+
+.botonGanador:hover
+{
+  background: transparent;
+}
+/* Fin de diseño de botones ganador */
    /*Comienza Diseño sala de espera*/
 
    .img{
      height: 100%;
      border-radius: 3rem;
-     
    }
 
    .margin{
@@ -253,11 +281,94 @@
       transform: rotate(360deg);
     }
   }
+/*Fin Diseño sala de espera*/
 
-   /*Comienza Diseño sala de espera*/
 
-/* Fin de diseño de cards */
+/* Diseño de preguntas */
+.contenedor-preguntas
+{
+  max-width: 950px;
+  width: 100%;
+  overflow: hidden;
+}
 
+.contenedor-preguntas .main-card
+{
+    width: 300%;
+    display: flex;
+    justify-content: space-evenly;
+    transition: all 1s ease;
+}
+
+#dos:checked ~ .main-card
+{
+    margin-left: -100%;
+}
+
+#tres:checked ~ .main-card
+{
+    margin-left: -200%;
+}
+
+.main-card .cards
+{
+    width: calc(100% / 4 - 10px);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    text-align: center;    
+}
+
+.main-card .cards .card
+{
+    width: calc(100% / 1.5 - 10px);
+    background: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 24px;
+}
+
+.botonDash
+{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+.botonDash label
+{
+    height: 65px;
+    width: 65px;
+    background: white;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    margin-top: 160px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+input[type="radio"]
+{
+    display: none;
+}
+
+.botonPreguntas
+{
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  background: #03a9f4;
+  margin-top: 15px;
+  border-radius: 5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.botonPreguntas:hover
+{
+  background: #00f165;
+}
+/* Fin de diseño de preguntas */
 /* Diseño de formulario */
 .form
 {
@@ -369,7 +480,7 @@
 }
 /* Fin de diseño de formulario */
  
- /* Diseño de fondo */
+ /* Comienza Diseño de Tablero */
 
  .table {
   width: 100%;
@@ -409,3 +520,4 @@ td {
   padding: 15px;
   border-radius: 10px
 }
+/* Fin Diseño de Tablero */
