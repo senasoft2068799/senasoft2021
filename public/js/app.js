@@ -2527,6 +2527,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2689,6 +2694,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2718,6 +2739,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Cartas.vue */ "./resources/js/components/Cartas.vue");
 /* harmony import */ var _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../public/json/cartas.json */ "./public/json/cartas.json");
+//
 //
 //
 //
@@ -44315,12 +44337,12 @@ var render = function() {
             _vm._l(_vm.json, function(carta) {
               return _c("tr", { key: carta.id }, [
                 _c("td", [_vm._v(_vm._s(carta.nombre))]),
-                _vm._v(" "),
+                _vm._v("\n<<<<<<< HEAD\n=======\n              "),
                 _c("td"),
-                _vm._v("\n<<<<<<< HEAD\n              "),
+                _vm._v("\n<<<<<<< HEAD\n<<<<<<< HEAD\n              "),
                 _c("td"),
                 _vm._v(
-                  "\n=======\n>>>>>>> c5b8b749767bc901a9faa232cbfe97e86fc35eb7\n            "
+                  "\n=======\n=======\n>>>>>>> f331ac46b8757beb138cee42071219dc4aa34e33\n>>>>>>> c5b8b749767bc901a9faa232cbfe97e86fc35eb7\n            "
                 )
               ])
             }),
@@ -44502,19 +44524,51 @@ var render = function() {
       _vm._v(" "),
       _c("center", [
         _c("div", { staticClass: "row-cols-1 row-cols-md-3 g-4 mt-3" }, [
+          _c("input", { attrs: { type: "radio", name: "dot", id: "uno" } }),
+          _vm._v(" "),
+          _c("input", { attrs: { type: "radio", name: "dot", id: "dos" } }),
+          _vm._v(" "),
+          _c("input", { attrs: { type: "radio", name: "dot", id: "tres" } }),
+          _vm._v(" "),
           _c(
             "div",
             { staticClass: "contenedor-preguntas" },
             [
-              _c("input", { attrs: { type: "radio", name: "dot", id: "uno" } }),
+              _c("div", { staticClass: "botonDash" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "uno",
+                    staticStyle: { "margin-right": "20px" },
+                    attrs: { for: "uno" }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-arrow-left",
+                      staticStyle: { "font-size": "65px", "margin-left": "2px" }
+                    })
+                  ]
+                )
+              ]),
               _vm._v(" "),
-              _c("input", { attrs: { type: "radio", name: "dot", id: "dos" } }),
+              _c("TableroCartas"),
               _vm._v(" "),
-              _c("input", {
-                attrs: { type: "radio", name: "dot", id: "tres" }
-              }),
-              _vm._v(" "),
-              _c("TableroCartas")
+              _c("div", { staticClass: "botonDash" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "dos",
+                    staticStyle: { "margin-left": "-150px" },
+                    attrs: { for: "dos" }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-arrow-right",
+                      staticStyle: { "font-size": "65px", "margin-left": "2px" }
+                    })
+                  ]
+                )
+              ])
             ],
             1
           )
@@ -44547,75 +44601,71 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "main-card" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "cards" }, [
+  return _c("div", [
+    _c("div", { staticClass: "main-card" }, [
       _c(
         "div",
-        { staticClass: "row" },
+        { staticClass: "cards", staticStyle: { "margin-left": "-100px" } },
         [
-          _vm._m(1),
-          _vm._v(" "),
-          _vm._l(_vm.programadores, function(datos) {
-            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
-          }),
-          _vm._v(" "),
-          _vm._l(_vm.errores, function(datos) {
-            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "cards" }, [
-      _c(
-        "div",
-        { staticClass: "row" },
-        [
-          _vm._m(2),
-          _vm._v(" "),
-          _vm._l(_vm.modulos, function(datos) {
-            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "cards" }, [
-      _c(
-        "div",
-        { staticClass: "row" },
-        [
-          _vm._m(3),
-          _vm._v(" "),
-          _vm._l(_vm.errores, function(datos) {
-            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _vm._m(4)
+          _c(
+            "div",
+            { staticClass: "row" },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._l(_vm.programadores, function(datos) {
+                return _c("Cartas", {
+                  key: datos.id,
+                  attrs: { cartaJugar: datos }
+                })
+              })
+            ],
+            2
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "cards" }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.modulos, function(datos) {
+              return _c("Cartas", {
+                key: datos.id,
+                attrs: { cartaJugar: datos }
+              })
+            })
+          ],
+          2
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "cards" }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _vm._m(2),
+            _vm._v(" "),
+            _vm._l(_vm.errores, function(datos) {
+              return _c("Cartas", {
+                key: datos.id,
+                attrs: { cartaJugar: datos }
+              })
+            })
+          ],
+          2
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(3)
+    ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "botonDash" }, [
-      _c("label", { staticClass: "uno", attrs: { for: "uno" } }, [
-        _c("i", {
-          staticClass: "fas fa-arrow-left",
-          staticStyle: { "font-size": "65px", "margin-left": "2px" }
-        })
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

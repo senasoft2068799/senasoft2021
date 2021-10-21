@@ -12,10 +12,15 @@
           <tbody style="text-align: center">
             <tr v-for="carta in json" :key="carta.id">
               <td>{{ carta.nombre }}</td>
+<<<<<<< HEAD
+=======
               <td></td>
+<<<<<<< HEAD
 <<<<<<< HEAD
               <td></td>
 =======
+=======
+>>>>>>> f331ac46b8757beb138cee42071219dc4aa34e33
 >>>>>>> c5b8b749767bc901a9faa232cbfe97e86fc35eb7
             </tr>
           </tbody>
