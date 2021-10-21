@@ -2830,7 +2830,7 @@ __webpack_require__.r(__webpack_exports__);
 
         if (res.data.start) {
           setTimeout(function () {
-            _this.$router.push("/partida/".concat(res.data.msg));
+            _this.$router.push("/partida/".concat(_this.$route.params.id));
           }, 2500);
         }
       })["catch"](function (err) {
