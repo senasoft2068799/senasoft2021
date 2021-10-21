@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TableroController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PartidaController;
 use Illuminate\Http\Request;
@@ -27,5 +28,6 @@ Route::post("logout", [AuthController::class, "logout"])->middleware("auth:sanct
 Route::middleware('api')->group(function () {
     Route::post("crear-partida", [PartidaController::class, "crearPartida"]);
     Route::post("unirse-partida", [PartidaController::class, "unirsePartida"]);
+    //Route::get("tableros", [TableroController::class, "index"]);
     Route::get("lista-espera/{partida}", [PartidaController::class, "listaEspera"]);
 });

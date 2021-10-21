@@ -11,9 +11,7 @@
                   Aquí podrás crear una partida y jugar con tus amigos a
                   encontrar las cartas en secreto.
                 </p>
-                <button class="btn" @click="crearPartida()">
-                  Crear
-                </button>
+                <button class="btn" @click="crearPartida()">Crear</button>
               </div>
             </div>
           </div>
@@ -26,7 +24,8 @@
               <div class="content">
                 <h3>Unirse a partida</h3>
                 <p>
-                  Si tienes el código de una partida escribelo en el siguiente campo y después da click al botón
+                  Si tienes el código de una partida escribelo en el siguiente
+                  campo y después da click al botón
                 </p>
                 <input type="text" v-model="partida_id" />
                 <button class="btn" @click="unirsePartida()">Unirme</button>
@@ -66,7 +65,7 @@ export default {
           // Storage.record("partida", res.data, false);
           this.$swal.close();
           Storage.record("partida", res.data.msg, false); //Aquí se envía el código a localStorage
-          this.$router.push("/sala");
+          this.$router.push(`/sala/${res.data.msg}`);
         })
         .catch((err) => {
           this.$swal({
@@ -91,7 +90,7 @@ export default {
           if (res.data.allowed) {
             Storage.record("partida", res.data.msg, false);
             this.$swal.close();
-            this.$router.push("/sala");
+            this.$router.push(`/sala/${res.data.msg}`);
           } else {
             this.$swal({
               icon: "info",

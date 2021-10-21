@@ -9,14 +9,11 @@
               <th>Notas</th>
             </tr>
           </thead>
-          <tbody style="text-align: center;">
-            <tr v-for="(card, index) in cards" :key="index">
-              <td>Pedro</td>
-              <td>X Jugador 2</td>
-            </tr>
-            <tr>
-              <td>Andrea</td>
-              <td>X Jugador 4</td>
+          <tbody style="text-align: center">
+            <tr v-for="carta in json" :key="carta.id">
+              <td>{{ carta.nombre }}</td>
+              <td v-if=""></td>
+              <td v-else=""></td>
             </tr>
           </tbody>
         </table>
@@ -25,7 +22,12 @@
   </div>
 </template>
 <script>
+import cartas from "../../../public/json/cartas.json";
 export default {
-	name: "Tabla",
+  data() {
+    return {
+      json: cartas.cartas,
+    };
+  },
 };
 </script>

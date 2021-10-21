@@ -96,8 +96,9 @@ class PartidaController extends Controller
     public function listaEspera(Partida $partida)
     {
         if ($partida->users->count() == 4) {
+            return response()->json(["start" => true, "users" => $partida->users]);
         } else {
-            return $partida->users;
+            return response()->json(["start" => false, "users" => $partida->users]);
         }
     }
 

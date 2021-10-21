@@ -2265,42 +2265,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Carta",
-  props: ["cartaJugar"]
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Ganador.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Ganador.vue?vue&type=script&lang=js& ***!
@@ -2395,7 +2359,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -2425,7 +2388,7 @@ __webpack_require__.r(__webpack_exports__);
 
         _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].record("partida", res.data.msg, false); //Aquí se envía el código a localStorage
 
-        _this.$router.push("/sala");
+        _this.$router.push("/sala/".concat(res.data.msg));
       })["catch"](function (err) {
         _this.$swal({
           icon: "error",
@@ -2451,7 +2414,7 @@ __webpack_require__.r(__webpack_exports__);
 
           _this2.$swal.close();
 
-          _this2.$router.push("/sala");
+          _this2.$router.push("/sala/".concat(res.data.msg));
         } else {
           _this2.$swal({
             icon: "info",
@@ -2585,7 +2548,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Cartas.vue */ "./resources/js/components/Cartas.vue");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '../Cartas.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../public/json/cartas.json */ "./public/json/cartas.json");
 //
 //
@@ -2641,7 +2604,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "TableroCartas",
   components: {
-    Cartas: _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Cartas: Object(function webpackMissingModule() { var e = new Error("Cannot find module '../Cartas.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
   },
   data: function data() {
     return {
@@ -2781,10 +2744,91 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/CartaJugador.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/CartaJugador.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/Sala.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/Sala.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
+/* harmony import */ var _TarjetaJugador_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TarjetaJugador.vue */ "./resources/js/components/Sala/TarjetaJugador.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    TarjetaJugador: _TarjetaJugador_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      code: this.$route.params.id,
+      jugadores: [] //Aquí se puede añadir el local storage para restaurar la partida
+
+    };
+  },
+  mounted: function mounted() {
+    this.getListaEspera();
+    this.interval = setInterval(function () {
+      this.getListaEspera();
+    }.bind(this), 5000);
+  },
+  methods: {
+    getListaEspera: function getListaEspera() {
+      var _this = this;
+
+      this.axios.get("/api/lista-espera/".concat(this.$route.params.id)).then(function (res) {
+        _this.jugadores = res.data.users;
+
+        if (res.data.start) {
+          setTimeout(function () {
+            _this.$router.push("/partida/".concat(_this.$route.params.id));
+          }, 2500);
+        }
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/TarjetaJugador.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/TarjetaJugador.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2813,162 +2857,6 @@ __webpack_require__.r(__webpack_exports__);
   props: ["jugador"],
   data: function data() {
     return {};
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/Sala.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/Sala.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
-/* harmony import */ var _CartaJugador_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CartaJugador.vue */ "./resources/js/components/Sala/CartaJugador.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    CartaJugador: _CartaJugador_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-  },
-  data: function data() {
-    return {
-      code: localStorage.getItem("partida"),
-      jugadores: []
-    };
-  },
-  mounted: function mounted() {
-    this.getListaEspera();
-    this.interval = setInterval(function () {
-      this.getListaEspera();
-    }.bind(this), 5000);
-  },
-  methods: {
-    getListaEspera: function getListaEspera() {
-      var _this = this;
-
-      this.axios.get("/api/lista-espera/".concat(this.$route.params.id)).then(function (res) {
-        _this.jugadores = res.data;
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tabla.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tabla.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Tabla"
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cartas.vue */ "./resources/js/components/Cartas.vue");
-/* harmony import */ var _Tabla_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tabla.vue */ "./resources/js/components/Tabla.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    Cartas: _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Tabla: _Tabla_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -3126,7 +3014,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Sala_Sala_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Sala/Sala.vue */ "./resources/js/components/Sala/Sala.vue");
 /* harmony import */ var _components_Preguntas_Preguntas_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Preguntas/Preguntas.vue */ "./resources/js/components/Preguntas/Preguntas.vue");
 /* harmony import */ var _components_Reglas_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Reglas.vue */ "./resources/js/components/Reglas.vue");
-/* harmony import */ var _components_Tablero_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Tablero.vue */ "./resources/js/components/Tablero.vue");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/Tablero.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 
@@ -3170,7 +3058,7 @@ var routes = [{
 }, {
   name: "Tablero",
   path: "/tablero",
-  component: _components_Tablero_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+  component: Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/Tablero.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()),
   meta: {
     requiresAuth: true
   }
@@ -42850,45 +42738,6 @@ component.options.__file = "resources/js/components/Auth/Auth.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/Cartas.vue":
-/*!********************************************!*\
-  !*** ./resources/js/components/Cartas.vue ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cartas.vue?vue&type=template&id=076ff47d& */ "./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d&");
-/* harmony import */ var _Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cartas.vue?vue&type=script&lang=js& */ "./resources/js/components/Cartas.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__.render,
-  _Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/Cartas.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
 /***/ "./resources/js/components/Ganador.vue":
 /*!*********************************************!*\
   !*** ./resources/js/components/Ganador.vue ***!
@@ -43123,45 +42972,6 @@ component.options.__file = "resources/js/components/Reglas.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/Sala/CartaJugador.vue":
-/*!*******************************************************!*\
-  !*** ./resources/js/components/Sala/CartaJugador.vue ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _CartaJugador_vue_vue_type_template_id_27f64852___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CartaJugador.vue?vue&type=template&id=27f64852& */ "./resources/js/components/Sala/CartaJugador.vue?vue&type=template&id=27f64852&");
-/* harmony import */ var _CartaJugador_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CartaJugador.vue?vue&type=script&lang=js& */ "./resources/js/components/Sala/CartaJugador.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _CartaJugador_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _CartaJugador_vue_vue_type_template_id_27f64852___WEBPACK_IMPORTED_MODULE_0__.render,
-  _CartaJugador_vue_vue_type_template_id_27f64852___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/Sala/CartaJugador.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
 /***/ "./resources/js/components/Sala/Sala.vue":
 /*!***********************************************!*\
   !*** ./resources/js/components/Sala/Sala.vue ***!
@@ -43201,10 +43011,10 @@ component.options.__file = "resources/js/components/Sala/Sala.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/Tabla.vue":
-/*!*******************************************!*\
-  !*** ./resources/js/components/Tabla.vue ***!
-  \*******************************************/
+/***/ "./resources/js/components/Sala/TarjetaJugador.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/Sala/TarjetaJugador.vue ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -43212,9 +43022,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Tabla_vue_vue_type_template_id_5b97bf6f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tabla.vue?vue&type=template&id=5b97bf6f& */ "./resources/js/components/Tabla.vue?vue&type=template&id=5b97bf6f&");
-/* harmony import */ var _Tabla_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tabla.vue?vue&type=script&lang=js& */ "./resources/js/components/Tabla.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _TarjetaJugador_vue_vue_type_template_id_6e0581c6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TarjetaJugador.vue?vue&type=template&id=6e0581c6& */ "./resources/js/components/Sala/TarjetaJugador.vue?vue&type=template&id=6e0581c6&");
+/* harmony import */ var _TarjetaJugador_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TarjetaJugador.vue?vue&type=script&lang=js& */ "./resources/js/components/Sala/TarjetaJugador.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -43223,9 +43033,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Tabla_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Tabla_vue_vue_type_template_id_5b97bf6f___WEBPACK_IMPORTED_MODULE_0__.render,
-  _Tabla_vue_vue_type_template_id_5b97bf6f___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _TarjetaJugador_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TarjetaJugador_vue_vue_type_template_id_6e0581c6___WEBPACK_IMPORTED_MODULE_0__.render,
+  _TarjetaJugador_vue_vue_type_template_id_6e0581c6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -43235,46 +43045,7 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/Tabla.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/Tablero.vue":
-/*!*********************************************!*\
-  !*** ./resources/js/components/Tablero.vue ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Tablero_vue_vue_type_template_id_1bc57a70___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tablero.vue?vue&type=template&id=1bc57a70& */ "./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70&");
-/* harmony import */ var _Tablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tablero.vue?vue&type=script&lang=js& */ "./resources/js/components/Tablero.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Tablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Tablero_vue_vue_type_template_id_1bc57a70___WEBPACK_IMPORTED_MODULE_0__.render,
-  _Tablero_vue_vue_type_template_id_1bc57a70___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/Tablero.vue"
+component.options.__file = "resources/js/components/Sala/TarjetaJugador.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -43308,22 +43079,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Auth_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Auth.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/Auth.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Auth_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/Cartas.vue?vue&type=script&lang=js&":
-/*!*********************************************************************!*\
-  !*** ./resources/js/components/Cartas.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Cartas.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -43423,22 +43178,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/Sala/CartaJugador.vue?vue&type=script&lang=js&":
-/*!********************************************************************************!*\
-  !*** ./resources/js/components/Sala/CartaJugador.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CartaJugador_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CartaJugador.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/CartaJugador.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CartaJugador_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
 /***/ "./resources/js/components/Sala/Sala.vue?vue&type=script&lang=js&":
 /*!************************************************************************!*\
   !*** ./resources/js/components/Sala/Sala.vue?vue&type=script&lang=js& ***!
@@ -43455,10 +43194,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/Tabla.vue?vue&type=script&lang=js&":
-/*!********************************************************************!*\
-  !*** ./resources/js/components/Tabla.vue?vue&type=script&lang=js& ***!
-  \********************************************************************/
+/***/ "./resources/js/components/Sala/TarjetaJugador.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/Sala/TarjetaJugador.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -43466,24 +43205,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tabla_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tabla.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tabla.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tabla_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/Tablero.vue?vue&type=script&lang=js&":
-/*!**********************************************************************!*\
-  !*** ./resources/js/components/Tablero.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tablero.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TarjetaJugador_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TarjetaJugador.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/TarjetaJugador.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TarjetaJugador_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -43517,23 +43240,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Auth_vue_vue_type_template_id_58d13874___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Auth_vue_vue_type_template_id_58d13874___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Auth.vue?vue&type=template&id=58d13874& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/Auth.vue?vue&type=template&id=58d13874&");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d&":
-/*!***************************************************************************!*\
-  !*** ./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d& ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Cartas.vue?vue&type=template&id=076ff47d& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d&");
 
 
 /***/ }),
@@ -43640,23 +43346,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/Sala/CartaJugador.vue?vue&type=template&id=27f64852&":
-/*!**************************************************************************************!*\
-  !*** ./resources/js/components/Sala/CartaJugador.vue?vue&type=template&id=27f64852& ***!
-  \**************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CartaJugador_vue_vue_type_template_id_27f64852___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CartaJugador_vue_vue_type_template_id_27f64852___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CartaJugador_vue_vue_type_template_id_27f64852___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CartaJugador.vue?vue&type=template&id=27f64852& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/CartaJugador.vue?vue&type=template&id=27f64852&");
-
-
-/***/ }),
-
 /***/ "./resources/js/components/Sala/Sala.vue?vue&type=template&id=4cce3154&":
 /*!******************************************************************************!*\
   !*** ./resources/js/components/Sala/Sala.vue?vue&type=template&id=4cce3154& ***!
@@ -43674,36 +43363,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/Tabla.vue?vue&type=template&id=5b97bf6f&":
-/*!**************************************************************************!*\
-  !*** ./resources/js/components/Tabla.vue?vue&type=template&id=5b97bf6f& ***!
-  \**************************************************************************/
+/***/ "./resources/js/components/Sala/TarjetaJugador.vue?vue&type=template&id=6e0581c6&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/Sala/TarjetaJugador.vue?vue&type=template&id=6e0581c6& ***!
+  \****************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tabla_vue_vue_type_template_id_5b97bf6f___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tabla_vue_vue_type_template_id_5b97bf6f___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TarjetaJugador_vue_vue_type_template_id_6e0581c6___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TarjetaJugador_vue_vue_type_template_id_6e0581c6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tabla_vue_vue_type_template_id_5b97bf6f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tabla.vue?vue&type=template&id=5b97bf6f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tabla.vue?vue&type=template&id=5b97bf6f&");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70& ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_template_id_1bc57a70___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_template_id_1bc57a70___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_template_id_1bc57a70___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tablero.vue?vue&type=template&id=1bc57a70& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TarjetaJugador_vue_vue_type_template_id_6e0581c6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TarjetaJugador.vue?vue&type=template&id=6e0581c6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/TarjetaJugador.vue?vue&type=template&id=6e0581c6&");
 
 
 /***/ }),
@@ -43974,58 +43646,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d&":
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d& ***!
-  \******************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-md-6" }, [
-    _c("div", { staticClass: "contenedor" }, [
-      _c(
-        "div",
-        {
-          staticClass: "carta",
-          staticStyle: {
-            "margin-top": "0px",
-            "padding-top": "0px",
-            height: "250px"
-          }
-        },
-        [
-          _c("div", { staticClass: "box" }, [
-            _c("div", { staticClass: "content" }, [
-              _c("img", { attrs: { src: "" } }),
-              _vm._v(" "),
-              _c("h3", [_vm._v(_vm._s(_vm.cartaJugar.nombre))]),
-              _vm._v(" "),
-              _c("button", { staticStyle: { color: "white" } }, [
-                _vm._v("Seleccionar")
-              ])
-            ])
-          ])
-        ]
-      )
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Ganador.vue?vue&type=template&id=6253a302&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Ganador.vue?vue&type=template&id=6253a302& ***!
@@ -44156,7 +43776,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Crear\n              ")]
+                  [_vm._v("Crear")]
                 )
               ])
             ])
@@ -44173,7 +43793,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "\n                Si tienes el código de una partida escribelo en el siguiente campo y después da click al botón\n              "
+                    "\n                Si tienes el código de una partida escribelo en el siguiente\n                campo y después da click al botón\n              "
                   )
                 ]),
                 _vm._v(" "),
@@ -44676,52 +44296,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/CartaJugador.vue?vue&type=template&id=27f64852&":
-/*!*****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/CartaJugador.vue?vue&type=template&id=27f64852& ***!
-  \*****************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-sm-12 col-md-6 col-xl-4" }, [
-    _c("div", { staticClass: "contenedor" }, [
-      _c("div", { staticClass: "carta" }, [
-        _c("div", { staticClass: "box" }, [
-          _c("div", { staticClass: "content" }, [
-            _c("img", {
-              staticClass: "img",
-              attrs: { src: "/images/descarga.png", alt: "jugador1" }
-            }),
-            _vm._v(" "),
-            _vm.jugador
-              ? _c("h3", { staticClass: "margin" }, [
-                  _vm._v(_vm._s(_vm.jugador.nickname))
-                ])
-              : _c("h3", [_vm._v("Esperando...")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "loader" }, [_vm._v("Cargando...")])
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/Sala.vue?vue&type=template&id=4cce3154&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/Sala.vue?vue&type=template&id=4cce3154& ***!
@@ -44777,13 +44351,13 @@ var render = function() {
       "div",
       { staticClass: "row d-flex", staticStyle: { "margin-top": "-40px" } },
       [
-        _c("CartaJugador", { attrs: { jugador: _vm.jugadores[0] } }),
+        _c("TarjetaJugador", { attrs: { jugador: _vm.jugadores[0] } }),
         _vm._v(" "),
-        _c("CartaJugador", { attrs: { jugador: _vm.jugadores[1] } }),
+        _c("TarjetaJugador", { attrs: { jugador: _vm.jugadores[1] } }),
         _vm._v(" "),
-        _c("CartaJugador", { attrs: { jugador: _vm.jugadores[2] } }),
+        _c("TarjetaJugador", { attrs: { jugador: _vm.jugadores[2] } }),
         _vm._v(" "),
-        _c("CartaJugador", { attrs: { jugador: _vm.jugadores[3] } })
+        _c("TarjetaJugador", { attrs: { jugador: _vm.jugadores[3] } })
       ],
       1
     )
@@ -44796,10 +44370,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tabla.vue?vue&type=template&id=5b97bf6f&":
-/*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tabla.vue?vue&type=template&id=5b97bf6f& ***!
-  \*****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/TarjetaJugador.vue?vue&type=template&id=6e0581c6&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Sala/TarjetaJugador.vue?vue&type=template&id=6e0581c6& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -44812,103 +44386,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "col-md-12" }, [
-      _c("div", { staticClass: "table-responsive" }, [
-        _c("table", { staticClass: "table" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            { staticStyle: { "text-align": "center" } },
-            [
-              _vm._l(_vm.cards, function(card, index) {
-                return _c("tr", { key: index }, [
-                  _c("td", [_vm._v("Pedro")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("X Jugador 2")])
+  return _c("div", { staticClass: "col-sm-12 col-md-6 col-xl-4" }, [
+    _c("div", { staticClass: "contenedor" }, [
+      _c("div", { staticClass: "carta" }, [
+        _c("div", { staticClass: "box" }, [
+          _c("div", { staticClass: "content" }, [
+            _c("img", {
+              staticClass: "img",
+              attrs: { src: "/images/descarga.png", alt: "jugador1" }
+            }),
+            _vm._v(" "),
+            _vm.jugador
+              ? _c("h3", { staticClass: "margin" }, [
+                  _vm._v(_vm._s(_vm.jugador.nickname))
                 ])
-              }),
-              _vm._v(" "),
-              _vm._m(1)
-            ],
-            2
-          )
+              : _c("h3", [_vm._v("Esperando...")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "loader" }, [_vm._v("Cargando...")])
+          ])
         ])
       ])
     ])
   ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Quien")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Notas")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", [_vm._v("Andrea")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("X Jugador 4")])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70& ***!
-  \*******************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container", staticStyle: { "margin-top": "50px" } },
-    [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-6" }, [_c("Tabla")], 1),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-6" },
-          [
-            _c("Cartas"),
-            _vm._v(" "),
-            _c("Cartas"),
-            _vm._v(" "),
-            _c("Cartas"),
-            _vm._v(" "),
-            _c("Cartas")
-          ],
-          1
-        )
-      ])
-    ]
-  )
 }
 var staticRenderFns = []
 render._withStripped = true
