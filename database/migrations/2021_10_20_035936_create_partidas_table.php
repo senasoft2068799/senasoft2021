@@ -21,7 +21,7 @@ class CreatePartidasTable extends Migration
             $table->integer("programador_carta_id");
             $table->integer("modulo_carta_id");
             $table->integer("error_carta_id");
-            $table->tinyInteger("estado")->default(1);
+            $table->tinyInteger("estado")->default(2);
             $table->timestamps();
         });
     }

@@ -2317,6 +2317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
 //
 //
 //
@@ -2361,16 +2362,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      partida: {
-        jugadore_id: 1
-      }
+      currentUser: {
+        nickname: null
+      },
+      token: null,
+      partida_id: null
     };
+  },
+  mounted: function mounted() {
+    this.checkCurrentUser();
   },
   methods: {
     crearPartida: function crearPartida() {
@@ -2380,9 +2384,9 @@ __webpack_require__.r(__webpack_exports__);
         title: "Creando partida..."
       });
       this.$swal.showLoading();
-      axios.post("/api/partida", this.partida).then(function (res) {
-        Storage.record("partida", res.data, false);
-
+      this.checkCurrentUser();
+      axios.post("/api/crear-partida", this.currentUser).then(function (res) {
+        // Storage.record("partida", res.data, false);
         _this.$swal.close();
 
         _this.$router.push("/sala");
@@ -2392,6 +2396,58 @@ __webpack_require__.r(__webpack_exports__);
           title: "Ha ocurrido un error:\n" + err
         });
       });
+    },
+    unirsePartida: function unirsePartida() {
+      var _this2 = this;
+
+      this.$swal({
+        title: "Con\xE9ctandose a la partida (".concat(this.partida_id, ")...")
+      });
+      this.$swal.showLoading();
+      this.checkCurrentUser();
+      var datos = {
+        partida_id: this.partida_id,
+        user_nickname: this.currentUser.nickname
+      };
+      axios.post("/api/unirse-partida", datos).then(function (res) {
+        if (res.data.allowed) {
+          _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].record("partida", res.data.msg, false);
+
+          _this2.$swal.close();
+
+          _this2.$router.push("/sala");
+        } else {
+          _this2.$swal({
+            icon: "info",
+            title: res.data.msg
+          });
+        }
+      })["catch"](function (err) {
+        _this2.$swal({
+          icon: "error",
+          title: "Ha ocurrido un error:\n" + err
+        });
+      });
+    },
+    checkCurrentUser: function checkCurrentUser() {
+      var _this3 = this;
+
+      if (_utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].has("token")) {
+        this.token = _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("token", false);
+        window.axios.defaults.headers.common["Authorization"] = "Bearer ".concat(this.token);
+        this.axios.get("/api/user").then(function (res) {
+          _this3.currentUser = res.data;
+          console.log(res.data);
+        })["catch"](function (err) {
+          console.log("Error autenticación: " + err);
+          _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].remove("token");
+
+          _this3.$router.push("/");
+        });
+      } else {
+        this.currentUser = {};
+        this.token = null;
+      }
     }
   }
 });
@@ -43198,16 +43254,37 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.partida_id,
+                      expression: "partida_id"
+                    }
+                  ],
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.partida_id },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.partida_id = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
                 _c(
                   "button",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: { name: "categorias.index" } } },
-                      [_vm._v("Unirme")]
-                    )
-                  ],
-                  1
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.unirsePartida()
+                      }
+                    }
+                  },
+                  [_vm._v("Unirme")]
                 )
               ])
             ])

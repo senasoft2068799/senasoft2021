@@ -32,11 +32,8 @@
                   Si tienes el código de una partida activa ingresa a ella dando
                   click al siguiente botón
                 </p>
-                <button>
-                  <router-link :to="{ name: 'categorias.index' }"
-                    >Unirme</router-link
-                  >
-                </button>
+                <input type="text" v-model="partida_id" />
+                <button @click="unirsePartida()">Unirme</button>
               </div>
             </div>
           </div>
@@ -46,13 +43,19 @@
   </div>
 </template>
 <script>
+import Storage from "../utilities/Storage.js";
 export default {
   data() {
     return {
-      partida: {
-        jugadore_id: 1,
+      currentUser: {
+        nickname: null,
       },
+      token: null,
+      partida_id: null,
     };
+  },
+  mounted() {
+    this.checkCurrentUser();
   },
   methods: {
     crearPartida() {
@@ -60,10 +63,11 @@ export default {
         title: "Creando partida...",
       });
       this.$swal.showLoading();
+      this.checkCurrentUser();
       axios
-        .post("/api/partida", this.partida)
+        .post("/api/crear-partida", this.currentUser)
         .then((res) => {
-          Storage.record("partida", res.data, false);
+          // Storage.record("partida", res.data, false);
           this.$swal.close();
           this.$router.push("/sala");
         })
@@ -73,6 +77,59 @@ export default {
             title: "Ha ocurrido un error:\n" + err,
           });
         });
+    },
+    unirsePartida() {
+      this.$swal({
+        title: `Conéctandose a la partida (${this.partida_id})...`,
+      });
+      this.$swal.showLoading();
+      this.checkCurrentUser();
+      let datos = {
+        partida_id: this.partida_id,
+        user_nickname: this.currentUser.nickname,
+      };
+      axios
+        .post("/api/unirse-partida", datos)
+        .then((res) => {
+          if (res.data.allowed) {
+            Storage.record("partida", res.data.msg, false);
+            this.$swal.close();
+            this.$router.push("/sala");
+          } else {
+            this.$swal({
+              icon: "info",
+              title: res.data.msg,
+            });
+          }
+        })
+        .catch((err) => {
+          this.$swal({
+            icon: "error",
+            title: "Ha ocurrido un error:\n" + err,
+          });
+        });
+    },
+    checkCurrentUser() {
+      if (Storage.has("token")) {
+        this.token = Storage.get("token", false);
+        window.axios.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${this.token}`;
+        this.axios
+          .get("/api/user")
+          .then((res) => {
+            this.currentUser = res.data;
+            console.log(res.data);
+          })
+          .catch((err) => {
+            console.log("Error autenticación: " + err);
+            Storage.remove("token");
+            this.$router.push("/");
+          });
+      } else {
+        this.currentUser = {};
+        this.token = null;
+      }
     },
   },
 };

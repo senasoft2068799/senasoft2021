@@ -25,5 +25,6 @@ Route::post("register", [AuthController::class, "register"]);
 Route::post("logout", [AuthController::class, "logout"])->middleware("auth:sanctum");
 
 Route::middleware('api')->group(function () {
-    Route::apiResource('partidas', PartidaController::class);
+    Route::post("crear-partida", [PartidaController::class, "crearPartida"]);
+    Route::post("unirse-partida", [PartidaController::class, "unirsePartida"]);
 });
