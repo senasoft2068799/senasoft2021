@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import Cartas from "./Cartas.vue";
+import Cartas from "../Cartas.vue";
 export default {
   name: "TableroCartas",
   components: {
