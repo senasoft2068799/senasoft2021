@@ -5,7 +5,7 @@
       <div class="col-md-8" style="text-align: center; color: white">
         <h3>Espera a que inicie la partida</h3>
         <center>
-          <h1 class="code" :style="codeStyle">Código: {{ code }}</h1>
+          <h1 class="code">Código: {{ code }}</h1>
         </center>
         <h4>
           ¡Comparte este código con tus amigos para que se puedan unir y empezar
@@ -88,20 +88,6 @@ export default {
       //se obtiene el código para mostrarlo
       this.code = code;
     },
-  },
-  props: 
-  {
-    color: {
-      default: "#" + this.code
-    },
-  },
-  computed:
-  {
-    codeStyle() {
-      return {
-        "background-color": this.color
-      };
-    }
   }
 };
 </script>

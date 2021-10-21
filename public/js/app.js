@@ -2788,18 +2788,6 @@ __webpack_require__.r(__webpack_exports__);
 
       this.code = code;
     }
-  },
-  props: {
-    color: {
-      "default": "#" + undefined.code
-    }
-  },
-  computed: {
-    codeStyle: function codeStyle() {
-      return {
-        "background-color": this.color
-      };
-    }
   }
 });
 
@@ -44372,7 +44360,7 @@ var render = function() {
           _c("h3", [_vm._v("Espera a que inicie la partida")]),
           _vm._v(" "),
           _c("center", [
-            _c("h1", { staticClass: "code", style: _vm.codeStyle }, [
+            _c("h1", { staticClass: "code" }, [
               _vm._v("Código: " + _vm._s(_vm.code))
             ])
           ]),
