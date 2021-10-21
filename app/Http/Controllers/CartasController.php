@@ -23,10 +23,10 @@ class CartasController
         return $lstCartas[$random];
     }
 
-    public static function obtenerPorValor($carta, $valor)
+    public static function obtenerPorValor($lstCartas, $carta_valor, $indice_string)
     {
         $cartasJson = CartasController::obtenerCartas();
-        return $cartasJson[array_keys(array_column($carta, $valor), $carta)[0]];
+        return $cartasJson[array_keys(array_column($lstCartas, $indice_string), $carta_valor)[0]];
     }
 
     public static function obtenerPorIndice($carta_indice)
@@ -37,6 +37,12 @@ class CartasController
 
     public static function cartasDiff($cartasParaDejar, $cartasParaQuitar)
     {
-        return array_diff(array_column($cartasParaDejar, 'id'), array_column($cartasParaQuitar, 'id'));
+        $cartasDiferencia = array_diff(array_column($cartasParaDejar, 'id'), array_column($cartasParaQuitar, 'id'));
+        $retorno = array();
+        foreach ($cartasDiferencia as $carta) {
+            $carta = CartasController::obtenerPorValor(CartasController::obtenerCartas(), $carta, "id");
+            array_push($retorno, $carta);
+        }
+        return $retorno;
     }
 }
