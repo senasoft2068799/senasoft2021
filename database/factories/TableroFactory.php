@@ -22,11 +22,14 @@ class TableroFactory extends Factory
      */
     public function definition()
     {
+        /*
+        Se generan datos aleatorios para los campos respectivos de la tabla Tableros a través de php faker
+        */
         return [
             'id' => $this->faker->unique()->firstName(),
-            'pregunta_user_partida_id' => User::inRandomOrder()->first()->id,
+            'pregunta_user_partidas_id' => User::inRandomOrder()->first()->id,
             'carta_id' => $this->faker->unique()->numberBetween(1, 19),
-            'respuesta_user_partida_id' => User::inRandomOrder()->first()->id
+            'respuesta_user_partidas_id' => User::inRandomOrder()->first()->id
         ];
     }
 }

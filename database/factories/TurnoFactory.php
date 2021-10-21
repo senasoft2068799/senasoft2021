@@ -23,6 +23,9 @@ class TurnoFactory extends Factory
      */
     public function definition()
     {
+        /*
+        Se generan datos aleatorios para los campos respectivos de la tabla Turnos a través de php faker
+        */
         return [
             'id' => $this->faker->unique()->firstName(),
             'partida_id' => Partida::inRandomOrder()->first()->id,

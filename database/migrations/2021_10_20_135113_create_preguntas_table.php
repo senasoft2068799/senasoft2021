@@ -15,9 +15,9 @@ class CreatePreguntasTable extends Migration
     {
         Schema::create('preguntas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_partida_id');
-            $table->foreign("user_partida_id")
-                ->references("id")->on("user_partida")
+            $table->unsignedBigInteger('user_partidas_id');
+            $table->foreign("user_partidas_id")
+                ->references("id")->on("user_partidas")
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->integer('programador_carta_id');

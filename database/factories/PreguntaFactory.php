@@ -22,8 +22,11 @@ class PreguntaFactory extends Factory
      */
     public function definition()
     {
+        /*
+        Se generan datos aleatorios para los campos respectivos de la tabla Preguntas a través de php faker
+        */
         return [
-            'id_user_partida' => User::inRandomOrder()->first()->id,
+            'id_user_partidas' => User::inRandomOrder()->first()->id,
             'programador_id' => $this->faker->unique()->numberBetween(1, 19),
             'modulo_id' => $this->faker->unique()->numberBetween(1, 19),
             'error_id' => $this->faker->unique()->numberBetween(1, 19),

@@ -13,7 +13,7 @@ class AuthController extends Controller
     {
         // Validación de datos para registro
         $request->validate([
-            "nickname" => "required|unique:users|min:4|max:12",
+            "nickname" => "required|string|alpha_dash|unique:users|min:4|max:12",
             "password" => "required|min:4|max:20|confirmed",
             "password_confirmation" => "required"
         ]);
@@ -44,11 +44,12 @@ class AuthController extends Controller
                 'nickname' => ['Los datos de acceso son incorrectos.'],
             ]);
         }
-        info("Correcto hasta aquí");
+
         //Se genera un token en la bd que almacene el dispositivo actual del usuario y se retorna este
         $token = $user->createToken($request->device_name)->plainTextToken;
         return $token;
     }
+
 
     public function logout(Request $request)
     {
