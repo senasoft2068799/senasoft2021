@@ -93,6 +93,14 @@ class PartidaController extends Controller
         TableroController::repartirCartas($partida["id"]);
     }
 
+    public function listaEspera(Partida $partida)
+    {
+        if ($partida->users->count() == 4) {
+        } else {
+            return $partida->users;
+        }
+    }
+
 
     /**
      * Remove the specified resource from storage.
