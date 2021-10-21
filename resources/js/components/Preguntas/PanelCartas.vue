@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="main-card"> 
+    <div class="main-card">
       <div class="cards" style="margin-left: -100px">
         <div class="row">
           <div class="col-md-12">
@@ -52,7 +52,7 @@
 import Cartas from "../Cartas.vue";
 import infoCartas from "../../../../public/json/cartas.json";
 export default {
-  name: "TableroCartas",
+  name: "PanelCartas",
   components: {
     Cartas,
   },

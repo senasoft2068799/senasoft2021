@@ -15,7 +15,7 @@
               ></i
             ></label>
           </div>
-          <TableroCartas />
+          <PanelCartas />
           <div class="botonDash">
             <label for="dos" class="dos" style="margin-left: -150px"
               ><i
@@ -30,11 +30,11 @@
   </div>
 </template>
 <script>
-import TableroCartas from "./TableroCartas.vue";
+import PanelCartas from "./PanelCartas.vue";
 import FormPregunta from "./FormPregunta.vue";
 export default {
   components: {
-    TableroCartas,
+    PanelCartas,
     FormPregunta,
   },
   data() {
