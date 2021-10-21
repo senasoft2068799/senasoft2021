@@ -18,25 +18,26 @@
     </div>
     <div class="col-md-2"></div>
     <div class="row d-flex" style="margin-top: -40px">
-      <CartaJugador :jugador="jugadores[0]" />
-      <CartaJugador :jugador="jugadores[1]" />
-      <CartaJugador :jugador="jugadores[2]" />
-      <CartaJugador :jugador="jugadores[3]" />
+      <TarjetaJugador :jugador="jugadores[0]" />
+      <TarjetaJugador :jugador="jugadores[1]" />
+      <TarjetaJugador :jugador="jugadores[2]" />
+      <TarjetaJugador :jugador="jugadores[3]" />
     </div>
   </div>
 </template>
 
 <script>
 import Storage from "../../utilities/Storage.js";
-import CartaJugador from "./CartaJugador.vue";
+import TarjetaJugador from "./TarjetaJugador.vue";
 export default {
   components: {
-    CartaJugador,
+    TarjetaJugador,
   },
   data() {
     return {
-      code: localStorage.getItem("partida"),
+      code: this.$route.params.id,
       jugadores: [],
+      //Aquí se puede añadir el local storage para restaurar la partida
     };
   },
   mounted() {
@@ -53,7 +54,12 @@ export default {
       this.axios
         .get(`/api/lista-espera/${this.$route.params.id}`)
         .then((res) => {
-          this.jugadores = res.data;
+          this.jugadores = res.data.users;
+          if (res.data.start) {
+            setTimeout(() => {
+              this.$router.push(`/partida/${res.data.msg}`);
+            }, 2500);
+          }
         })
         .catch((err) => {
           console.log(err);
