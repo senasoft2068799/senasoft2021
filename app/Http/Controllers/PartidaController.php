@@ -3,35 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Partida;
+use App\Models\User;
+use App\Models\UserPartida;
 use Illuminate\Http\Request;
 
 class PartidaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     * 
-     */
-    public function store(Request $request)
-    {
-        // Las cartas se almacenan en un archivo .json debido a que no están sujetas a modificaciones
-        // Se obtiene el path del archivo .json que contiene las cartas, y se convierte a array
-        $path = public_path() . "/json/cartas.json";
-        $cartas = json_decode(file_get_contents($path), true)["cartas"];
+    // Función para crear una partida
 
-        $cartasOcultas = [];
+    public function crearPartida(Request $request)
+    {
+        $cartas = TableroCOntroller::obtenerCartas();
+        $cartasOcultas = array();
         //Se buscan las columnas de las cartas que contengan el tipo 1, 2 y 3, para separarlas en variables
         // Luego, se selecciona un array aleatorio de cada tipo y se ingresan en el arreglo de cartas ocultas
         $programadores = array_keys(array_column($cartas, 'tipo'), 1);
@@ -41,8 +25,6 @@ class PartidaController extends Controller
         $errores = array_keys(array_column($cartas, 'tipo'), 3);
         array_push($cartasOcultas, $cartas[$errores[array_rand($errores)]]);
 
-        // Aquí, se separan las cartas ocultas de las demás cartas almacenandolas en un arreglo
-        $cartasRestantes = array_diff(array_column($cartas, 'id'), array_column($cartasOcultas, 'id'));
 
         // Aquí se genera el código hexadecimal para la partida y se consulta si existe un registro previo con este código
         $codigo = sprintf('%06X', mt_rand(0, 0xFFFFFF));
@@ -59,34 +41,46 @@ class PartidaController extends Controller
                     "error_carta_id" => $cartasOcultas[2]["id"],
                 ]
             );
+            // Se registra el jugador1 (Quien creó la partida) en la tabla jugador_partida
+            $partida->users()->attach($request->nickname);
         }
     }
 
-    // $prueba = array_rand($json["cartas"], 3);
-    // $eeeey = array_diff($json["cartas"], $prueba);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Partida  $partida
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Partida $partida)
+    public function unirsePartida(Request $request)
     {
-        //
+        // Se busca una partida por su id, y se guarda la cantidad de jugadores en una variable.
+        $partida = Partida::find($request->partida_id);
+        $cantidadJugadores = $partida->users()->count();
+        if ($partida->users->contains($request->user_nickname)) {
+            // Si la partida contiene el jugador que está ingresando, retorna un mensaje de error, de lo contrario comprueba la cantidad de jugadores
+            return response()->json(["allowed" => false, "msg" => "El jugador ya se encuentra en la partida."]);
+        } else {
+            if ($cantidadJugadores < 4) {
+                // Si hay menos de 4 jugadores, registra el nuevo jugador a la partida. de lo contrario, informa que ya hay 4 jugadores.
+                $partida->users()->attach($request->user_nickname);
+                if ($cantidadJugadores == 3) {
+                    // Si la cantidad de jugadores era 3, ahora, se inicia la partida.
+                    $this::iniciarPartida($partida);
+                }
+                // Se retorna el partida id para almacenarla en el local storage del jugador
+                return response()->json(["allowed" => true, "msg" => $partida->id]);
+            } else {
+                return response()->json(["allowed" => false, "msg" => "La partida ya tiene 4 jugadores."]);
+            }
+        }
+        //TODO: Detectar si la partida tiene 4 jugadores, para retornar un response que diga que la partida está llena
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Partida  $partida
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Partida $partida)
+    static function iniciarPartida($partida)
     {
-        //
+        //Se cambia el estado de la partida y se reparten las cartas de esa partida
+        $partida->estado = 1;
+        $partida->save();
+        // En vez de mandar la partida completa, se manda el id, para que los jugadores se actualizen correctamente
+        TableroController::repartirCartas($partida["id"]);
     }
+
 
     /**
      * Remove the specified resource from storage.
