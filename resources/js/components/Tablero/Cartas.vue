@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-12">
+  <div class="col-md-6">
     <div class="contenedor">
       <div
         class="carta"
@@ -18,6 +18,6 @@
 </template>
 <script>
 export default {
-  name: "Cartas",
+  name: "Carta",
 };
 </script>
