@@ -8,13 +8,7 @@ use App\Models\UserPartida;
 use Illuminate\Http\Request;
 
 class TableroController extends Controller
-{
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+{  
     public static function repartirCartas($partida_id)
     {
         // Se crea la partida, se consultan los jugadores y se obtiene el .json de cartas

@@ -12,8 +12,8 @@
           <tbody style="text-align: center">
             <tr v-for="carta in json" :key="carta.id">
               <td>{{ carta.nombre }}</td>
-              <td v-if=""></td>
-              <td v-else=""></td>
+              <td></td>
+              <td></td>
             </tr>
           </tbody>
         </table>
