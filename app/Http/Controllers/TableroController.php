@@ -27,7 +27,7 @@ class TableroController extends Controller
         array_push($cartasOcultas, $cartas[$partida["programador_carta_id"]]);
         array_push($cartasOcultas, $cartas[$partida["modulo_carta_id"]]);
         array_push($cartasOcultas, $cartas[$partida["error_carta_id"]]);
-        $cartasRestantes = array_diff(array_column($cartas, 'id'), array_column($cartasOcultas, 'id'));
+        $cartasRestantes = CartasController::cartasDiff($cartas, $cartasOcultas);
 
         // $eeeey = array_diff($json["cartas"], $prueba);
         foreach ($users as $user) {

@@ -2539,6 +2539,8 @@ __webpack_require__.r(__webpack_exports__);
         // Storage.record("partida", res.data, false);
         _this.$swal.close();
 
+        _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].record("partida", res.data.msg, false); //Aquí se envía el código a localStorage
+
         _this.$router.push("/sala");
       })["catch"](function (err) {
         _this.$swal({
@@ -2807,6 +2809,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
 //
 //
 //
@@ -2875,7 +2878,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      code: null
+    };
+  },
+  mounted: function mounted() {
+    this.codeParty();
+  },
+  methods: {
+    codeParty: function codeParty() {
+      var code = localStorage.getItem("partida"); //se obtiene el código para mostrarlo
+
+      this.code = code;
+    }
+  },
+  props: {
+    color: {
+      "default": "#" + undefined.code
+    }
+  },
+  computed: {
+    codeStyle: function codeStyle() {
+      return {
+        "background-color": this.color
+      };
+    }
+  }
+});
 
 /***/ }),
 
@@ -44632,7 +44669,35 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container", attrs: { id: "sala" } }, [
-    _vm._m(0),
+    _c("div", { staticClass: "row", staticStyle: { "margin-top": "30px" } }, [
+      _c("div", { staticClass: "col-md-2" }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "col-md-8",
+          staticStyle: { "text-align": "center", color: "white" }
+        },
+        [
+          _c("h3", [_vm._v("Espera a que inicie la partida")]),
+          _vm._v(" "),
+          _c("center", [
+            _c("h1", { staticClass: "code", style: _vm.codeStyle }, [
+              _vm._v("Código: " + _vm._s(_vm.code))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("h4", [
+            _vm._v(
+              "\n        ¡Comparte este código con tus amigos para que se puedan unir y empezar\n        la partida!\n      "
+            )
+          ]),
+          _vm._v(" "),
+          _c("h3", [_vm._v("Jugadores que han ingresado a la partida")])
+        ],
+        1
+      )
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-md-2" }),
     _vm._v(" "),
@@ -44727,41 +44792,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "row", staticStyle: { "margin-top": "30px" } },
-      [
-        _c("div", { staticClass: "col-md-2" }),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "col-md-8",
-            staticStyle: { "text-align": "center", color: "white" }
-          },
-          [
-            _c("h3", [_vm._v("Espera a que inicie la partida")]),
-            _vm._v(" "),
-            _c("h1", [_vm._v("Código: 1212io")]),
-            _vm._v(" "),
-            _c("h4", [
-              _vm._v(
-                "¡Comparte este código con tus amigos para que se puedan unir y empezar la partida!"
-              )
-            ]),
-            _vm._v(" "),
-            _c("h3", [_vm._v("Jugadores que han ingresado a la partida")])
-          ]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
