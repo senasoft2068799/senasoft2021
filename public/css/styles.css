@@ -132,6 +132,9 @@
       display: inline-block;
       padding: .9rem 3rem;
       background: #03a9f4;
+      color: white;
+      font-family: var(--main-font);
+      font-size: 1rem;
       margin-top: 15px;
       border-radius: 20px;
       box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
@@ -140,6 +143,9 @@
     .contenedor .carta:hover .box .content button
     {
       background: #ff568f;
+      opacity: .8;
+      cursor: pointer;
+      transition: .9s;
     }
 
    .contenedor .carta .box .content button a{
@@ -147,11 +153,6 @@
     color: white;
     text-decoration: none;
     font-weight: 400;
-   }
-
-   .btn{
-     color: white;
-
    }
 
    /*Comienza Diseño sala de espera*/

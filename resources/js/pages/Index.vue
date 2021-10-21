@@ -26,8 +26,7 @@
               <div class="content">
                 <h3>Unirse a partida</h3>
                 <p>
-                  Si tienes el código de una partida activa ingresa a ella dando
-                  click al siguiente botón
+                  Si tienes el código de una partida escribelo en el siguiente campo y después da click al botón
                 </p>
                 <input type="text" v-model="partida_id" />
                 <button class="btn" @click="unirsePartida()">Unirme</button>

@@ -5,8 +5,8 @@
       <div class="col-md-8" style="text-align: center; color: white;">
         <h1>Reglas</h1>
       </div>
-    </div>
     <div class="col-md-2"></div>
+    </div>
     <div class="row d-flex" style="margin-top: -40px">
       <div class="col-sm-12 col-md-6 col-xl-4">
         <div class="contenedor">

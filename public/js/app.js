@@ -2358,7 +2358,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -43248,7 +43247,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "\n                Si tienes el código de una partida activa ingresa a ella dando\n                click al siguiente botón\n              "
+                    "\n                Si tienes el código de una partida escribelo en el siguiente campo y después da click al botón\n              "
                   )
                 ]),
                 _vm._v(" "),
@@ -43334,10 +43333,10 @@ var staticRenderFns = [
             staticStyle: { "text-align": "center", color: "white" }
           },
           [_c("h1", [_vm._v("Reglas")])]
-        )
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-2" })
       ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-2" }),
       _vm._v(" "),
       _c(
         "div",
