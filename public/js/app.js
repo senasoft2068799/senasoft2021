@@ -3183,7 +3183,7 @@ var routes = [{
   }
 }, {
   name: "Tablero",
-  path: "/tablero",
+  path: "/partida/:id",
   component: _components_Partida_Tablero_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
   meta: {
     requiresAuth: true
