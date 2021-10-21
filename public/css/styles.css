@@ -521,3 +521,13 @@ td {
   border-radius: 10px
 }
 /* Fin Diseño de Tablero */
+
+/* Diseño código en sala */
+.code
+{
+  width: 180px;
+  border-radius: 5%;
+  border: solid 2px black;
+  background-color: black;
+}
+/* Fin diseño código en sala */

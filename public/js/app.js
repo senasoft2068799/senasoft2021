@@ -2770,6 +2770,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -2782,9 +2784,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     codeParty: function codeParty() {
-      var code = localStorage.getItem('partida'); //se obtiene el código para mostrarlo
+      var code = localStorage.getItem("partida"); //se obtiene el código para mostrarlo
 
       this.code = code;
+    }
+  },
+  props: {
+    color: {
+      "default": "#" + undefined.code
+    }
+  },
+  computed: {
+    codeStyle: function codeStyle() {
+      return {
+        "background-color": this.color
+      };
     }
   }
 });
@@ -44357,7 +44371,11 @@ var render = function() {
         [
           _c("h3", [_vm._v("Espera a que inicie la partida")]),
           _vm._v(" "),
-          _c("h1", [_vm._v("Código: " + _vm._s(_vm.code))]),
+          _c("center", [
+            _c("h1", { staticClass: "code", style: _vm.codeStyle }, [
+              _vm._v("Código: " + _vm._s(_vm.code))
+            ])
+          ]),
           _vm._v(" "),
           _c("h4", [
             _vm._v(
@@ -44366,7 +44384,8 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("h3", [_vm._v("Jugadores que han ingresado a la partida")])
-        ]
+        ],
+        1
       )
     ]),
     _vm._v(" "),
