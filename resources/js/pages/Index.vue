@@ -13,9 +13,6 @@
                 </p>
                 <button @click="crearPartida()">
                   Crear
-                  <!-- <router-link :to="{ name: 'categorias.index' }"
-                    >Crear</router-link
-                  > -->
                 </button>
               </div>
             </div>
