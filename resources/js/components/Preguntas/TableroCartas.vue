@@ -1,12 +1,30 @@
 <template>
-  <div class="cards">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 style="color: white">Programadores</h2>
+  <div class="main-card">
+    <div class="botonDash">
+      <label for="uno" class="uno"
+        ><i
+          class="fas fa-arrow-left"
+          style="font-size: 65px; margin-left: 2px"
+        ></i
+      ></label>
+    </div>
+    <div class="cards">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 style="color: white;" class="title">Programadores</h2>
+        </div>
+        <Cartas />
+        <Cartas />
+        <Cartas />
       </div>
-      <Cartas />
-      <Cartas />
-      <Cartas />
+    </div>
+    <div class="botonDash">
+      <label for="dos" class="dos"
+        ><i
+          class="fas fa-arrow-right"
+          style="font-size: 65px; margin-left: 2px"
+        ></i
+      ></label>
     </div>
   </div>
 </template>

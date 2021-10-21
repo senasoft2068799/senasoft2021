@@ -294,29 +294,34 @@
 
 .contenedor-preguntas .main-card
 {
-    width: 300%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     transition: all 1s ease;
 }
 
-#dos:checked ~ .main-card
+/* #dos:checked ~ .main-card
 {
     margin-left: -100%;
-}
+} */
 
-#tres:checked ~ .main-card
+/* #tres:checked ~ .main-card
 {
     margin-left: -200%;
-}
+} */
 
 .main-card .cards
 {
-    width: calc(100% / 4 - 10px);
+    width: calc(100% / 1 - 10px);
     display: flex;
     justify-content: space-between;
     margin: 0 20px;
     text-align: center;    
+}
+
+.title
+{
+  font-family: var(--main-font);
 }
 
 .main-card .cards .card
@@ -362,6 +367,9 @@ input[type="radio"]
   margin-top: 15px;
   border-radius: 5rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  font-family: var(--main-font);
+  color: white;
 }
 
 .botonPreguntas:hover
