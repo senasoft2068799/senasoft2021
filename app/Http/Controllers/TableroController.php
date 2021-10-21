@@ -68,59 +68,12 @@ class TableroController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function obtenerTablero(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Tablero  $tablero
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Tablero $tablero)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Tablero  $tablero
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Tablero $tablero)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tablero  $tablero
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Tablero $tablero)
-    {
-        //
+        info($request);
+        // $partida = Partida::find($request->partida_id);
+        // $cantidadJugadores = $partida->users()->count();
+        // if ($partida->users->contains($request->user_nickname)) {
     }
 
     /**

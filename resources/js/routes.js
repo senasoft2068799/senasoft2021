@@ -44,7 +44,7 @@ export const routes = [
     },
     {
         name: "Tablero",
-        path: "/tablero",
+        path: "/partida/:id",
         component: Tablero,
         meta: { requiresAuth: true }
     },
