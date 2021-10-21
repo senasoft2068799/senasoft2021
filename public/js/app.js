@@ -2500,6 +2500,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../public/json/cartas.json */ "./public/json/cartas.json");
+/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
+//
+//
+//
+//
 //
 //
 //
@@ -2522,11 +2527,58 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      currentUser: {
+        nickname: null
+      },
+      token: null,
       json: _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_0__.cartas
     };
+  },
+  mounted: function mounted() {
+    this.checkCurrentUser();
+    this.obtenerTablero();
+  },
+  methods: {
+    obtenerTablero: function obtenerTablero() {
+      var _this = this;
+
+      this.checkCurrentUser();
+      var datos = {
+        partida_id: this.$route.params.id,
+        user_nickname: this.currentUser.nickname
+      };
+      axios.post("/api/obtener-tablero", datos).then(function (res) {
+        console.log(res);
+      })["catch"](function (err) {
+        _this.$swal({
+          icon: "error",
+          title: "Ha ocurrido un error:\n" + err
+        });
+      });
+    },
+    checkCurrentUser: function checkCurrentUser() {
+      var _this2 = this;
+
+      if (_utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__["default"].has("token")) {
+        this.token = _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__["default"].get("token", false);
+        window.axios.defaults.headers.common["Authorization"] = "Bearer ".concat(this.token);
+        this.axios.get("/api/user").then(function (res) {
+          _this2.currentUser = res.data;
+        })["catch"](function (err) {
+          console.log("Error autenticación: " + err);
+          _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__["default"].remove("token");
+
+          _this2.$router.push("/");
+        });
+      } else {
+        this.currentUser = {};
+        this.token = null;
+      }
+    }
   }
 });
 
@@ -2545,9 +2597,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Cartas.vue */ "./resources/js/components/Cartas.vue");
 /* harmony import */ var _Tabla_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tabla.vue */ "./resources/js/components/Partida/Tabla.vue");
-//
-//
-//
 //
 //
 //
@@ -3198,7 +3247,7 @@ var routes = [{
   }
 }, {
   name: "Tablero",
-  path: "/tablero",
+  path: "/partida/:id",
   component: _components_Partida_Tablero_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
   meta: {
     requiresAuth: true
@@ -44281,7 +44330,12 @@ var render = function() {
             { staticStyle: { "text-align": "center" } },
             _vm._l(_vm.json, function(carta) {
               return _c("tr", { key: carta.id }, [
-                _c("td", [_vm._v(_vm._s(carta.nombre))])
+                _c("td", [_vm._v(_vm._s(carta.nombre))]),
+                _vm._v("\n<<<<<<< HEAD\n=======\n              "),
+                _c("td"),
+                _vm._v(
+                  "\n>>>>>>> c5b8b749767bc901a9faa232cbfe97e86fc35eb7\n            "
+                )
               ])
             }),
             0
@@ -44334,20 +44388,7 @@ var render = function() {
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-6" }, [_c("Tabla")], 1),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-6" },
-          [
-            _c("Cartas"),
-            _vm._v(" "),
-            _c("Cartas"),
-            _vm._v(" "),
-            _c("Cartas"),
-            _vm._v(" "),
-            _c("Cartas")
-          ],
-          1
-        )
+        _c("div", { staticClass: "col-md-6" }, [_c("Cartas")], 1)
       ])
     ]
   )

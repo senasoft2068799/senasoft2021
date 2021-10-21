@@ -30,4 +30,5 @@ Route::middleware('api')->group(function () {
     Route::post("unirse-partida", [PartidaController::class, "unirsePartida"]);
     //Route::get("tableros", [TableroController::class, "index"]);
     Route::get("lista-espera/{partida}", [PartidaController::class, "listaEspera"]);
+    Route::post("obtener-tablero", [TableroController::class, "obtenerTablero"]);
 });
