@@ -1,5 +1,6 @@
 import Index from "./pages/Index.vue";
 import Auth from "./pages/Auth/Auth.vue";
+import Ganador from "./pages/Ganador.vue";
 
 export const routes = [
     {
@@ -12,5 +13,10 @@ export const routes = [
         name: "auth",
         path: "/auth",
         component: Auth,
+    },
+    {
+        name: "ganador",
+        path: "/ganador",
+        component: Ganador,
     },
 ];

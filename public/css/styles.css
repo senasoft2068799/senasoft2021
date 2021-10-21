@@ -265,7 +265,26 @@ body
     text-decoration: none;
     font-weight: 400;
    }
-
-
-
 /* Fin de diseño de cards */
+
+/* Diseño de botones ganador */
+.botonGanador
+{
+  position: relative;
+  display: inline-block;
+  font-size: 25px;
+  padding: 0.7rem 2.5rem;
+  background: white;
+  margin-top: 15px;
+  border-radius: 5rem;
+  color: black;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: .5s;
+}
+
+.botonGanador:hover
+{
+  background: transparent;
+}
+/* Fin de diseño de botones ganador */
