@@ -26,11 +26,14 @@ class PartidaController extends Controller
      */
     public function store(Request $request)
     {
+        // Las cartas se almacenan en un archivo .json debido a que no están sujetas a modificaciones
         // Se obtiene el path del archivo .json que contiene las cartas, y se convierte a array
         $path = public_path() . "/json/cartas.json";
         $cartas = json_decode(file_get_contents($path), true)["cartas"];
 
         $cartasOcultas = [];
+        //Se buscan las columnas de las cartas que contengan el tipo 1, 2 y 3, para separarlas en variables
+        // Luego, se selecciona un array aleatorio de cada tipo y se ingresan en el arreglo de cartas ocultas
         $programadores = array_keys(array_column($cartas, 'tipo'), 1);
         array_push($cartasOcultas, $cartas[$programadores[array_rand($programadores)]]);
         $modulos = array_keys(array_column($cartas, 'tipo'), 2);
@@ -38,20 +41,15 @@ class PartidaController extends Controller
         $errores = array_keys(array_column($cartas, 'tipo'), 3);
         array_push($cartasOcultas, $cartas[$errores[array_rand($errores)]]);
 
+        // Aquí, se separan las cartas ocultas de las demás cartas almacenandolas en un arreglo
         $cartasRestantes = array_diff(array_column($cartas, 'id'), array_column($cartasOcultas, 'id'));
 
-        // $prueba = array_rand($json["cartas"], 3);
-        // $eeeey = array_diff($json["cartas"], $prueba);
-        // info($eeeey);
-        // $random = sprintf('%06X', mt_rand(0, 0xFFFFFF));
-        // $request->validate([
-        //     'nickname' => 'required',
-        //     'password' => 'required',
-        //     'device_name' => 'required',
-        // ]);
+        // Aquí se genera el código hexadecimal para la partida y se consulta si existe un registro previo con este código
         $codigo = sprintf('%06X', mt_rand(0, 0xFFFFFF));
+        // TODO: Validacion de codigo de partida que no exista
         $partida = Partida::where('id', $codigo)->first();
         if (!$partida) {
+            //Si la partida con el código generado no existe, se crea una nueva partida haciendo uso de las cartas almacenadas previamente
             $partida = Partida::create(
                 [
                     "id" => $codigo,
@@ -63,6 +61,9 @@ class PartidaController extends Controller
             );
         }
     }
+
+    // $prueba = array_rand($json["cartas"], 3);
+    // $eeeey = array_diff($json["cartas"], $prueba);
 
     /**
      * Display the specified resource.

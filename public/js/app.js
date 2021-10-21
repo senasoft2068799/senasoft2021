@@ -2259,14 +2259,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       partida: {
         jugadore_id: 1
-      }
+      },
+      currentUser: {},
+      token: null
     };
+  },
+  mounted: function mounted() {
+    this.checkCurrentUser();
   },
   methods: {
     crearPartida: function crearPartida() {
@@ -2288,6 +2294,23 @@ __webpack_require__.r(__webpack_exports__);
           title: "Ha ocurrido un error:\n" + err
         });
       });
+    },
+    checkCurrentUser: function checkCurrentUser() {
+      var _this2 = this;
+
+      if (_utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].has("token")) {
+        this.token = _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("token", false);
+        window.axios.defaults.headers.common["Authorization"] = "Bearer ".concat(this.token);
+        this.axios.get("/api/user").then(function (res) {
+          _this2.currentUser = res.data;
+        })["catch"](function (err) {
+          console.log("Error autenticación: " + err);
+          _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].remove("token");
+        });
+      } else {
+        this.currentUser = {};
+        this.token = null;
+      }
     }
   }
 });
@@ -42534,7 +42557,11 @@ var render = function() {
             _c("div", { staticClass: "box" }, [
               _c("div", { staticClass: "content" }, [
                 _c("h3", [_vm._v("Unirse a partida")]),
-                _vm._v(" "),
+                _vm._v(
+                  "\n              " +
+                    _vm._s(_vm.currentUser) +
+                    "\n              "
+                ),
                 _c("p", [
                   _vm._v(
                     "\n                Si tienes el código de una partida activa ingresa a ella dando\n                click al siguiente botón\n              "

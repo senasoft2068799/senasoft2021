@@ -28,6 +28,7 @@
             <div class="box">
               <div class="content">
                 <h3>Unirse a partida</h3>
+                {{ currentUser }}
                 <p>
                   Si tienes el código de una partida activa ingresa a ella dando
                   click al siguiente botón
@@ -53,7 +54,12 @@ export default {
       partida: {
         jugadore_id: 1,
       },
+      currentUser: {},
+      token: null,
     };
+  },
+  mounted() {
+    this.checkCurrentUser();
   },
   methods: {
     crearPartida() {
@@ -74,6 +80,26 @@ export default {
             title: "Ha ocurrido un error:\n" + err,
           });
         });
+    },
+    checkCurrentUser() {
+      if (Storage.has("token")) {
+        this.token = Storage.get("token", false);
+        window.axios.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${this.token}`;
+        this.axios
+          .get("/api/user")
+          .then((res) => {
+            this.currentUser = res.data;
+          })
+          .catch((err) => {
+            console.log("Error autenticación: " + err);
+            Storage.remove("token");
+          });
+      } else {
+        this.currentUser = {};
+        this.token = null;
+      }
     },
   },
 };
