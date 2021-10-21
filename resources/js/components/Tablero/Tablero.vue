@@ -15,7 +15,7 @@
 </template>
 <script>
 import Cartas from "./Cartas.vue";
-import Tabla from "./Tabla.vue";
+import Tabla from "./Tablero/Tabla.vue";
 export default {
   components: {
     Cartas,
