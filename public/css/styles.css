@@ -1,3 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,900&family=Lusitana&display=swap');
+
+:root{
+  --main-font: 'Exo 2', sans-serif;
+  --second-font: 'Lusitana', serif;
+}
+ 
+ /* Diseño de fondo */
+ body
+ {
+   background-image: linear-gradient(135deg, #00B7D4, #505488, #2F3F80, #161569, #5A4894, #A950A1, #FF7CAE);
+   background-attachment: fixed;
+   background-size: 500%;
+   animation:  fanimado 10s infinite;
+ }
+ 
+ @keyframes fanimado
+ {
+   0%
+   {
+     background-position: 0% 50%;
+   }
+   50%
+   {
+     background-position: 100% 50%;
+   }
+   100%
+   {
+     background-position: 0% 50%;
+   }
+ }
+ 
+ /* FIN Diseño de fondo */
+ 
+ /* Diseño de cards */
+    .contenedor
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      flex-wrap: wrap;
+      padding: 40px 0;
+    }
+ 
+    .contenedor .carta
+    {
+      background-color: whitesmoke;
+      position: relative;
+      min-width: 320px;
+      height: 440px;
+      box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05)
+                   inset -5px -5px -5px rgba(255, 255, 255, 0.5)
+                   5px 5px 5px rgba(0, 0, 0, 0.05)
+                   -5px -5px -5px rgba(255, 255, 255, 0.5);
+       border-radius: 15px;
+       margin: 30px;
+ 
+    }
+ 
+    .contenedor .carta .box
+    {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      background: #ebf5fc;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+    }
+ 
+    .contenedor .carta:hover .box
+    {
+       transform: translateY(-50px);
+       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+       background: linear-gradient(45deg, #b95ce4, #4f29cd);
+    }
+ 
+    .contenedor .carta .box .content
+    {
+      padding: 20px;
+      text-align: center;
+    }
+ 
+    .contenedor .carta .box .content h2
+    {
+      position: absolute;
+      top: -10px;
+      right: 30px;
+      font-size: 8em;
+      color: rgba(0, 0, 0, 0.02);
+      transition: 0.5s;
+      pointer-events: none;
+    }
+ 
+    .contenedor .carta:hover .box .content h2
+    {
+      color: rgba(0, 0, 0, 0.05);
+    }
+ 
+    .contenedor .carta:hover .box .content h3,
+    .contenedor .carta:hover .box .content p
+    {
+       color: #fff;
+    }
+ 
+    .contenedor .carta .box .content h3
+    {
+      font-size: 1.8em;
+      color: #777;
+      z-index: 1;
+      transition: 0.5s;
+    }
+ 
+    .contenedor .carta .box .content p
+    {
+       font-size: 1em;
+       font-weight: 300;
+       color: #777;
+       z-index: 1;
+       transition: 0.5s;
+    }
+ 
+    .contenedor .carta .box .content button
+    {
+      position: relative;
+      display: inline-block;
+      padding: .9rem 3rem;
+      background: #03a9f4;
+      color: white;
+      font-family: var(--main-font);
+      font-size: 1rem;
+      margin-top: 15px;
+      border-radius: 20px;
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+    }
+ 
+    .contenedor .carta:hover .box .content button
+    {
+      background: #ff568f;
+      opacity: .8;
+      cursor: pointer;
+      transition: .9s;
+    }
+
+   .contenedor .carta .box .content button a{
+    font-family: var(--main-font);
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+   }
+/* Fin de diseño de cards */
+
+/* Diseño de botones ganador */
+.botonGanador
+{
+  position: relative;
+  display: inline-block;
+  font-size: 25px;
+  padding: 0.7rem 2.5rem;
+  background: white;
+  margin-top: 15px;
+  border-radius: 5rem;
+  color: black;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: .5s;
+}
+
+.botonGanador:hover
+{
+  background: transparent;
+}
+/* Fin de diseño de botones ganador */
+   /*Comienza Diseño sala de espera*/
+
+   .img{
+     height: 100%;
+     border-radius: 3rem;
+   }
+
+   .margin{
+     margin-bottom: 2.5rem;
+   }
+
+   #sala h1{
+     font-size: 2.5rem;
+   }
+
+   #sala h3{
+    font-size: 1.5rem;
+  }
+
+   #sala h1, h3{
+     font-weight: bold;
+   }
+
+   .loader {
+    margin: 1rem auto;
+    color: black;
+    font-size: 25px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  }
+  @-webkit-keyframes load6 {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+  }
+  @keyframes load6 {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+  }
+  @-webkit-keyframes round {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes round {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+/*Fin Diseño sala de espera*/
+
+
+/* Diseño de preguntas */
+.contenedor-preguntas
+{
+  max-width: 950px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.contenedor-preguntas .main-card
+{
+    width: 300%;
+    display: flex;
+    justify-content: space-evenly;
+    transition: all 1s ease;
+}
+
+#dos:checked ~ .main-card
+{
+    margin-left: -100%;
+}
+
+ #tres:checked ~ .main-card
+{
+    margin-left: -300%;
+}
+
+.main-card .cards
+{
+    width: calc(100% / 4 - 10px);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    text-align: center;    
+}
+
+.title
+{
+  font-family: var(--main-font);
+}
+
+.main-card .cards .card
+{
+    width: calc(100% / 1.5 - 10px);
+    background: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 24px;
+}
+
+.botonDash
+{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+.botonDash label
+{
+    height: 65px;
+    width: 65px;
+    background: white;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    margin-top: 160px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+input[type="radio"]
+{
+    display: none;
+}
+
+.botonPreguntas
+{
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  background: #03a9f4;
+  margin-top: 15px;
+  border-radius: 5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  font-family: var(--main-font);
+  color: white;
+}
+
+.botonPreguntas:hover
+{
+  background: #00f165;
+}
+/* Fin de diseño de preguntas */
 /* Diseño de formulario */
 .form
 {
@@ -108,261 +487,55 @@
   border: none;
 }
 /* Fin de diseño de formulario */
-
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,900&family=Lusitana&display=swap');
-
-:root{
-  --main-font: 'Exo 2', sans-serif;
-  --second-font: 'Lusitana', serif;
-}
  
- /* Diseño de fondo */
-body
-{
-  background: linear-gradient(135deg, #00B7D4, #505488, #2F3F80, #161569, #5A4894, #A950A1, #FF7CAE) no-repeat center center fixed;
-  background-attachment: fixed;
-  background-size: 500%;
-  animation: fanimado 10s infinite;
+ /* Comienza Diseño de Tablero */
+
+ .table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-spacing: .250rem;
 }
 
-@keyframes fanimado
-{
-  0%
-  {
-    background-position: 0% 50%;
-  }
-  50%
-  {
-    background-position: 100% 50%;
-  }
-  100%
-  {
-    background-position: 0% 50%;
-  }
+ .table-responsive {
+  overflow-x: auto;
 }
 
-/* FIN Diseño de fondo */
+thead tr th{
+  background-color: rgb(207, 207, 207);
+}
 
-/* Diseño de cards */
-   .contenedor
-   {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     max-width: 1200px;
-     flex-wrap: wrap;
-     margin-top: 5rem;
-     margin-bottom: 1rem;
-     overflow: hidden;
-   }
+table tr:nth-child(even) {
+  background-color: rgb(224, 224, 224);
+}
 
-   .contenedor .carta
-   {
-    display: flex;
-     background-color: whitesmoke;
-     position: relative;
-     min-width: 320px;
-     height: 440px;
-     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05)
-                  inset -5px -5px -5px rgba(255, 255, 255, 0.5)
-                  5px 5px 5px rgba(0, 0, 0, 0.05)
-                  -5px -5px -5px rgba(255, 255, 255, 0.5);
-      border-radius: 15px;
-      margin: 30px;
+table tr:nth-child(odd) {
+  background-color: rgb(241, 241, 241);
+}
 
-   }
+thead tr th{
+  font-family: var(--main-font);
+  font-size: 1.280rem;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px
+}
 
-   .contenedor .carta .box
-   {
-     position: absolute;
-     top: 20px;
-     left: 20px;
-     right: 20px;
-     bottom: 20px;
-     background: #ebf5fc;
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-     border-radius: 15px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     transition: 0.5s;
-   }
+td {
+  font-family: var(--second-font);
+  font-size: 1rem;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px
+}
+/* Fin Diseño de Tablero */
 
-   .contenedor .carta:hover .box
-   {
-      transform: translateY(-50px);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-      background: linear-gradient(45deg, #b95ce4, #4f29cd);
-   }
-
-   .contenedor .carta .box .content
-   {
-     padding: 20px;
-     text-align: center;
-   }
-
-   .contenedor .carta .box .content h2
-   {
-     position: absolute;
-     top: -10px;
-     right: 30px;
-     font-size: 8em;
-     color: rgba(0, 0, 0, 0.02);
-     transition: 0.5s;
-     pointer-events: none;
-   }
-
-   .contenedor .carta:hover .box .content h2
-   {
-     color: rgba(0, 0, 0, 0.05);
-   }
-
-   .contenedor .carta:hover .box .content h3,
-   .contenedor .carta:hover .box .content p
-   {
-      color: #fff;
-   }
-
-   .contenedor .carta .box .content h3
-   {
-     font-family: var(--main-font);
-     font-size: 2em;
-     color: #777;
-     z-index: 1;
-     transition: 0.5s;
-   }
-
-   .contenedor .carta .box .content p
-   {
-      font-family: var(--second-font);
-      font-size: 1.2em;
-      font-weight: 300;
-      color: #777;
-      z-index: 1;
-      transition: .5s;
-   }
-
-   .contenedor .carta .box .content button
-   {
-     position: relative;
-     display: inline-block;
-     padding: .7rem 2.5rem;
-     background: #03a9f4;
-     margin-top: 15px;
-     border-radius: 5rem;
-     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-   }
-
-   .contenedor .carta:hover .box .content button
-   {
-     background: #ff568f;
-   }
-
-   .contenedor .carta .box .content button a{
-    font-family: var(--main-font);
-    color: white;
-    text-decoration: none;
-    font-weight: 400;
-   }
-
-   /*Comienza Diseño sala de espera*/
-
-   .img{
-     height: 100%;
-     border-radius: 3rem;
-     margin-bottom: 1.2rem;
-   }
-
-   .margin{
-     margin-bottom: 2rem;
-   }
-
-   #sala h1, h3{
-     font-weight: bold;
-   }
-
-   .loader {
-    margin: 0 auto;
-    color: black;
-    font-size: 25px;
-    text-indent: -9999em;
-    overflow: hidden;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    position: relative;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
-    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
-  }
-  @-webkit-keyframes load6 {
-    0% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    5%,
-    95% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    10%,
-    59% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
-    }
-    20% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
-    }
-    38% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
-    }
-    100% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-  }
-  @keyframes load6 {
-    0% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    5%,
-    95% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-    10%,
-    59% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
-    }
-    20% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
-    }
-    38% {
-      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
-    }
-    100% {
-      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-    }
-  }
-  @-webkit-keyframes round {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes round {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-
-   /*Comienza Diseño sala de espera*/
-
-/* Fin de diseño de cards */
+/* Diseño código en sala */
+.code
+{
+  width: 180px;
+  border-radius: 5%;
+  border: solid 2px black;
+  background-color: black;
+}
+/* Fin diseño código en sala */

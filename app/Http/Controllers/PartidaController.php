@@ -14,17 +14,27 @@ class PartidaController extends Controller
 
     public function crearPartida(Request $request)
     {
-        $cartas = TableroCOntroller::obtenerCartas();
+        $cartas = CartasController::obtenerCartas();
         $cartasOcultas = array();
         //Se buscan las columnas de las cartas que contengan el tipo 1, 2 y 3, para separarlas en variables
         // Luego, se selecciona un array aleatorio de cada tipo y se ingresan en el arreglo de cartas ocultas
-        $programadores = array_keys(array_column($cartas, 'tipo'), 1);
-        array_push($cartasOcultas, $cartas[$programadores[array_rand($programadores)]]);
-        $modulos = array_keys(array_column($cartas, 'tipo'), 2);
-        array_push($cartasOcultas, $cartas[$modulos[array_rand($modulos)]]);
-        $errores = array_keys(array_column($cartas, 'tipo'), 3);
-        array_push($cartasOcultas, $cartas[$errores[array_rand($errores)]]);
 
+
+        // $programadores = array_keys(array_column($cartas, 'tipo'), 1);
+        // array_push($cartasOcultas, $cartas[$programadores[array_rand($programadores)]]);
+        // $modulos = array_keys(array_column($cartas, 'tipo'), 2);
+        // array_push($cartasOcultas, $cartas[$modulos[array_rand($modulos)]]);
+        // $errores = array_keys(array_column($cartas, 'tipo'), 3);
+        // array_push($cartasOcultas, $cartas[$errores[array_rand($errores)]]);
+        $programadores = array_keys(array_column($cartas, 'tipo'), 1);
+        $carta1 = CartasController::obtenerPorIndice(CartasController::obtenerRandom($programadores));
+        array_push($cartasOcultas, $carta1);
+        $programadores = array_keys(array_column($cartas, 'tipo'), 2);
+        $carta2 = CartasController::obtenerPorIndice(CartasController::obtenerRandom($programadores));
+        array_push($cartasOcultas, $carta2);
+        $programadores = array_keys(array_column($cartas, 'tipo'), 3);
+        $carta3 = CartasController::obtenerPorIndice(CartasController::obtenerRandom($programadores));
+        array_push($cartasOcultas, $carta3);
 
         // Aquí se genera el código hexadecimal para la partida y se consulta si existe un registro previo con este código
         $codigo = sprintf('%06X', mt_rand(0, 0xFFFFFF));
@@ -43,6 +53,9 @@ class PartidaController extends Controller
             );
             // Se registra el jugador1 (Quien creó la partida) en la tabla jugador_partida
             $partida->users()->attach($request->nickname);
+
+            // Aquí se envía el código a la vista
+            return response()->json(["msg" => $partida->id]);
         }
     }
 
@@ -69,7 +82,6 @@ class PartidaController extends Controller
                 return response()->json(["allowed" => false, "msg" => "La partida ya tiene 4 jugadores."]);
             }
         }
-        //TODO: Detectar si la partida tiene 4 jugadores, para retornar un response que diga que la partida está llena
     }
 
     static function iniciarPartida($partida)
@@ -79,6 +91,15 @@ class PartidaController extends Controller
         $partida->save();
         // En vez de mandar la partida completa, se manda el id, para que los jugadores se actualizen correctamente
         TableroController::repartirCartas($partida["id"]);
+    }
+
+    public function listaEspera(Partida $partida)
+    {
+        if ($partida->users->count() == 4) {
+            return response()->json(["start" => true, "users" => $partida->users]);
+        } else {
+            return response()->json(["start" => false, "users" => $partida->users]);
+        }
     }
 
 
