@@ -6,9 +6,6 @@
       </div>
       <div class="col-md-6">
         <Cartas />
-        <Cartas />
-        <Cartas />
-        <Cartas />
       </div>
     </div>
   </div>
