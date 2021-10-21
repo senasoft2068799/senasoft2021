@@ -50,8 +50,8 @@
   </div>
 </template>
 <script>
-import TableroCartas from "../components/TableroCartas.vue";
-import FormPregunta from "../components/FormPregunta.vue";
+import TableroCartas from "./Tablero-Preguntas/TableroCartas.vue";
+import FormPregunta from "./Tablero-Preguntas/FormPregunta.vue";
 export default {
   components: {
     TableroCartas,

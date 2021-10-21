@@ -1,9 +1,13 @@
 <template>
-  <div class="col-md-12">
+  <div class="col-md-6">
     <div class="contenedor">
       <div
         class="carta"
-        style="margin-top: 0px; padding-top: 0px; height: 250px"
+        style="
+          margin-top: 0px;
+          padding-top: 0px;
+          height: 250px;
+        "
       >
         <div class="box">
           <div class="content">
@@ -18,6 +22,6 @@
 </template>
 <script>
 export default {
-  name: "Cartas",
+  name: "Carta",
 };
 </script>
