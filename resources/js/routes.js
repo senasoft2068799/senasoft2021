@@ -2,7 +2,7 @@ import Index from "./components/Index.vue";
 import Auth from "./components/Auth/Auth.vue";
 import Ganador from "./components/Ganador.vue";
 import Sala from "./components/Sala.vue";
-import Preguntas from "./components/Preguntas.vue";
+import Preguntas from "./components/Preguntas/Preguntas.vue";
 import Reglas from "./components/Reglas.vue";
 import Tablero from "./components/Tablero.vue";
 

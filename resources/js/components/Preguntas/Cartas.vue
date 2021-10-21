@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-6">
+  <div class="col-md-12">
     <div class="contenedor">
       <div
         class="carta"
@@ -17,7 +17,13 @@
   </div>
 </template>
 <script>
+import Cartas from "../../../../public/json/cartas.json";
 export default {
   name: "Carta",
+  data() {
+    return {
+      Cartas,
+    };
+  },
 };
 </script>
