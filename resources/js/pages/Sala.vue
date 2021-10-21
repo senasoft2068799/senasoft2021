@@ -9,7 +9,7 @@
     </div>
     <div class="col-md-3"></div>
     <div class="row d-flex" style="margin-top: -60px">
-      <div class="col-md-3">
+      <div class="col-md-3"> 
         <div class="contenedor">
           <div class="carta">
             <div class="box">
