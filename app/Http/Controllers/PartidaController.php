@@ -79,7 +79,6 @@ class PartidaController extends Controller
                 return response()->json(["allowed" => false, "msg" => "La partida ya tiene 4 jugadores."]);
             }
         }
-        //TODO: Detectar si la partida tiene 4 jugadores, para retornar un response que diga que la partida está llena
     }
 
     static function iniciarPartida($partida)
