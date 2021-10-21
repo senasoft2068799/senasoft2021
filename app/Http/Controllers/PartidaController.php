@@ -27,13 +27,13 @@ class PartidaController extends Controller
         // $errores = array_keys(array_column($cartas, 'tipo'), 3);
         // array_push($cartasOcultas, $cartas[$errores[array_rand($errores)]]);
         $programadores = array_keys(array_column($cartas, 'tipo'), 1);
-        $carta1 = CartasController::obtenerRandom($programadores);
+        $carta1 = CartasController::obtenerPorIndice(CartasController::obtenerRandom($programadores));
         array_push($cartasOcultas, $carta1);
         $programadores = array_keys(array_column($cartas, 'tipo'), 2);
-        $carta2 = CartasController::obtenerRandom($programadores);
+        $carta2 = CartasController::obtenerPorIndice(CartasController::obtenerRandom($programadores));
         array_push($cartasOcultas, $carta2);
         $programadores = array_keys(array_column($cartas, 'tipo'), 3);
-        $carta3 = CartasController::obtenerRandom($programadores);
+        $carta3 = CartasController::obtenerPorIndice(CartasController::obtenerRandom($programadores));
         array_push($cartasOcultas, $carta3);
 
         // Aquí se genera el código hexadecimal para la partida y se consulta si existe un registro previo con este código
@@ -46,9 +46,9 @@ class PartidaController extends Controller
                 [
                     "id" => $codigo,
                     "fecha_inicio" => now(),
-                    "programador_carta_id" => $cartasOcultas[0],
-                    "modulo_carta_id" => $cartasOcultas[1],
-                    "error_carta_id" => $cartasOcultas[2],
+                    "programador_carta_id" => $cartasOcultas[0]["id"],
+                    "modulo_carta_id" => $cartasOcultas[1]["id"],
+                    "error_carta_id" => $cartasOcultas[2]["id"],
                 ]
             );
             // Se registra el jugador1 (Quien creó la partida) en la tabla jugador_partida
