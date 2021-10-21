@@ -22,7 +22,7 @@
   </div>
 </template>
 <script>
-import cartas from "../../../public/json/cartas.json";
+import cartas from "../../../../public/json/cartas.json";
 export default {
   data() {
     return {

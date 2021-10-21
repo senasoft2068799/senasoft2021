@@ -14,8 +14,8 @@
   </div>
 </template>
 <script>
-import Cartas from "./Cartas.vue";
-import Tabla from "./Tablero/Tabla.vue";
+import Cartas from "../Cartas.vue";
+import Tabla from "./Tabla.vue";
 export default {
   components: {
     Cartas,

@@ -115,7 +115,6 @@ export default {
           .get("/api/user")
           .then((res) => {
             this.currentUser = res.data;
-            console.log(res.data);
           })
           .catch((err) => {
             console.log("Error autenticación: " + err);
