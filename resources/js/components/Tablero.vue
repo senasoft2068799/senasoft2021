@@ -1,6 +1,6 @@
 <template>
-  <div id="sala" class="container">
-    <div class="col-md-4">
+  <div class="row">
+    <div class="col-md-12">
       <div class="table-responsive">
         <table class="table">
           <thead>
@@ -25,5 +25,7 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+	name: "Tablero",
+};
 </script>

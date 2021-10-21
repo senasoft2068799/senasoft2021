@@ -2077,6 +2077,81 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Cartas"
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FormPregunta.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FormPregunta.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "FormPregunta"
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=script&lang=js& ***!
@@ -2114,7 +2189,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Tablero"
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TableroCartas.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TableroCartas.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cartas.vue */ "./resources/js/components/Cartas.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "TableroCartas",
+  components: {
+    Cartas: _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
 
 /***/ }),
 
@@ -2504,8 +2615,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Tablero_Preguntas_TableroCartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tablero-Preguntas/TableroCartas.vue */ "./resources/js/pages/Tablero-Preguntas/TableroCartas.vue");
-/* harmony import */ var _Tablero_Preguntas_FormPregunta_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tablero-Preguntas/FormPregunta.vue */ "./resources/js/pages/Tablero-Preguntas/FormPregunta.vue");
+/* harmony import */ var _components_TableroCartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/TableroCartas.vue */ "./resources/js/components/TableroCartas.vue");
+/* harmony import */ var _components_FormPregunta_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/FormPregunta.vue */ "./resources/js/components/FormPregunta.vue");
 //
 //
 //
@@ -2561,8 +2672,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    TableroCartas: _Tablero_Preguntas_TableroCartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    FormPregunta: _Tablero_Preguntas_FormPregunta_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    TableroCartas: _components_TableroCartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    FormPregunta: _components_FormPregunta_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -2768,10 +2879,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2779,6 +2890,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _components_Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Cartas.vue */ "./resources/js/components/Cartas.vue");
+/* harmony import */ var _components_Tablero_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Tablero.vue */ "./resources/js/components/Tablero.vue");
 //
 //
 //
@@ -2794,88 +2907,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Carta"
-});
 
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "FormPregunta"
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cartas.vue */ "./resources/js/pages/Tablero-Preguntas/Cartas.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "TableroCartas",
   components: {
-    Cartas: _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Cartas: _components_Cartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Tablero: _components_Tablero_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -3033,7 +3070,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Sala_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Sala.vue */ "./resources/js/pages/Sala.vue");
 /* harmony import */ var _pages_Preguntas_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Preguntas.vue */ "./resources/js/pages/Preguntas.vue");
 /* harmony import */ var _pages_Reglas_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Reglas.vue */ "./resources/js/pages/Reglas.vue");
-/* harmony import */ var _components_Tablero_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Tablero.vue */ "./resources/js/components/Tablero.vue");
+/* harmony import */ var _pages_Tablero_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Tablero.vue */ "./resources/js/pages/Tablero.vue");
 
 
 
@@ -3077,7 +3114,7 @@ var routes = [{
 }, {
   name: "Tablero",
   path: "/tablero",
-  component: _components_Tablero_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+  component: _pages_Tablero_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
   meta: {
     requiresAuth: true
   }
@@ -42718,6 +42755,84 @@ component.options.__file = "resources/js/App.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Cartas.vue":
+/*!********************************************!*\
+  !*** ./resources/js/components/Cartas.vue ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cartas.vue?vue&type=template&id=076ff47d& */ "./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d&");
+/* harmony import */ var _Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cartas.vue?vue&type=script&lang=js& */ "./resources/js/components/Cartas.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Cartas.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/FormPregunta.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/FormPregunta.vue ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FormPregunta_vue_vue_type_template_id_21c014b9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormPregunta.vue?vue&type=template&id=21c014b9& */ "./resources/js/components/FormPregunta.vue?vue&type=template&id=21c014b9&");
+/* harmony import */ var _FormPregunta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormPregunta.vue?vue&type=script&lang=js& */ "./resources/js/components/FormPregunta.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormPregunta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormPregunta_vue_vue_type_template_id_21c014b9___WEBPACK_IMPORTED_MODULE_0__.render,
+  _FormPregunta_vue_vue_type_template_id_21c014b9___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/FormPregunta.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Tablero.vue":
 /*!*********************************************!*\
   !*** ./resources/js/components/Tablero.vue ***!
@@ -42753,6 +42868,45 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 /* hot reload */
 if (false) { var api; }
 component.options.__file = "resources/js/components/Tablero.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/TableroCartas.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/TableroCartas.vue ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _TableroCartas_vue_vue_type_template_id_819f4a3c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TableroCartas.vue?vue&type=template&id=819f4a3c& */ "./resources/js/components/TableroCartas.vue?vue&type=template&id=819f4a3c&");
+/* harmony import */ var _TableroCartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TableroCartas.vue?vue&type=script&lang=js& */ "./resources/js/components/TableroCartas.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TableroCartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TableroCartas_vue_vue_type_template_id_819f4a3c___WEBPACK_IMPORTED_MODULE_0__.render,
+  _TableroCartas_vue_vue_type_template_id_819f4a3c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/TableroCartas.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -42991,10 +43145,10 @@ component.options.__file = "resources/js/pages/Sala.vue"
 
 /***/ }),
 
-/***/ "./resources/js/pages/Tablero-Preguntas/Cartas.vue":
-/*!*********************************************************!*\
-  !*** ./resources/js/pages/Tablero-Preguntas/Cartas.vue ***!
-  \*********************************************************/
+/***/ "./resources/js/pages/Tablero.vue":
+/*!****************************************!*\
+  !*** ./resources/js/pages/Tablero.vue ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -43002,9 +43156,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Cartas_vue_vue_type_template_id_3a0037ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cartas.vue?vue&type=template&id=3a0037ba& */ "./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=template&id=3a0037ba&");
-/* harmony import */ var _Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cartas.vue?vue&type=script&lang=js& */ "./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Tablero_vue_vue_type_template_id_40fe6992___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tablero.vue?vue&type=template&id=40fe6992& */ "./resources/js/pages/Tablero.vue?vue&type=template&id=40fe6992&");
+/* harmony import */ var _Tablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tablero.vue?vue&type=script&lang=js& */ "./resources/js/pages/Tablero.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -43013,9 +43167,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Cartas_vue_vue_type_template_id_3a0037ba___WEBPACK_IMPORTED_MODULE_0__.render,
-  _Cartas_vue_vue_type_template_id_3a0037ba___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _Tablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Tablero_vue_vue_type_template_id_40fe6992___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Tablero_vue_vue_type_template_id_40fe6992___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -43025,85 +43179,7 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/pages/Tablero-Preguntas/Cartas.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/pages/Tablero-Preguntas/FormPregunta.vue":
-/*!***************************************************************!*\
-  !*** ./resources/js/pages/Tablero-Preguntas/FormPregunta.vue ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _FormPregunta_vue_vue_type_template_id_14ab2fdf___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormPregunta.vue?vue&type=template&id=14ab2fdf& */ "./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=template&id=14ab2fdf&");
-/* harmony import */ var _FormPregunta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormPregunta.vue?vue&type=script&lang=js& */ "./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _FormPregunta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormPregunta_vue_vue_type_template_id_14ab2fdf___WEBPACK_IMPORTED_MODULE_0__.render,
-  _FormPregunta_vue_vue_type_template_id_14ab2fdf___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/pages/Tablero-Preguntas/FormPregunta.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/pages/Tablero-Preguntas/TableroCartas.vue":
-/*!****************************************************************!*\
-  !*** ./resources/js/pages/Tablero-Preguntas/TableroCartas.vue ***!
-  \****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _TableroCartas_vue_vue_type_template_id_29a8a47c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TableroCartas.vue?vue&type=template&id=29a8a47c& */ "./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=template&id=29a8a47c&");
-/* harmony import */ var _TableroCartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TableroCartas.vue?vue&type=script&lang=js& */ "./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _TableroCartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _TableroCartas_vue_vue_type_template_id_29a8a47c___WEBPACK_IMPORTED_MODULE_0__.render,
-  _TableroCartas_vue_vue_type_template_id_29a8a47c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/pages/Tablero-Preguntas/TableroCartas.vue"
+component.options.__file = "resources/js/pages/Tablero.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -43124,6 +43200,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Cartas.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/Cartas.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Cartas.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/FormPregunta.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/FormPregunta.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FormPregunta.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FormPregunta.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Tablero.vue?vue&type=script&lang=js&":
 /*!**********************************************************************!*\
   !*** ./resources/js/components/Tablero.vue?vue&type=script&lang=js& ***!
@@ -43137,6 +43245,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tablero.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/TableroCartas.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/TableroCartas.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TableroCartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TableroCartas.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TableroCartas.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TableroCartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -43236,10 +43360,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************/
+/***/ "./resources/js/pages/Tablero.vue?vue&type=script&lang=js&":
+/*!*****************************************************************!*\
+  !*** ./resources/js/pages/Tablero.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -43247,40 +43371,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Cartas.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FormPregunta.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TableroCartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TableroCartas.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TableroCartas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tablero.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -43301,6 +43393,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d& ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_template_id_076ff47d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Cartas.vue?vue&type=template&id=076ff47d& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/FormPregunta.vue?vue&type=template&id=21c014b9&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/FormPregunta.vue?vue&type=template&id=21c014b9& ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_template_id_21c014b9___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_template_id_21c014b9___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_template_id_21c014b9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FormPregunta.vue?vue&type=template&id=21c014b9& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FormPregunta.vue?vue&type=template&id=21c014b9&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70&":
 /*!****************************************************************************!*\
   !*** ./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70& ***!
@@ -43314,6 +43440,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_template_id_1bc57a70___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_template_id_1bc57a70___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tablero.vue?vue&type=template&id=1bc57a70& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/TableroCartas.vue?vue&type=template&id=819f4a3c&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/TableroCartas.vue?vue&type=template&id=819f4a3c& ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TableroCartas_vue_vue_type_template_id_819f4a3c___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TableroCartas_vue_vue_type_template_id_819f4a3c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TableroCartas_vue_vue_type_template_id_819f4a3c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TableroCartas.vue?vue&type=template&id=819f4a3c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TableroCartas.vue?vue&type=template&id=819f4a3c&");
 
 
 /***/ }),
@@ -43420,53 +43563,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=template&id=3a0037ba&":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=template&id=3a0037ba& ***!
-  \****************************************************************************************/
+/***/ "./resources/js/pages/Tablero.vue?vue&type=template&id=40fe6992&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/pages/Tablero.vue?vue&type=template&id=40fe6992& ***!
+  \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_template_id_3a0037ba___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_template_id_3a0037ba___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_template_id_40fe6992___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_template_id_40fe6992___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cartas_vue_vue_type_template_id_3a0037ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Cartas.vue?vue&type=template&id=3a0037ba& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=template&id=3a0037ba&");
-
-
-/***/ }),
-
-/***/ "./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=template&id=14ab2fdf&":
-/*!**********************************************************************************************!*\
-  !*** ./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=template&id=14ab2fdf& ***!
-  \**********************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_template_id_14ab2fdf___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_template_id_14ab2fdf___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_template_id_14ab2fdf___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FormPregunta.vue?vue&type=template&id=14ab2fdf& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=template&id=14ab2fdf&");
-
-
-/***/ }),
-
-/***/ "./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=template&id=29a8a47c&":
-/*!***********************************************************************************************!*\
-  !*** ./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=template&id=29a8a47c& ***!
-  \***********************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TableroCartas_vue_vue_type_template_id_29a8a47c___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TableroCartas_vue_vue_type_template_id_29a8a47c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TableroCartas_vue_vue_type_template_id_29a8a47c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TableroCartas.vue?vue&type=template&id=29a8a47c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=template&id=29a8a47c&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tablero_vue_vue_type_template_id_40fe6992___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tablero.vue?vue&type=template&id=40fe6992& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero.vue?vue&type=template&id=40fe6992&");
 
 
 /***/ }),
@@ -43496,6 +43605,158 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Cartas.vue?vue&type=template&id=076ff47d& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c("div", { staticClass: "contenedor" }, [
+        _c(
+          "div",
+          {
+            staticClass: "carta",
+            staticStyle: {
+              "margin-top": "0px",
+              "padding-top": "0px",
+              height: "250px"
+            }
+          },
+          [
+            _c("div", { staticClass: "box" }, [
+              _c("div", { staticClass: "content" }, [
+                _c("img", { attrs: { src: "" } }),
+                _vm._v(" "),
+                _c("h3", [_vm._v("Pedro")]),
+                _vm._v(" "),
+                _c("button", { staticStyle: { color: "white" } }, [
+                  _vm._v("Seleccionar")
+                ])
+              ])
+            ])
+          ]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FormPregunta.vue?vue&type=template&id=21c014b9&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FormPregunta.vue?vue&type=template&id=21c014b9& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "form",
+      {
+        staticClass: "form",
+        staticStyle: {
+          "padding-top": "0px",
+          "margin-top": "0px",
+          "max-width": "780px",
+          width: "80%",
+          height: "42px"
+        }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "form-container",
+            staticStyle: { "margin-top": "30px" }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "form-group", staticStyle: { display: "flex" } },
+              [
+                _c("input", {
+                  staticClass: "form-input",
+                  attrs: { type: "text", disabled: "" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "h2",
+                  { staticStyle: { padding: "10px", "font-size": "30px" } },
+                  [_vm._v("|")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-input",
+                  attrs: { type: "text", disabled: "" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "h2",
+                  { staticStyle: { padding: "10px", "font-size": "30px" } },
+                  [_vm._v("|")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-input",
+                  attrs: { type: "text", disabled: "" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "botonPreguntas", attrs: { type: "submit" } },
+                  [_vm._v("Realizar pregunta")]
+                )
+              ]
+            )
+          ]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tablero.vue?vue&type=template&id=1bc57a70& ***!
@@ -43519,8 +43780,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container", attrs: { id: "sala" } }, [
-      _c("div", { staticClass: "col-md-4" }, [
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "table-responsive" }, [
           _c("table", { staticClass: "table" }, [
             _c("thead", [
@@ -43547,6 +43808,55 @@ var staticRenderFns = [
           ])
         ])
       ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TableroCartas.vue?vue&type=template&id=819f4a3c&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TableroCartas.vue?vue&type=template&id=819f4a3c& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "cards" }, [
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("Cartas"),
+        _vm._v(" "),
+        _c("Cartas"),
+        _vm._v(" "),
+        _c("Cartas")
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c("h2", { staticStyle: { color: "white" } }, [_vm._v("Programadores")])
     ])
   }
 ]
@@ -44458,10 +44768,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=template&id=3a0037ba&":
-/*!*******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/Cartas.vue?vue&type=template&id=3a0037ba& ***!
-  \*******************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero.vue?vue&type=template&id=40fe6992&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero.vue?vue&type=template&id=40fe6992& ***!
+  \**************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -44474,185 +44784,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "contenedor" }, [
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { "margin-top": "50px" } },
+    [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-6" }, [_c("Tablero")], 1),
+        _vm._v(" "),
         _c(
           "div",
-          {
-            staticClass: "carta",
-            staticStyle: {
-              "margin-top": "0px",
-              "padding-top": "0px",
-              height: "250px"
-            }
-          },
+          { staticClass: "col-md-6" },
           [
-            _c("div", { staticClass: "box" }, [
-              _c("div", { staticClass: "content" }, [
-                _c("img", { attrs: { src: "" } }),
-                _vm._v(" "),
-                _c("h3", [_vm._v("Pedro")]),
-                _vm._v(" "),
-                _c("button", { staticStyle: { color: "white" } }, [
-                  _vm._v("Seleccionar")
-                ])
-              ])
-            ])
-          ]
+            _c("Cartas"),
+            _vm._v(" "),
+            _c("Cartas"),
+            _vm._v(" "),
+            _c("Cartas"),
+            _vm._v(" "),
+            _c("Cartas")
+          ],
+          1
         )
       ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=template&id=14ab2fdf&":
-/*!*************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/FormPregunta.vue?vue&type=template&id=14ab2fdf& ***!
-  \*************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
+    ]
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "form",
-      {
-        staticClass: "form",
-        staticStyle: {
-          "padding-top": "0px",
-          "margin-top": "0px",
-          "max-width": "780px",
-          width: "80%",
-          height: "42px"
-        }
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "form-container",
-            staticStyle: { "margin-top": "30px" }
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "form-group", staticStyle: { display: "flex" } },
-              [
-                _c("input", {
-                  staticClass: "form-input",
-                  attrs: { type: "text", disabled: "" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "h2",
-                  { staticStyle: { padding: "10px", "font-size": "30px" } },
-                  [_vm._v("|")]
-                ),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "form-input",
-                  attrs: { type: "text", disabled: "" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "h2",
-                  { staticStyle: { padding: "10px", "font-size": "30px" } },
-                  [_vm._v("|")]
-                ),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "form-input",
-                  attrs: { type: "text", disabled: "" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  { staticClass: "botonPreguntas", attrs: { type: "submit" } },
-                  [_vm._v("Realizar pregunta")]
-                )
-              ]
-            )
-          ]
-        )
-      ]
-    )
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=template&id=29a8a47c&":
-/*!**************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Tablero-Preguntas/TableroCartas.vue?vue&type=template&id=29a8a47c& ***!
-  \**************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "cards" }, [
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("Cartas"),
-        _vm._v(" "),
-        _c("Cartas"),
-        _vm._v(" "),
-        _c("Cartas")
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c("h2", { staticStyle: { color: "white" } }, [_vm._v("Programadores")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
