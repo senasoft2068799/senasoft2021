@@ -152,14 +152,11 @@ body
      align-items: center;
      max-width: 1200px;
      flex-wrap: wrap;
-     margin-top: 5rem;
-     margin-bottom: 1rem;
-     overflow: hidden;
+      padding: 40px 0;
    }
 
    .contenedor .carta
    {
-    display: flex;
      background-color: whitesmoke;
      position: relative;
      min-width: 320px;
@@ -251,7 +248,7 @@ body
      background: #03a9f4;
      margin-top: 15px;
      border-radius: 5rem;
-     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
    }
 
    .contenedor .carta:hover .box .content button
@@ -388,3 +385,90 @@ body
    /*Comienza Diseño sala de espera*/
 
 /* Fin de diseño de cards */
+
+
+/* Diseño de preguntas */
+.contenedor-preguntas
+{
+  max-width: 950px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.contenedor-preguntas .main-card
+{
+    width: 300%;
+    display: flex;
+    justify-content: space-evenly;
+    transition: all 1s ease;
+}
+
+#dos:checked ~ .main-card
+{
+    margin-left: -100%;
+}
+
+#tres:checked ~ .main-card
+{
+    margin-left: -200%;
+}
+
+.main-card .cards
+{
+    width: calc(100% / 4 - 10px);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    text-align: center;    
+}
+
+.main-card .cards .card
+{
+    width: calc(100% / 1.5 - 10px);
+    background: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 24px;
+}
+
+.botonDash
+{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+.botonDash label
+{
+    height: 65px;
+    width: 65px;
+    background: white;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    margin-top: 160px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+input[type="radio"]
+{
+    display: none;
+}
+
+.botonPreguntas
+{
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  background: #03a9f4;
+  margin-top: 15px;
+  border-radius: 5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.botonPreguntas:hover
+{
+  background: #00f165;
+}
+/* Fin de diseño de preguntas */
