@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-12">
+  <div class="col-md-6">
     <div class="contenedor">
       <div
         class="carta"
@@ -8,7 +8,7 @@
         <div class="box">
           <div class="content">
             <img src="" />
-            <h3>Pedro</h3>
+            <h3>{{cartaJugar.nombre}}</h3>
             <button style="color: white">Seleccionar</button>
           </div>
         </div>
@@ -17,13 +17,10 @@
   </div>
 </template>
 <script>
-import Cartas from "../../../public/json/cartas.json";
+
 export default {
   name: "Carta",
-  data() {
-    return {
-      Cartas,
-    };
-  },
+  props: ["cartaJugar"],
+
 };
 </script>

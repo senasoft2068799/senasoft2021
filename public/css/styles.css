@@ -305,9 +305,9 @@
     margin-left: -100%;
 }
 
-#tres:checked ~ .main-card
+ #tres:checked ~ .main-card
 {
-    margin-left: -200%;
+    margin-left: -300%;
 }
 
 .main-card .cards
@@ -317,6 +317,11 @@
     justify-content: space-between;
     margin: 0 20px;
     text-align: center;    
+}
+
+.title
+{
+  font-family: var(--main-font);
 }
 
 .main-card .cards .card
@@ -362,6 +367,9 @@ input[type="radio"]
   margin-top: 15px;
   border-radius: 5rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  font-family: var(--main-font);
+  color: white;
 }
 
 .botonPreguntas:hover
