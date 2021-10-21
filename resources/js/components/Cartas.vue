@@ -6,10 +6,9 @@
         style="margin-top: 0px; padding-top: 0px; height: 250px"
       >
         <div class="box">
-          <div class="content" v-for="(datos, index) in datosCarta" :key="index">
+          <div class="content">
             <img src="" />
-            <h3>{{datos.nombre}}</h3>
-            <h3>{{datos.tipo}}</h3>
+            <h3>{{cartaJugar.nombre}}</h3>
             <button style="color: white">Seleccionar</button>
           </div>
         </div>
@@ -18,13 +17,10 @@
   </div>
 </template>
 <script>
-import infoCartas from "../../../public/json/cartas.json";
+
 export default {
   name: "Carta",
-  data() {
-    return {
-      datosCarta: infoCartas.cartas
-    };
-  },
+  props: ["cartaJugar"],
+
 };
 </script>

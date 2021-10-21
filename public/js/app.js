@@ -2276,7 +2276,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../public/json/cartas.json */ "./public/json/cartas.json");
 //
 //
 //
@@ -2295,15 +2294,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Carta",
-  data: function data() {
-    return {
-      datosCarta: _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_0__.cartas
-    };
-  }
+  props: ["cartaJugar"]
 });
 
 /***/ }),
@@ -2593,6 +2586,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Cartas.vue */ "./resources/js/components/Cartas.vue");
+/* harmony import */ var _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../public/json/cartas.json */ "./public/json/cartas.json");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2624,10 +2637,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "TableroCartas",
   components: {
     Cartas: _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      cartasJson: _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_1__.cartas
+    };
+  },
+  computed: {
+    programadores: function programadores() {
+      return this.cartasJson.filter(function (u) {
+        if (u.tipo == 1) return u.tipo;
+      });
+    },
+    modulos: function modulos() {
+      return this.cartasJson.filter(function (u) {
+        if (u.tipo == 2) return u.tipo;
+      });
+    },
+    errores: function errores() {
+      return this.cartasJson.filter(function (u) {
+        if (u.tipo == 3) return u.tipo;
+      });
+    }
   }
 });
 
@@ -43967,24 +44003,17 @@ var render = function() {
           }
         },
         [
-          _c(
-            "div",
-            { staticClass: "box" },
-            _vm._l(_vm.datosCarta, function(datos, index) {
-              return _c("div", { key: index, staticClass: "content" }, [
-                _c("img", { attrs: { src: "" } }),
-                _vm._v(" "),
-                _c("h3", [_vm._v(_vm._s(datos.nombre))]),
-                _vm._v(" "),
-                _c("h3", [_vm._v(_vm._s(datos.tipo))]),
-                _vm._v(" "),
-                _c("button", { staticStyle: { color: "white" } }, [
-                  _vm._v("Seleccionar")
-                ])
+          _c("div", { staticClass: "box" }, [
+            _c("div", { staticClass: "content" }, [
+              _c("img", { attrs: { src: "" } }),
+              _vm._v(" "),
+              _c("h3", [_vm._v(_vm._s(_vm.cartaJugar.nombre))]),
+              _vm._v(" "),
+              _c("button", { staticStyle: { color: "white" } }, [
+                _vm._v("Seleccionar")
               ])
-            }),
-            0
-          )
+            ])
+          ])
         ]
       )
     ])
@@ -44367,17 +44396,49 @@ var render = function() {
         [
           _vm._m(1),
           _vm._v(" "),
-          _c("Cartas"),
+          _vm._l(_vm.programadores, function(datos) {
+            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
+          }),
           _vm._v(" "),
-          _c("Cartas"),
-          _vm._v(" "),
-          _c("Cartas")
+          _vm._l(_vm.errores, function(datos) {
+            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
+          })
         ],
-        1
+        2
       )
     ]),
     _vm._v(" "),
-    _vm._m(2)
+    _c("div", { staticClass: "cards" }, [
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._l(_vm.modulos, function(datos) {
+            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
+          })
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "cards" }, [
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _vm._m(3),
+          _vm._v(" "),
+          _vm._l(_vm.errores, function(datos) {
+            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
+          })
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(4)
   ])
 }
 var staticRenderFns = [
@@ -44401,6 +44462,26 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-md-12" }, [
       _c("h2", { staticClass: "title", staticStyle: { color: "white" } }, [
         _vm._v("Programadores")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c("h2", { staticClass: "title", staticStyle: { color: "white" } }, [
+        _vm._v("Módulos")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c("h2", { staticClass: "title", staticStyle: { color: "white" } }, [
+        _vm._v("Errores")
       ])
     ])
   },

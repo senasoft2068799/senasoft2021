@@ -294,25 +294,25 @@
 
 .contenedor-preguntas .main-card
 {
-    width: 100%;
+    width: 300%;
     display: flex;
     justify-content: space-evenly;
     transition: all 1s ease;
 }
 
-/* #dos:checked ~ .main-card
+#dos:checked ~ .main-card
 {
     margin-left: -100%;
-} */
+}
 
-/* #tres:checked ~ .main-card
+ #tres:checked ~ .main-card
 {
-    margin-left: -200%;
-} */
+    margin-left: -300%;
+}
 
 .main-card .cards
 {
-    width: calc(100% / 1 - 10px);
+    width: calc(100% / 4 - 10px);
     display: flex;
     justify-content: space-between;
     margin: 0 20px;
