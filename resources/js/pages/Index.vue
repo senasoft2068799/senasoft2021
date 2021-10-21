@@ -65,6 +65,7 @@ export default {
         .then((res) => {
           // Storage.record("partida", res.data, false);
           this.$swal.close();
+          Storage.record("partida", res.data.msg, false); //Aquí se envía el código a localStorage
           this.$router.push("/sala");
         })
         .catch((err) => {
