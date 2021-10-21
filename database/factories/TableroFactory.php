@@ -27,9 +27,9 @@ class TableroFactory extends Factory
         */
         return [
             'id' => $this->faker->unique()->firstName(),
-            'pregunta_user_partida_id' => User::inRandomOrder()->first()->id,
+            'pregunta_user_partidas_id' => User::inRandomOrder()->first()->id,
             'carta_id' => $this->faker->unique()->numberBetween(1, 19),
-            'respuesta_user_partida_id' => User::inRandomOrder()->first()->id
+            'respuesta_user_partidas_id' => User::inRandomOrder()->first()->id
         ];
     }
 }

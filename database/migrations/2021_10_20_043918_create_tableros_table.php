@@ -15,15 +15,15 @@ class CreateTablerosTable extends Migration
     {
         Schema::create('tableros', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("pregunta_user_partida_id");
-            $table->foreign("pregunta_user_partida_id")
-                ->references("id")->on("user_partida")
+            $table->unsignedBigInteger("pregunta_user_partidas_id");
+            $table->foreign("pregunta_user_partidas_id")
+                ->references("id")->on("user_partidas")
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->integer("carta_id");
-            $table->unsignedBigInteger("respuesta_user_partida_id");
-            $table->foreign("respuesta_user_partida_id")
-                ->references("id")->on("user_partida")
+            $table->unsignedBigInteger("respuesta_user_partidas_id");
+            $table->foreign("respuesta_user_partidas_id")
+                ->references("id")->on("user_partidas")
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();

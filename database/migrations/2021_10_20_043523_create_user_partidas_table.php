@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserPartidaTable extends Migration
+class CreateUserPartidasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,14 @@ class CreateUserPartidaTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_partida', function (Blueprint $table) {
+        Schema::create('user_partidas', function (Blueprint $table) {
             $table->id();
-            $table->string("user_nickname", 12);
+            $table->string("user_nickname", 12)->nullable();
             $table->foreign("user_nickname")
-                ->references("nickname")->on("users")
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-            $table->string("partida_id", 6);
+                ->references("nickname")->on("users");
+            $table->string("partida_id", 6)->nullable();
             $table->foreign("partida_id")
-                ->references("id")->on("partidas")
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+                ->references("id")->on("partidas");
             $table->timestamps();
         });
     }
@@ -36,6 +32,6 @@ class CreateUserPartidaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_partida');
+        Schema::dropIfExists('user_partidas');
     }
 }

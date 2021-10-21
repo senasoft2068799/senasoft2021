@@ -1,15 +1,17 @@
 <template>
   <div id="sala" class="container">
     <div class="row" style="margin-top:30px;">
-      <div class="col-md-3"></div>
-      <div class="col-md-6" style="text-align: center; color: white;">
-        <h1>Espera a que inicie la partida</h1>
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="text-align: center; color: white;">
+        <h3>Espera a que inicie la partida</h3>
+        <h1>Código: 1212io</h1>
+        <h4>¡Comparte este código con tus amigos para que se puedan unir y empezar la partida!</h4>
         <h3>Jugadores que han ingresado a la partida</h3>
       </div>
     </div>
-    <div class="col-md-3"></div>
-    <div class="row d-flex" style="margin-top: -60px">
-      <div class="col-md-3"> 
+    <div class="col-md-2"></div>
+    <div class="row d-flex" style="margin-top: -40px">
+      <div class="col-sm-12 col-md-6 col-xl-4">
         <div class="contenedor">
           <div class="carta">
             <div class="box">
@@ -22,7 +24,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-sm-12 col-md-6 col-xl-4">
         <div class="contenedor">
           <div class="carta">
             <div class="box">
@@ -35,7 +37,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-sm-12 col-md-6 col-xl-4">
         <div class="contenedor">
           <div class="carta">
             <div class="box">
@@ -48,7 +50,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-sm-12 col-md-6 col-xl-4">
         <div class="contenedor">
           <div class="carta">
             <div class="box">

@@ -1,114 +1,3 @@
-/* Diseño de formulario */
-.form
-{
-  background-color: #fff;
-  margin: auto;
-  width: 90%;
-  max-width: 400px;
-  padding: 4.5em 3em;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px -5px rgb(0, 0, 0 / 30%);
-  text-align: center;
-  margin-top: 5%;
-}
-
-.form-title
-{
-  font-size: 2rem;
-  margin-bottom: .5em;
-}
-
-.form-container
-{
-  margin-top: 3em;
-  display: grid;
-  gap: 2.5em;
-}
-
-.form-group
-{
-  position: relative;
-  color: rgb(59, 1, 59);
-}
-
-.form-input
-{
-  width: 100%;
-  background: none;
-  color: #706c6c;
-  font-size: 1rem;
-  padding: .6em .3em;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid black;
-}
-
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label
-{
-  transform: translateY(-12px) scale(.7);
-  transform-origin: left top;
-  color: #2F3F80;
-}
-
-.form-label
-{
-  color: rgb(59, 1, 59);
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 5px;
-  transform: translateY(10px);
-  transition: all 0.5s ease;
-}
-
-.form-submit
-{
-  background: #3866f2;
-  color: #fff;
-  font-weight: 300;
-  font-size: 1rem;
-  width: 80%;
-  padding: .8rem 0;
-  border: none;
-  border-radius: .5em;
-  cursor: pointer;
-}
-
-.form-line
-{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: black;
-  transition: scale(0);
-  transform: left bottom;
-  transition:  transform .4s;
-}
-
-.form-input:focus ~ .form-line,
-.form-input:not(:placeholder-shown) ~ .form-line
-{
-  transform: scale(1);
-}
-
-.form-check
-{
-  border-radius: 8%;
-  margin: 18px;
-  cursor: pointer;
-}
-
-.form-p
-{
-  color: rgb(231, 0, 0);
-  text-decoration: none;
-  border: none;
-}
-/* Fin de diseño de formulario */
-
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,900&family=Lusitana&display=swap');
 
@@ -118,143 +7,140 @@
 }
  
  /* Diseño de fondo */
-body
-{
-  background: linear-gradient(135deg, #00B7D4, #505488, #2F3F80, #161569, #5A4894, #A950A1, #FF7CAE) no-repeat center center fixed;
-  background-attachment: fixed;
-  background-size: 500%;
-  animation: fanimado 10s infinite;
-}
-
-@keyframes fanimado
-{
-  0%
-  {
-    background-position: 0% 50%;
-  }
-  50%
-  {
-    background-position: 100% 50%;
-  }
-  100%
-  {
-    background-position: 0% 50%;
-  }
-}
-
-/* FIN Diseño de fondo */
-
-/* Diseño de cards */
-   .contenedor
+ body
+ {
+   background-image: linear-gradient(135deg, #00B7D4, #505488, #2F3F80, #161569, #5A4894, #A950A1, #FF7CAE);
+   background-size: 500%;
+   animation:  fanimado 10s infinite;
+ }
+ 
+ @keyframes fanimado
+ {
+   0%
    {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     max-width: 1200px;
-     flex-wrap: wrap;
+     background-position: 0% 50%;
+   }
+   50%
+   {
+     background-position: 100% 50%;
+   }
+   100%
+   {
+     background-position: 0% 50%;
+   }
+ }
+ 
+ /* FIN Diseño de fondo */
+ 
+ /* Diseño de cards */
+    .contenedor
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      flex-wrap: wrap;
       padding: 40px 0;
-   }
-
-   .contenedor .carta
-   {
-     background-color: whitesmoke;
-     position: relative;
-     min-width: 320px;
-     height: 440px;
-     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05)
-                  inset -5px -5px -5px rgba(255, 255, 255, 0.5)
-                  5px 5px 5px rgba(0, 0, 0, 0.05)
-                  -5px -5px -5px rgba(255, 255, 255, 0.5);
+    }
+ 
+    .contenedor .carta
+    {
+      background-color: whitesmoke;
+      position: relative;
+      min-width: 320px;
+      height: 440px;
+      box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05)
+                   inset -5px -5px -5px rgba(255, 255, 255, 0.5)
+                   5px 5px 5px rgba(0, 0, 0, 0.05)
+                   -5px -5px -5px rgba(255, 255, 255, 0.5);
+       border-radius: 15px;
+       margin: 30px;
+ 
+    }
+ 
+    .contenedor .carta .box
+    {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      background: #ebf5fc;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       border-radius: 15px;
-      margin: 30px;
-
-   }
-
-   .contenedor .carta .box
-   {
-     position: absolute;
-     top: 20px;
-     left: 20px;
-     right: 20px;
-     bottom: 20px;
-     background: #ebf5fc;
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-     border-radius: 15px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     transition: 0.5s;
-   }
-
-   .contenedor .carta:hover .box
-   {
-      transform: translateY(-50px);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-      background: linear-gradient(45deg, #b95ce4, #4f29cd);
-   }
-
-   .contenedor .carta .box .content
-   {
-     padding: 20px;
-     text-align: center;
-   }
-
-   .contenedor .carta .box .content h2
-   {
-     position: absolute;
-     top: -10px;
-     right: 30px;
-     font-size: 8em;
-     color: rgba(0, 0, 0, 0.02);
-     transition: 0.5s;
-     pointer-events: none;
-   }
-
-   .contenedor .carta:hover .box .content h2
-   {
-     color: rgba(0, 0, 0, 0.05);
-   }
-
-   .contenedor .carta:hover .box .content h3,
-   .contenedor .carta:hover .box .content p
-   {
-      color: #fff;
-   }
-
-   .contenedor .carta .box .content h3
-   {
-     font-family: var(--main-font);
-     font-size: 2em;
-     color: #777;
-     z-index: 1;
-     transition: 0.5s;
-   }
-
-   .contenedor .carta .box .content p
-   {
-      font-family: var(--second-font);
-      font-size: 1.2em;
-      font-weight: 300;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+    }
+ 
+    .contenedor .carta:hover .box
+    {
+       transform: translateY(-50px);
+       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+       background: linear-gradient(45deg, #b95ce4, #4f29cd);
+    }
+ 
+    .contenedor .carta .box .content
+    {
+      padding: 20px;
+      text-align: center;
+    }
+ 
+    .contenedor .carta .box .content h2
+    {
+      position: absolute;
+      top: -10px;
+      right: 30px;
+      font-size: 8em;
+      color: rgba(0, 0, 0, 0.02);
+      transition: 0.5s;
+      pointer-events: none;
+    }
+ 
+    .contenedor .carta:hover .box .content h2
+    {
+      color: rgba(0, 0, 0, 0.05);
+    }
+ 
+    .contenedor .carta:hover .box .content h3,
+    .contenedor .carta:hover .box .content p
+    {
+       color: #fff;
+    }
+ 
+    .contenedor .carta .box .content h3
+    {
+      font-size: 1.8em;
       color: #777;
       z-index: 1;
-      transition: .5s;
-   }
-
-   .contenedor .carta .box .content button
-   {
-     position: relative;
-     display: inline-block;
-     padding: .7rem 2.5rem;
-     background: #03a9f4;
-     margin-top: 15px;
-     border-radius: 5rem;
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-   }
-
-   .contenedor .carta:hover .box .content button
-   {
-     background: #ff568f;
-   }
+      transition: 0.5s;
+    }
+ 
+    .contenedor .carta .box .content p
+    {
+       font-size: 1em;
+       font-weight: 300;
+       color: #777;
+       z-index: 1;
+       transition: 0.5s;
+    }
+ 
+    .contenedor .carta .box .content button
+    {
+      position: relative;
+      display: inline-block;
+      padding: 8px 20px;
+      background: #03a9f4;
+      margin-top: 15px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+ 
+    .contenedor .carta:hover .box .content button
+    {
+      background: #ff568f;
+    }
 
    .contenedor .carta .box .content button a{
     font-family: var(--main-font);
@@ -290,19 +176,27 @@ body
    .img{
      height: 100%;
      border-radius: 3rem;
-     margin-bottom: 1.2rem;
+     
    }
 
    .margin{
-     margin-bottom: 2rem;
+     margin-bottom: 2.5rem;
    }
+
+   #sala h1{
+     font-size: 2.5rem;
+   }
+
+   #sala h3{
+    font-size: 1.5rem;
+  }
 
    #sala h1, h3{
      font-weight: bold;
    }
 
    .loader {
-    margin: 0 auto;
+    margin: 1rem auto;
     color: black;
     font-size: 25px;
     text-indent: -9999em;
@@ -472,3 +366,154 @@ input[type="radio"]
   background: #00f165;
 }
 /* Fin de diseño de preguntas */
+/* Diseño de formulario */
+.form
+{
+  background-color: #fff;
+  margin: auto;
+  width: 90%;
+  max-width: 400px;
+  padding: 4.5em 3em;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px -5px rgb(0, 0, 0 / 30%);
+  text-align: center;
+  margin-top: 5%;
+}
+
+.form-title
+{
+  font-size: 2rem;
+  margin-bottom: .5em;
+}
+
+.form-container
+{
+  margin-top: 3em;
+  display: grid;
+  gap: 2.5em;
+}
+
+.form-group
+{
+  position: relative;
+  color: rgb(59, 1, 59);
+}
+
+.form-input
+{
+  width: 100%;
+  background: none;
+  color: #706c6c;
+  font-size: 1rem;
+  padding: .6em .3em;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label
+{
+  transform: translateY(-12px) scale(.7);
+  transform-origin: left top;
+  color: #2F3F80;
+}
+
+.form-label
+{
+  color: rgb(59, 1, 59);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+.form-submit
+{
+  background: #3866f2;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1rem;
+  width: 80%;
+  padding: .8rem 0;
+  border: none;
+  border-radius: .5em;
+  cursor: pointer;
+}
+
+.form-line
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transition: scale(0);
+  transform: left bottom;
+  transition:  transform .4s;
+}
+
+.form-input:focus ~ .form-line,
+.form-input:not(:placeholder-shown) ~ .form-line
+{
+  transform: scale(1);
+}
+
+.form-check
+{
+  border-radius: 8%;
+  margin: 18px;
+  cursor: pointer;
+}
+
+.form-p
+{
+  color: rgb(231, 0, 0);
+  text-decoration: none;
+  border: none;
+}
+/* Fin de diseño de formulario */
+ 
+ /* Diseño de fondo */
+
+ .table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-spacing: .250rem;
+}
+
+ .table-responsive {
+  overflow-x: auto;
+}
+
+thead tr th{
+  background-color: rgb(207, 207, 207);
+}
+
+table tr:nth-child(even) {
+  background-color: rgb(224, 224, 224);
+}
+
+table tr:nth-child(odd) {
+  background-color: rgb(241, 241, 241);
+}
+
+thead tr th{
+  font-family: var(--main-font);
+  font-size: 1.280rem;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px
+}
+
+td {
+  font-family: var(--second-font);
+  font-size: 1rem;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px
+}
