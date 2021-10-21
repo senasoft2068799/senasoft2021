@@ -2814,19 +2814,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      code: null
+      code: localStorage.getItem("partida")
     };
   },
-  mounted: function mounted() {
-    this.codeParty();
-  },
-  methods: {
-    codeParty: function codeParty() {
-      var code = localStorage.getItem("partida"); //se obtiene el código para mostrarlo
-
-      this.code = code;
-    }
-  }
+  methods: {}
 });
 
 /***/ }),

@@ -80,18 +80,9 @@ import Storage from "../utilities/Storage.js";
 export default {
   data() {
     return {
-      code: null,
+      code: localStorage.getItem("partida"),
     };
   },
-  mounted() {
-    this.codeParty();
-  },
-  methods: {
-    codeParty() {
-      let code = localStorage.getItem("partida");
-      //se obtiene el código para mostrarlo
-      this.code = code;
-    },
-  },
+  methods: {},
 };
 </script>
