@@ -16,4 +16,16 @@ class CartasController
         $cartas = json_decode(file_get_contents($path), true)["cartas"];
         return $cartas;
     }
+
+    public static function obtenerRandom($lstCartas)
+    {
+        $random = array_rand($lstCartas);
+        return $lstCartas[$random];
+    }
+
+    public static function obtenerIndice($carta_indice, $indice)
+    {
+        $cartas = CartasController::obtenerCartas();
+        return $cartas[array_keys(array_column($cartas, $indice), $carta_indice)[0]];
+    }
 }
