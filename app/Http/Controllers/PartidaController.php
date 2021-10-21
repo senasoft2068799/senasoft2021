@@ -14,7 +14,7 @@ class PartidaController extends Controller
 
     public function crearPartida(Request $request)
     {
-        $cartas = TableroCOntroller::obtenerCartas();
+        $cartas = CartasController::obtenerCartas();
         $cartasOcultas = array();
         //Se buscan las columnas de las cartas que contengan el tipo 1, 2 y 3, para separarlas en variables
         // Luego, se selecciona un array aleatorio de cada tipo y se ingresan en el arreglo de cartas ocultas

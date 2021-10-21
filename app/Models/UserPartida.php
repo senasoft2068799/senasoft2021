@@ -19,4 +19,9 @@ class UserPartida extends Model
     {
         return $this->belongsTo(Partida::class);
     }
+
+    public function tablero()
+    {
+        return $this->belongsTo(Tablero::class);
+    }
 }
