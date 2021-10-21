@@ -4,7 +4,7 @@ import Ganador from "./components/Ganador.vue";
 import Sala from "./components/Sala/Sala.vue";
 import Preguntas from "./components/Preguntas/Preguntas.vue";
 import Reglas from "./components/Reglas.vue";
-import Tablero from "./components/Tablero.vue";
+import Dashboard from "./components/Partida/Dashboard.vue";
 
 export const routes = [
     {
@@ -22,6 +22,7 @@ export const routes = [
         name: "ganador",
         path: "/ganador",
         component: Ganador,
+        meta: { requiresAuth: true }
     },
     {
         name: "Sala",
@@ -33,6 +34,7 @@ export const routes = [
         name: "preguntas",
         path: "/preguntas",
         component: Preguntas,
+        meta: { requiresAuth: true }
     },
     {
         name: "Reglas",
@@ -41,9 +43,9 @@ export const routes = [
         meta: { requiresAuth: true }
     },
     {
-        name: "Tablero",
-        path: "/tablero",
-        component: Tablero,
+        name: "Dashboard",
+        path: "/partida/:id",
+        component: Dashboard,
         meta: { requiresAuth: true }
     },
 ];
