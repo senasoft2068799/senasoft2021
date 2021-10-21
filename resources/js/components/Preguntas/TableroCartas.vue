@@ -1,49 +1,50 @@
 <template>
-  <div class="main-card">
-    <div class="botonDash">
-      <label for="uno" class="uno"
-        ><i
-          class="fas fa-arrow-left"
-          style="font-size: 65px; margin-left: 2px"
-        ></i
-      ></label>
-    </div>
-    <div class="cards">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 style="color: white" class="title">Programadores</h2>
+  <div>
+    <div class="main-card"> 
+      <div class="cards" style="margin-left: -100px">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 style="color: white" class="title">Programadores</h2>
+          </div>
+          <Cartas
+            v-for="datos in programadores"
+            :key="datos.id"
+            :cartaJugar="datos"
+          />
         </div>
-        <Cartas
-          v-for="datos in programadores"
-          :key="datos.id"
-          :cartaJugar="datos"
-        />
-        <Cartas v-for="datos in errores" :key="datos.id" :cartaJugar="datos" />
       </div>
-    </div>
-    <div class="cards">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 style="color: white" class="title">Módulos</h2>
+      <div class="cards">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 style="color: white" class="title">Módulos</h2>
+          </div>
+          <Cartas
+            v-for="datos in modulos"
+            :key="datos.id"
+            :cartaJugar="datos"
+          />
         </div>
-        <Cartas v-for="datos in modulos" :key="datos.id" :cartaJugar="datos" />
       </div>
-    </div>
-    <div class="cards">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 style="color: white" class="title">Errores</h2>
+      <div class="cards">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 style="color: white" class="title">Errores</h2>
+          </div>
+          <Cartas
+            v-for="datos in errores"
+            :key="datos.id"
+            :cartaJugar="datos"
+          />
         </div>
-        <Cartas v-for="datos in errores" :key="datos.id" :cartaJugar="datos" />
       </div>
-    </div>
-    <div class="botonDash">
-      <label for="dos" class="dos"
-        ><i
-          class="fas fa-arrow-right"
-          style="font-size: 65px; margin-left: 2px"
-        ></i
-      ></label>
+      <div class="botonDash">
+        <label for="dos" class="dos"
+          ><i
+            class="fas fa-arrow-right"
+            style="font-size: 65px; margin-left: 2px"
+          ></i
+        ></label>
+      </div>
     </div>
   </div>
 </template>

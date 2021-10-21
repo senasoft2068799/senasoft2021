@@ -2521,8 +2521,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -2641,6 +2639,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2670,6 +2684,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Cartas.vue */ "./resources/js/components/Cartas.vue");
 /* harmony import */ var _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../public/json/cartas.json */ "./public/json/cartas.json");
+//
 //
 //
 //
@@ -44251,8 +44266,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render),
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-md-12" }, [
+      _c("div", { staticClass: "table-responsive" }, [
+        _c("table", { staticClass: "table" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            { staticStyle: { "text-align": "center" } },
+            _vm._l(_vm.json, function(carta) {
+              return _c("tr", { key: carta.id }, [
+                _c("td", [_vm._v(_vm._s(carta.nombre))])
+              ])
+            }),
+            0
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Quien")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Notas")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
 
 
 
@@ -44422,19 +44475,51 @@ var render = function() {
       _vm._v(" "),
       _c("center", [
         _c("div", { staticClass: "row-cols-1 row-cols-md-3 g-4 mt-3" }, [
+          _c("input", { attrs: { type: "radio", name: "dot", id: "uno" } }),
+          _vm._v(" "),
+          _c("input", { attrs: { type: "radio", name: "dot", id: "dos" } }),
+          _vm._v(" "),
+          _c("input", { attrs: { type: "radio", name: "dot", id: "tres" } }),
+          _vm._v(" "),
           _c(
             "div",
             { staticClass: "contenedor-preguntas" },
             [
-              _c("input", { attrs: { type: "radio", name: "dot", id: "uno" } }),
+              _c("div", { staticClass: "botonDash" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "uno",
+                    staticStyle: { "margin-right": "20px" },
+                    attrs: { for: "uno" }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-arrow-left",
+                      staticStyle: { "font-size": "65px", "margin-left": "2px" }
+                    })
+                  ]
+                )
+              ]),
               _vm._v(" "),
-              _c("input", { attrs: { type: "radio", name: "dot", id: "dos" } }),
+              _c("TableroCartas"),
               _vm._v(" "),
-              _c("input", {
-                attrs: { type: "radio", name: "dot", id: "tres" }
-              }),
-              _vm._v(" "),
-              _c("TableroCartas")
+              _c("div", { staticClass: "botonDash" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "dos",
+                    staticStyle: { "margin-left": "-150px" },
+                    attrs: { for: "dos" }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-arrow-right",
+                      staticStyle: { "font-size": "65px", "margin-left": "2px" }
+                    })
+                  ]
+                )
+              ])
             ],
             1
           )
@@ -44467,75 +44552,71 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "main-card" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "cards" }, [
+  return _c("div", [
+    _c("div", { staticClass: "main-card" }, [
       _c(
         "div",
-        { staticClass: "row" },
+        { staticClass: "cards", staticStyle: { "margin-left": "-100px" } },
         [
-          _vm._m(1),
-          _vm._v(" "),
-          _vm._l(_vm.programadores, function(datos) {
-            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
-          }),
-          _vm._v(" "),
-          _vm._l(_vm.errores, function(datos) {
-            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "cards" }, [
-      _c(
-        "div",
-        { staticClass: "row" },
-        [
-          _vm._m(2),
-          _vm._v(" "),
-          _vm._l(_vm.modulos, function(datos) {
-            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "cards" }, [
-      _c(
-        "div",
-        { staticClass: "row" },
-        [
-          _vm._m(3),
-          _vm._v(" "),
-          _vm._l(_vm.errores, function(datos) {
-            return _c("Cartas", { key: datos.id, attrs: { cartaJugar: datos } })
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _vm._m(4)
+          _c(
+            "div",
+            { staticClass: "row" },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._l(_vm.programadores, function(datos) {
+                return _c("Cartas", {
+                  key: datos.id,
+                  attrs: { cartaJugar: datos }
+                })
+              })
+            ],
+            2
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "cards" }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.modulos, function(datos) {
+              return _c("Cartas", {
+                key: datos.id,
+                attrs: { cartaJugar: datos }
+              })
+            })
+          ],
+          2
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "cards" }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _vm._m(2),
+            _vm._v(" "),
+            _vm._l(_vm.errores, function(datos) {
+              return _c("Cartas", {
+                key: datos.id,
+                attrs: { cartaJugar: datos }
+              })
+            })
+          ],
+          2
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(3)
+    ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "botonDash" }, [
-      _c("label", { staticClass: "uno", attrs: { for: "uno" } }, [
-        _c("i", {
-          staticClass: "fas fa-arrow-left",
-          staticStyle: { "font-size": "65px", "margin-left": "2px" }
-        })
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -60258,7 +60339,7 @@ Vue.compile = compileToFunctions;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\xampp\\\\htdocs\\\\senasoft2021\\\\senasoft2021"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\xampp\\\\htdocs\\\\senasoft2021\\\\senasoft2021","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\xampp\\\\htdocs\\\\senasoft2\\\\senasoft2021"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\xampp\\\\htdocs\\\\senasoft2\\\\senasoft2021","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ }),
 
