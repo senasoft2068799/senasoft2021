@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import Cartas from "../../../../public/json/cartas.json";
+import Cartas from "../../../public/json/cartas.json";
 export default {
   name: "Carta",
   data() {

@@ -2,7 +2,7 @@
   <div class="container" style="margin-top: 50px">
     <div class="row">
       <div class="col-md-6">
-        <Tablero />
+        <Tabla />
       </div>
       <div class="col-md-6">
         <Cartas />
@@ -15,11 +15,11 @@
 </template>
 <script>
 import Cartas from "./Cartas.vue";
-import Tablero from "./Tabla.vue";
+import Tabla from "./Tabla.vue";
 export default {
   components: {
     Cartas,
-    Tablero,
+    Tabla,
   },
 };
 </script>
