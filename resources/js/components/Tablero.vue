@@ -1,31 +1,25 @@
 <template>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Quien</th>
-              <th>Notas</th>
-            </tr>
-          </thead>
-          <tbody style="text-align: center;">
-            <tr>
-              <td>Pedro</td>
-              <td>X Jugador 2</td>
-            </tr>
-            <tr>
-              <td>Andrea</td>
-              <td>X Jugador 4</td>
-            </tr>
-          </tbody>
-        </table>
+  <div class="container" style="margin-top: 50px">
+    <div class="row">
+      <div class="col-md-6">
+        <Tablero />
+      </div>
+      <div class="col-md-6">
+        <Cartas />
+        <Cartas />
+        <Cartas />
+        <Cartas />
       </div>
     </div>
   </div>
 </template>
 <script>
+import Cartas from "./Cartas.vue";
+import Tablero from "./Tabla.vue";
 export default {
-	name: "Tablero",
+  components: {
+    Cartas,
+    Tablero,
+  },
 };
 </script>

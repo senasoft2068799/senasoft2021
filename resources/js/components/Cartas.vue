@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-6">
+  <div class="col-md-12">
     <div class="contenedor">
       <div
         class="carta"
