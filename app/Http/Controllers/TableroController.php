@@ -10,15 +10,6 @@ use Illuminate\Http\Request;
 class TableroController extends Controller
 {
 
-    public static function obtenerCartas()
-    {
-        // Las cartas se almacenan en un archivo .json debido a que no están sujetas a modificaciones
-        // Se obtiene el path del archivo .json que contiene las cartas, y se convierte a array
-        $path = public_path() . "/json/cartas.json";
-        $cartas = json_decode(file_get_contents($path), true)["cartas"];
-        return $cartas;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -26,18 +17,39 @@ class TableroController extends Controller
      */
     public static function repartirCartas($partida_id)
     {
+        // Se crea la partida, se consultan los jugadores y se obtiene el .json de cartas
         $partida = Partida::find($partida_id);
         $users = $partida->users;
-        $cartas = TableroController::obtenerCartas();
+        $cartas = CartasController::obtenerCartas();
 
+        // Se llena el arreglo con las cartas ocultas y se separan de las demás cartas
         $cartasOcultas = array();
-        array_push($cartasOcultas, $partida["programador_carta_id"]);
-        array_push($cartasOcultas, $partida["modulo_carta_id"]);
-        array_push($cartasOcultas, $partida["error_carta_id"]);
-        info($cartasOcultas);
-
-
+        array_push($cartasOcultas, $cartas[$partida["programador_carta_id"]]);
+        array_push($cartasOcultas, $cartas[$partida["modulo_carta_id"]]);
+        array_push($cartasOcultas, $cartas[$partida["error_carta_id"]]);
         $cartasRestantes = array_diff(array_column($cartas, 'id'), array_column($cartasOcultas, 'id'));
+
+        // $eeeey = array_diff($json["cartas"], $prueba);
+        foreach ($users as $user) {
+            $userPartida = UserPartida::where("user_nickname", $user["nickname"])->where("partida_id", $partida["id"])->first();
+            for ($i = 0; $i < 4; $i++) {
+                $cartaSeleccionada = array_rand($cartasRestantes);
+                unset($cartasRestantes[$cartaSeleccionada]);
+                $tablero = Tablero::create(
+                    [
+                        "pregunta_user_partidas_id" => $userPartida["id"],
+                        "carta_id" => $cartas[$cartaSeleccionada]["id"],
+                        "respuesta_user_partidas_id" => $userPartida["id"],
+                    ]
+                );
+            }
+
+            // info("4 CARTAS DE USUARIO:");
+            // info($cartasUsuario);
+
+            // $cartasRestantes = array_diff($cartasRestantes, $cartasUsuario);
+            // TableroController::repartirCartas($userPartida);
+        }
     }
 
     /**
