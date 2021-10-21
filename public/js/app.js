@@ -2806,6 +2806,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -44561,9 +44565,13 @@ var render = function() {
           _c("h3", [_vm._v("Espera a que inicie la partida")]),
           _vm._v(" "),
           _c("center", [
-            _c("h1", { staticClass: "code" }, [
-              _vm._v("Código: " + _vm._s(_vm.code))
-            ])
+            _c("h1", [_vm._v("Código:")]),
+            _vm._v(" "),
+            _c(
+              "h1",
+              { staticClass: "code", style: { background: "#" + _vm.code } },
+              [_vm._v("\n          " + _vm._s(_vm.code) + "\n        ")]
+            )
           ]),
           _vm._v(" "),
           _c("h4", [

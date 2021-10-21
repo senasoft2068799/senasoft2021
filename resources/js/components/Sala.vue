@@ -5,7 +5,10 @@
       <div class="col-md-8" style="text-align: center; color: white">
         <h3>Espera a que inicie la partida</h3>
         <center>
-          <h1 class="code">Código: {{ code }}</h1>
+          <h1>Código:</h1>
+          <h1 class="code" :style="{ background: '#' + code }">
+            {{ code }}
+          </h1>
         </center>
         <h4>
           ¡Comparte este código con tus amigos para que se puedan unir y empezar
@@ -71,6 +74,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import Storage from "../utilities/Storage.js";
 export default {
@@ -88,6 +92,6 @@ export default {
       //se obtiene el código para mostrarlo
       this.code = code;
     },
-  }
+  },
 };
 </script>
