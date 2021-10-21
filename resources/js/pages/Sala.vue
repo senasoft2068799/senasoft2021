@@ -1,11 +1,14 @@
 <template>
   <div id="sala" class="container">
-    <div class="row" style="margin-top:30px;">
+    <div class="row" style="margin-top: 30px">
       <div class="col-md-2"></div>
-      <div class="col-md-8" style="text-align: center; color: white;">
+      <div class="col-md-8" style="text-align: center; color: white">
         <h3>Espera a que inicie la partida</h3>
-        <h1>Código: 1212io</h1>
-        <h4>¡Comparte este código con tus amigos para que se puedan unir y empezar la partida!</h4>
+        <h1>Código: {{ code }}</h1>
+        <h4>
+          ¡Comparte este código con tus amigos para que se puedan unir y empezar
+          la partida!
+        </h4>
         <h3>Jugadores que han ingresado a la partida</h3>
       </div>
     </div>
@@ -67,5 +70,22 @@
   </div>
 </template>
 <script>
-export default {};
+import Storage from "../utilities/Storage.js";
+export default {
+  data(){
+    return{
+        code: null,
+    }
+  },
+  mounted() {
+    this.codeParty();
+  },
+  methods: {
+    codeParty() {
+      let code = localStorage.getItem('partida');
+      //se obtiene el código para mostrarlo
+      this.code = code;
+    },
+  },
+};
 </script>

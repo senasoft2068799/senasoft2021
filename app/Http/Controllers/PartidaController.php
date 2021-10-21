@@ -53,6 +53,9 @@ class PartidaController extends Controller
             );
             // Se registra el jugador1 (Quien creó la partida) en la tabla jugador_partida
             $partida->users()->attach($request->nickname);
+
+            // Aquí se envía el código a la vista
+            return response()->json(["msg" => $partida->id]);
         }
     }
 
