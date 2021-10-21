@@ -11,11 +11,8 @@
                   Aquí podrás crear una partida y jugar con tus amigos a
                   encontrar las cartas en secreto.
                 </p>
-                <button @click="crearPartida()">
+                <button class="btn" @click="crearPartida()">
                   Crear
-                  <!-- <router-link :to="{ name: 'categorias.index' }"
-                    >Crear</router-link
-                  > -->
                 </button>
               </div>
             </div>
@@ -33,7 +30,7 @@
                   click al siguiente botón
                 </p>
                 <input type="text" v-model="partida_id" />
-                <button @click="unirsePartida()">Unirme</button>
+                <button class="btn" @click="unirsePartida()">Unirme</button>
               </div>
             </div>
           </div>

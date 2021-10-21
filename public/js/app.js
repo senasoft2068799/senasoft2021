@@ -2359,9 +2359,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -43227,13 +43224,14 @@ var render = function() {
                 _c(
                   "button",
                   {
+                    staticClass: "btn",
                     on: {
                       click: function($event) {
                         return _vm.crearPartida()
                       }
                     }
                   },
-                  [_vm._v("\n                Crear\n                ")]
+                  [_vm._v("\n                Crear\n              ")]
                 )
               ])
             ])
@@ -43278,6 +43276,7 @@ var render = function() {
                 _c(
                   "button",
                   {
+                    staticClass: "btn",
                     on: {
                       click: function($event) {
                         return _vm.unirsePartida()

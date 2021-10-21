@@ -130,11 +130,11 @@
     {
       position: relative;
       display: inline-block;
-      padding: 8px 20px;
+      padding: .9rem 3rem;
       background: #03a9f4;
       margin-top: 15px;
       border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
     }
  
     .contenedor .carta:hover .box .content button
@@ -149,12 +149,16 @@
     font-weight: 400;
    }
 
+   .btn{
+     color: white;
+
+   }
+
    /*Comienza Diseño sala de espera*/
 
    .img{
      height: 100%;
      border-radius: 3rem;
-     
    }
 
    .margin{
@@ -253,10 +257,7 @@
       transform: rotate(360deg);
     }
   }
-
-   /*Comienza Diseño sala de espera*/
-
-/* Fin de diseño de cards */
+/*Fin Diseño sala de espera*/
 
 /* Diseño de formulario */
 .form
@@ -369,7 +370,7 @@
 }
 /* Fin de diseño de formulario */
  
- /* Diseño de fondo */
+ /* Comienza Diseño de Tablero */
 
  .table {
   width: 100%;
@@ -409,3 +410,4 @@ td {
   padding: 15px;
   border-radius: 10px
 }
+/* Fin Diseño de Tablero */
