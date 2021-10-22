@@ -27,7 +27,7 @@
 </ul>
 
 <h1>Base de datos usada en este proyecto</h1>
-<p>Este es un modelo entidad relación, el cual nos permite visualizar la base de datos para el desarrollo del juego de una forma más detallada.</p>>
+<p>Este es un modelo entidad relación, el cual nos permite visualizar la base de datos para el desarrollo del juego de una forma más detallada.</p>
 
 <h1>DFD (Diagrama de Flujo de Datos)</h1>
 <p>Los DFD o Diagrama de Flujo de Datos nos permite trazar y visualizar el flujo de la información que se maneja en el juego, en este existen 3 niveles:</p>
