@@ -2464,6 +2464,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2611,6 +2616,49 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {};
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Partida/CartasTablero.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Partida/CartasTablero.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../public/json/cartas.json */ "./public/json/cartas.json");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Cartas",
+  data: function data() {
+    return {
+      json: _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_0__.cartas
+    };
   }
 });
 
@@ -2880,6 +2928,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../public/json/cartas.json */ "./public/json/cartas.json");
+/* harmony import */ var _CartasTablero_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CartasTablero.vue */ "./resources/js/components/Partida/CartasTablero.vue");
+//
 //
 //
 //
@@ -2917,7 +2967,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Cartas: _CartasTablero_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: ["usuarioActual"],
   data: function data() {
     return {
@@ -43555,6 +43609,45 @@ component.options.__file = "resources/js/components/Partida/Acusacion.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Partida/CartasTablero.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Partida/CartasTablero.vue ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CartasTablero_vue_vue_type_template_id_0671efa2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CartasTablero.vue?vue&type=template&id=0671efa2& */ "./resources/js/components/Partida/CartasTablero.vue?vue&type=template&id=0671efa2&");
+/* harmony import */ var _CartasTablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CartasTablero.vue?vue&type=script&lang=js& */ "./resources/js/components/Partida/CartasTablero.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CartasTablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CartasTablero_vue_vue_type_template_id_0671efa2___WEBPACK_IMPORTED_MODULE_0__.render,
+  _CartasTablero_vue_vue_type_template_id_0671efa2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Partida/CartasTablero.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Partida/Dashboard.vue":
 /*!*******************************************************!*\
   !*** ./resources/js/components/Partida/Dashboard.vue ***!
@@ -44041,6 +44134,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Partida/CartasTablero.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/Partida/CartasTablero.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CartasTablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CartasTablero.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Partida/CartasTablero.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CartasTablero_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Partida/Dashboard.vue?vue&type=script&lang=js&":
 /*!********************************************************************************!*\
   !*** ./resources/js/components/Partida/Dashboard.vue?vue&type=script&lang=js& ***!
@@ -44299,6 +44408,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Acusacion_vue_vue_type_template_id_a86b6da2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Acusacion_vue_vue_type_template_id_a86b6da2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Acusacion.vue?vue&type=template&id=a86b6da2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Partida/Acusacion.vue?vue&type=template&id=a86b6da2&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Partida/CartasTablero.vue?vue&type=template&id=0671efa2&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/Partida/CartasTablero.vue?vue&type=template&id=0671efa2& ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CartasTablero_vue_vue_type_template_id_0671efa2___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CartasTablero_vue_vue_type_template_id_0671efa2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CartasTablero_vue_vue_type_template_id_0671efa2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CartasTablero.vue?vue&type=template&id=0671efa2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Partida/CartasTablero.vue?vue&type=template&id=0671efa2&");
 
 
 /***/ }),
@@ -45013,7 +45139,20 @@ var render = function() {
             ])
           ])
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticStyle: { "text-align": "center" } },
+        [
+          _c(
+            "router-link",
+            { staticClass: "btn-reglas", attrs: { to: { name: "Reglas" } } },
+            [_vm._v("Reglas "), _c("i", { staticClass: "fas fa-book" })]
+          )
+        ],
+        1
+      )
     ])
   ])
 }
@@ -45065,6 +45204,61 @@ var render = function() {
       ])
     ],
     1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Partida/CartasTablero.vue?vue&type=template&id=0671efa2&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Partida/CartasTablero.vue?vue&type=template&id=0671efa2& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "col-md-12" },
+    _vm._l(_vm.json, function(carta) {
+      return _c("div", { key: carta.id }, [
+        _c("div", { staticClass: "contenedor" }, [
+          _c(
+            "div",
+            {
+              staticClass: "carta",
+              staticStyle: {
+                "margin-top": "0px",
+                "padding-top": "0px",
+                height: "250px"
+              }
+            },
+            [
+              _c("div", { staticClass: "box" }, [
+                _c("div", { staticClass: "content" }, [
+                  _c("img", { attrs: { src: "" } }),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v(_vm._s(carta.nombre))])
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
+    }),
+    0
   )
 }
 var staticRenderFns = []
@@ -45477,53 +45671,60 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "col-md-12" }, [
-      _c("div", { staticClass: "table-responsive" }, [
-        _c("table", { staticClass: "table" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            { staticStyle: { "text-align": "center" } },
-            _vm._l(_vm.json, function(carta) {
-              return _c("tr", { key: carta.id }, [
-                _c("td", [_vm._v(_vm._s(carta.nombre))]),
-                _vm._v(" "),
-                _vm.prueba(carta.id)
-                  ? _c("td", [
-                      _vm.prueba(carta.id).respuesta_user_partida
-                        .user_nickname == _vm.usuarioActual
-                        ? _c("b", { staticClass: "text-green" }, [
-                            _vm._v(
-                              "\n                ✔ " +
-                                _vm._s(
-                                  _vm.prueba(carta.id).respuesta_user_partida
-                                    .user_nickname
-                                ) +
-                                "\n              "
-                            )
-                          ])
-                        : _c("b", { staticClass: "text-green" }, [
-                            _vm._v(
-                              "\n                ✔ " +
-                                _vm._s(
-                                  _vm.prueba(carta.id).respuesta_user_partida
-                                    .user_nickname
-                                ) +
-                                "\n              "
-                            )
-                          ])
-                    ])
-                  : _c("td", { staticClass: "text-red" }, [_vm._v("✘")])
-              ])
-            }),
-            0
-          )
+  return _c(
+    "div",
+    { staticClass: "row" },
+    [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "table-responsive" }, [
+          _c("table", { staticClass: "table" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              { staticStyle: { "text-align": "center" } },
+              _vm._l(_vm.json, function(carta) {
+                return _c("tr", { key: carta.id }, [
+                  _c("td", [_vm._v(_vm._s(carta.nombre))]),
+                  _vm._v(" "),
+                  _vm.prueba(carta.id)
+                    ? _c("td", [
+                        _vm.prueba(carta.id).respuesta_user_partida
+                          .user_nickname == _vm.usuarioActual
+                          ? _c("b", { staticClass: "text-green" }, [
+                              _vm._v(
+                                "\n                ✔ " +
+                                  _vm._s(
+                                    _vm.prueba(carta.id).respuesta_user_partida
+                                      .user_nickname
+                                  ) +
+                                  "\n              "
+                              )
+                            ])
+                          : _c("b", { staticClass: "text-green" }, [
+                              _vm._v(
+                                "\n                ✔ " +
+                                  _vm._s(
+                                    _vm.prueba(carta.id).respuesta_user_partida
+                                      .user_nickname
+                                  ) +
+                                  "\n              "
+                              )
+                            ])
+                      ])
+                    : _c("td", { staticClass: "text-red" }, [_vm._v("✘")])
+                ])
+              }),
+              0
+            )
+          ])
         ])
-      ])
-    ])
-  ])
+      ]),
+      _vm._v(" "),
+      _c("Cartas")
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {

@@ -37,6 +37,11 @@
           </div>
         </div>
       </div>
+      <div style="text-align: center">
+        <router-link :to="{ name: 'Reglas' }" class="btn-reglas"
+          >Reglas <i class="fas fa-book"></i
+        ></router-link>
+      </div>
     </div>
   </div>
 </template>

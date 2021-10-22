@@ -547,3 +547,24 @@ td {
   margin-top: 40px; 
   margin-left: 20px;
 }
+
+/*Boton reglas*/
+
+.btn-reglas{
+  text-decoration: none; 
+  font-size: 1.2rem;
+  font-family: var(--main-font);
+  background-color: white; 
+  padding: 1rem 2rem;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.btn-reglas:hover{
+  background: #ff568f;
+  color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: .9s;
+}
+
+/*Fin Boton */
