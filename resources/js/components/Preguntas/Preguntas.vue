@@ -6,12 +6,8 @@
       :usuarioActual="currentUser.nickname"
     />
     <center>
-      <div class="row-cols-1 row-cols-md-3 g-4 mt-3">
-        <div class="contenedor-preguntas">
-          <!-- <input type="radio" name="dot" id="uno" />
-          <input type="radio" name="dot" id="dos" /> -->
-          <PanelCartas @seleccionar="seleccionarCarta($event)" />
-        </div>
+      <div class="contenedor-preguntas">
+        <PanelCartas @seleccionar="seleccionarCarta($event)" />
       </div>
     </center>
   </div>

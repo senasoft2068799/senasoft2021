@@ -306,23 +306,12 @@
     margin-left: -30px;
 }
 
-#dos:checked ~ .main-card
-{
-    margin-left: -100%;
-}
-
 .main-card .cards
 {
-    width: calc(100% / 1 - 10px);
     display: flex;
     justify-content: space-between;
     margin: 0 20px;
     text-align: center;    
-}
-
-.title
-{
-  font-family: var(--main-font);
 }
 
 .main-card .cards .card
@@ -332,31 +321,6 @@
     padding: 30px;
     margin: 20px;
     border-radius: 24px;
-}
-
-.botonDash
-{
-    display: flex;
-    margin: 20px;
-    justify-content: center;
-}
-
-.botonDash label
-{
-    height: 65px;
-    width: 65px;
-    background: white;
-    border-radius: 20px;
-    transition: all 0.5s ease;
-    margin-top: 160px;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-}
-
-input[type="radio"]
-{
-    display: none;
 }
 
 .botonPreguntas
@@ -383,6 +347,20 @@ input[type="radio"]
 .botonPreguntas:hover
 {
   background: #00f165;
+}
+
+.flecha
+{
+  position: fixed;
+  font-size: 50px;
+  margin-top: 40px;
+  transition: all .5s ease;
+}
+
+.flecha:hover
+{
+  background-color: black;
+  color: white;
 }
 /* Fin de diseño de preguntas */
 /* Diseño de formulario */
@@ -555,4 +533,17 @@ td {
 
 .text-red{
   color: red;
+}
+
+.h2Preguntas
+{
+  font-size: 1rem; 
+  margin-top: 40px;
+}
+
+.inputPreguntas
+{
+  color: green; 
+  margin-top: 40px; 
+  margin-left: 20px;
 }
