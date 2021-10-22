@@ -540,3 +540,8 @@ td {
   background-color: black;
 }
 /* Fin diseño código en sala */
+
+/* Diseño de textos */
+.text-green {
+  color: green;
+}

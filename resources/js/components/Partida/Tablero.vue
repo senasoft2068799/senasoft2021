@@ -12,7 +12,21 @@
           <tbody style="text-align: center">
             <tr v-for="carta in json" :key="carta.id">
               <td>{{ carta.nombre }}</td>
-              <td></td>
+              <td v-if="prueba(carta.id)">
+                <b
+                  v-if="
+                    prueba(carta.id).respuesta_user_partida.user_nickname ==
+                    currentUser.nickname
+                  "
+                  class="text-green"
+                >
+                  {{ prueba(carta.id).respuesta_user_partida.user_nickname }}
+                </b>
+                <b v-else>
+                  {{ prueba(carta.id).respuesta_user_partida.user_nickname }}
+                </b>
+              </td>
+              <td v-else></td>
             </tr>
           </tbody>
         </table>
@@ -31,15 +45,17 @@ export default {
       },
       token: null,
       json: cartas.cartas,
+      tablero: [],
     };
   },
   mounted() {
     this.checkCurrentUser();
-    this.obtenerTablero();
   },
   methods: {
+    prueba(id) {
+      return this.tablero.find((item) => item.carta_id === id);
+    },
     obtenerTablero() {
-      this.checkCurrentUser();
       let datos = {
         partida_id: this.$route.params.id,
         user_nickname: this.currentUser.nickname,
@@ -47,7 +63,7 @@ export default {
       axios
         .post("/api/obtener-tablero", datos)
         .then((res) => {
-          console.log(res);
+          this.tablero = res.data.data;
         })
         .catch((err) => {
           this.$swal({
@@ -66,6 +82,7 @@ export default {
           .get("/api/user")
           .then((res) => {
             this.currentUser = res.data;
+            this.obtenerTablero();
           })
           .catch((err) => {
             console.log("Error autenticación: " + err);

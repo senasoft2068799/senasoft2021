@@ -2559,6 +2559,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2568,24 +2582,28 @@ __webpack_require__.r(__webpack_exports__);
         nickname: null
       },
       token: null,
-      json: _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_0__.cartas
+      json: _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_0__.cartas,
+      tablero: []
     };
   },
   mounted: function mounted() {
     this.checkCurrentUser();
-    this.obtenerTablero();
   },
   methods: {
+    prueba: function prueba(id) {
+      return this.tablero.find(function (item) {
+        return item.carta_id === id;
+      });
+    },
     obtenerTablero: function obtenerTablero() {
       var _this = this;
 
-      this.checkCurrentUser();
       var datos = {
         partida_id: this.$route.params.id,
         user_nickname: this.currentUser.nickname
       };
       axios.post("/api/obtener-tablero", datos).then(function (res) {
-        console.log(res);
+        _this.tablero = res.data.data;
       })["catch"](function (err) {
         _this.$swal({
           icon: "error",
@@ -2601,6 +2619,8 @@ __webpack_require__.r(__webpack_exports__);
         window.axios.defaults.headers.common["Authorization"] = "Bearer ".concat(this.token);
         this.axios.get("/api/user").then(function (res) {
           _this2.currentUser = res.data;
+
+          _this2.obtenerTablero();
         })["catch"](function (err) {
           console.log("Error autenticación: " + err);
           _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__["default"].remove("token");
@@ -44364,7 +44384,32 @@ var render = function() {
               return _c("tr", { key: carta.id }, [
                 _c("td", [_vm._v(_vm._s(carta.nombre))]),
                 _vm._v(" "),
-                _c("td")
+                _vm.prueba(carta.id)
+                  ? _c("td", [
+                      _vm.prueba(carta.id).respuesta_user_partida
+                        .user_nickname == _vm.currentUser.nickname
+                        ? _c("b", { staticClass: "text-green" }, [
+                            _vm._v(
+                              "\n                " +
+                                _vm._s(
+                                  _vm.prueba(carta.id).respuesta_user_partida
+                                    .user_nickname
+                                ) +
+                                "\n              "
+                            )
+                          ])
+                        : _c("b", [
+                            _vm._v(
+                              "\n                " +
+                                _vm._s(
+                                  _vm.prueba(carta.id).respuesta_user_partida
+                                    .user_nickname
+                                ) +
+                                "\n              "
+                            )
+                          ])
+                    ])
+                  : _c("td")
               ])
             }),
             0
