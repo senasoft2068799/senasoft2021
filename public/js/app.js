@@ -2566,7 +2566,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Preguntas_PanelCartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Preguntas/PanelCartas.vue */ "./resources/js/components/Preguntas/PanelCartas.vue");
-//
+/* harmony import */ var _Preguntas_FormPreguntasAcusacion_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Preguntas/FormPreguntasAcusacion.vue */ "./resources/js/components/Preguntas/FormPreguntasAcusacion.vue");
 //
 //
 //
@@ -2581,12 +2581,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    PanelCartas: _Preguntas_PanelCartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    PanelCartas: _Preguntas_PanelCartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    FormPreguntaAcusacion: _Preguntas_FormPreguntasAcusacion_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
-    return {};
+    return {
+      cartasSeleccionadas: {
+        programador: null,
+        modulo: null,
+        error: null
+      }
+    };
+  },
+  methods: {
+    seleccionarCarta: function seleccionarCarta(event) {
+      if (event.tipo == 1) {
+        this.cartasSeleccionadas.programador = event;
+      } else if (event.tipo == 2) {
+        this.cartasSeleccionadas.modulo = event;
+      } else if (event.tipo == 3) {
+        this.cartasSeleccionadas.error = event;
+      }
+    }
   }
 });
 
@@ -2993,6 +3012,74 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "FormPregunta",
+  props: ["cartasSeleccionadas"],
+  components: {
+    Cartas: _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Cartas.vue */ "./resources/js/components/Cartas.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "FormPreguntaAcusacion",
   props: ["cartasSeleccionadas"],
   components: {
     Cartas: _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -3554,8 +3641,7 @@ var routes = [{
   }
 }, {
   name: "preguntas",
-  // path: "/pregunta/:id",
-  path: "/pregunta",
+  path: "/pregunta/:id",
   component: _components_Preguntas_Preguntas_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
   meta: {
     requiresAuth: true
@@ -43622,6 +43708,45 @@ component.options.__file = "resources/js/components/Preguntas/FormPregunta.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Preguntas/FormPreguntasAcusacion.vue":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/Preguntas/FormPreguntasAcusacion.vue ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FormPreguntasAcusacion_vue_vue_type_template_id_482bcedc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormPreguntasAcusacion.vue?vue&type=template&id=482bcedc& */ "./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=template&id=482bcedc&");
+/* harmony import */ var _FormPreguntasAcusacion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormPreguntasAcusacion.vue?vue&type=script&lang=js& */ "./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormPreguntasAcusacion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormPreguntasAcusacion_vue_vue_type_template_id_482bcedc___WEBPACK_IMPORTED_MODULE_0__.render,
+  _FormPreguntasAcusacion_vue_vue_type_template_id_482bcedc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Preguntas/FormPreguntasAcusacion.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Preguntas/PanelCartas.vue":
 /*!***********************************************************!*\
   !*** ./resources/js/components/Preguntas/PanelCartas.vue ***!
@@ -43993,6 +44118,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPreguntasAcusacion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FormPreguntasAcusacion.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPreguntasAcusacion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Preguntas/PanelCartas.vue?vue&type=script&lang=js&":
 /*!************************************************************************************!*\
   !*** ./resources/js/components/Preguntas/PanelCartas.vue?vue&type=script&lang=js& ***!
@@ -44256,6 +44397,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_template_id_d5ebf0c2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPregunta_vue_vue_type_template_id_d5ebf0c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FormPregunta.vue?vue&type=template&id=d5ebf0c2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Preguntas/FormPregunta.vue?vue&type=template&id=d5ebf0c2&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=template&id=482bcedc&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=template&id=482bcedc& ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPreguntasAcusacion_vue_vue_type_template_id_482bcedc___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPreguntasAcusacion_vue_vue_type_template_id_482bcedc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPreguntasAcusacion_vue_vue_type_template_id_482bcedc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FormPreguntasAcusacion.vue?vue&type=template&id=482bcedc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=template&id=482bcedc&");
 
 
 /***/ }),
@@ -44903,21 +45061,29 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("FormPreguntaAcusacion", {
+        attrs: { cartasSeleccionadas: _vm.cartasSeleccionadas }
+      }),
+      _vm._v(" "),
       _c("center", [
         _c("div", { staticClass: "row-cols-1 row-cols-md-3 g-4 mt-3" }, [
           _c(
             "div",
             { staticClass: "contenedor-preguntas" },
             [
-              _c("input", { attrs: { type: "radio", name: "dot", id: "uno" } }),
+              _c("h1", { staticStyle: { color: "white" } }, [
+                _vm._v(
+                  "¡Selecciona las cartas que crees que son las que están ocultas!"
+                )
+              ]),
               _vm._v(" "),
-              _c("input", { attrs: { type: "radio", name: "dot", id: "dos" } }),
-              _vm._v(" "),
-              _c("input", {
-                attrs: { type: "radio", name: "dot", id: "tres" }
-              }),
-              _vm._v(" "),
-              _c("PanelCartas")
+              _c("PanelCartas", {
+                on: {
+                  seleccionar: function($event) {
+                    return _vm.seleccionarCarta($event)
+                  }
+                }
+              })
             ],
             1
           )
@@ -45554,6 +45720,170 @@ var render = function() {
                 "button",
                 { staticClass: "botonPreguntas", attrs: { type: "submit" } },
                 [_vm._v("Realizar pregunta")]
+              )
+            ]
+          )
+        ]
+      )
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=template&id=482bcedc&":
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Preguntas/FormPreguntasAcusacion.vue?vue&type=template&id=482bcedc& ***!
+  \********************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "form",
+    {
+      staticClass: "form",
+      staticStyle: {
+        "padding-top": "0px",
+        "margin-top": "0px",
+        "max-width": "880px",
+        width: "80%",
+        height: "50px"
+      }
+    },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "form-container",
+          staticStyle: { "margin-top": "30px" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "form-group", staticStyle: { display: "flex" } },
+            [
+              _c("h2", { staticClass: "h2Preguntas" }, [
+                _vm._v("El programador")
+              ]),
+              _vm._v(" "),
+              _vm.cartasSeleccionadas.programador
+                ? _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.cartasSeleccionadas.programador.nombre,
+                        expression: "cartasSeleccionadas.programador.nombre"
+                      }
+                    ],
+                    staticClass: "form-input inputPreguntas",
+                    attrs: { type: "text", disabled: "" },
+                    domProps: {
+                      value: _vm.cartasSeleccionadas.programador.nombre
+                    },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.cartasSeleccionadas.programador,
+                          "nombre",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                : _c("input", {
+                    staticClass: "form-input",
+                    attrs: { type: "text", disabled: "" }
+                  }),
+              _vm._v(" "),
+              _c("h2", { staticClass: "h2Preguntas" }, [
+                _vm._v("generó en el módulo")
+              ]),
+              _vm._v(" "),
+              _vm.cartasSeleccionadas.modulo
+                ? _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.cartasSeleccionadas.modulo.nombre,
+                        expression: "cartasSeleccionadas.modulo.nombre"
+                      }
+                    ],
+                    staticClass: "form-input inputPreguntas",
+                    attrs: { type: "text", disabled: "" },
+                    domProps: { value: _vm.cartasSeleccionadas.modulo.nombre },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.cartasSeleccionadas.modulo,
+                          "nombre",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                : _c("input", {
+                    staticClass: "form-input",
+                    attrs: { type: "text", disabled: "" }
+                  }),
+              _vm._v(" "),
+              _c("h2", { staticClass: "h2Preguntas" }, [_vm._v("un error")]),
+              _vm._v(" "),
+              _vm.cartasSeleccionadas.error
+                ? _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.cartasSeleccionadas.error.nombre,
+                        expression: "cartasSeleccionadas.error.nombre"
+                      }
+                    ],
+                    staticClass: "form-input inputPreguntas",
+                    attrs: { type: "text", disabled: "" },
+                    domProps: { value: _vm.cartasSeleccionadas.error.nombre },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.cartasSeleccionadas.error,
+                          "nombre",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                : _c("input", {
+                    staticClass: "form-input",
+                    attrs: { type: "text", disabled: "" }
+                  }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "botonPreguntas", attrs: { type: "submit" } },
+                [_vm._v("Realizar acusacion")]
               )
             ]
           )

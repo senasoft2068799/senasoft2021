@@ -22,7 +22,6 @@ class CreateTurnosTable extends Migration
                 ->onDelete('cascade');
             $table->tinyInteger("pregunta_user_id")->default(1);
             $table->tinyInteger("respuesta_user_id")->default(1);
-            $table->timestamps();
         });
     }
 

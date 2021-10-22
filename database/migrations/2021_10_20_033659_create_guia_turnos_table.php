@@ -17,7 +17,6 @@ class CreateGuiaTurnosTable extends Migration
             $table->id();
             $table->string("pregunta_user_nickname");
             $table->string("respuesta_user_nickname");
-            $table->timestamps();
         });
     }
 
