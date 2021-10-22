@@ -12,6 +12,6 @@ class Pregunta extends Model
 
     public function user_partida()
     {
-        return $this->belongsTo(UserPartida::class);
+        return $this->belongsTo(UserPartida::class, "user_partidas_id");
     }
 }

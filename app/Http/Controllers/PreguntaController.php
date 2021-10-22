@@ -12,11 +12,6 @@ class PreguntaController extends Controller
     public function hacerPregunta(Request $request)
     {
         $userPartida = UserPartida::where("user_nickname", $request->user_nickname)->where("partida_id", $request->partida_id)->first();
-        info($userPartida["id"]);
-        info($request->carta_programador["id"]);
-        info($request->carta_modulo["id"]);
-        info($request->carta_error["id"]);
-        info($request->tipo_pregunta);
         $pregunta = Pregunta::create(
             [
                 "user_partidas_id" => $userPartida["id"],
@@ -27,17 +22,32 @@ class PreguntaController extends Controller
             ]
         );
         if ($pregunta->tipo_pregunta == 1) {
-            PreguntaController::pregunta($pregunta);
+            return PreguntaController::pregunta($pregunta);
         } else {
-            PreguntaController::acusacion($pregunta);
+            return PreguntaController::acusacion($pregunta);
         }
     }
     public static function pregunta($pregunta)
     {
+        // GuiaTurnoController::siguienteTurno($partida);
     }
 
     public static function acusacion($pregunta)
     {
-        $pregunta->user_partida;
+        $up = $pregunta->user_partida;
+        $partida = $up->partida;
+        info(($partida["programador_carta_id"] == $pregunta["programador_carta_id"]));
+        if (($partida["programador_carta_id"] == $pregunta["programador_carta_id"])
+            && ($partida["modulo_carta_id"] == $pregunta["modulo_carta_id"])
+            && ($partida["error_carta_id"] == $pregunta["error_carta_id"])
+        ) {
+            $partida["estado"] = 0;
+            $partida->save();
+            GuiaTurnoController::siguienteTurno($partida);
+            return response()->json(["correct" => true, "msg" => "¡Felicidades! Has ganado la partida."]);
+        } else {
+            GuiaTurnoController::siguienteTurno($partida);
+            return response()->json(["correct" => false, "msg" => "¡Error! Esas no son las cartas ocultas..."]);
+        }
     }
 }

@@ -35,8 +35,7 @@ export const routes = [
     },
     {
         name: "preguntas",
-        // path: "/pregunta/:id",
-        path: "/pregunta",
+        path: "/pregunta/:id",
         component: Preguntas,
         meta: { requiresAuth: true }
     },

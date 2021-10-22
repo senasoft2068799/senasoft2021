@@ -2620,6 +2620,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2682,9 +2683,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     pregunta: function pregunta() {
       this.$router.push("/decision/".concat(this.$route.params.id));
+      clearInterval(this.interval);
     },
     respuesta: function respuesta() {
       this.$router.push("/respuesta/".concat(this.$route.params.id));
+      clearInterval(this.interval);
     }
   }
 });
@@ -3040,8 +3043,18 @@ __webpack_require__.r(__webpack_exports__);
           });
           this.$swal.showLoading();
           axios.post("/api/enviar-pregunta", datos).then(function (res) {
-            // Storage.record("partida", res.data, false);
             _this.$swal.close();
+
+            if (datos.tipo_pregunta == 0) {
+              if (res.data.correct) {//GANAR
+              } else {//PERDER
+              }
+
+              _this.$swal({
+                icon: "info",
+                title: res.data.msg
+              });
+            }
 
             _this.$router.push("/partida/".concat(_this.$route.params.id));
           })["catch"](function (err) {
@@ -3657,8 +3670,7 @@ var routes = [{
   }
 }, {
   name: "preguntas",
-  // path: "/pregunta/:id",
-  path: "/pregunta",
+  path: "/pregunta/:id",
   component: _components_Preguntas_Preguntas_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
   meta: {
     requiresAuth: true
@@ -45070,6 +45082,8 @@ var render = function() {
           ],
           1
         ),
+        _vm._v(" "),
+        _c("div", { staticClass: "loader" }),
         _vm._v(" "),
         _c("div", { staticClass: "col-md-6" })
       ])
