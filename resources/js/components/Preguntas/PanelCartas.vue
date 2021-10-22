@@ -1,19 +1,23 @@
 <template>
   <div>
     <div class="main-card">
-      <div class="cards" style="margin-left: -100px">
+      <button v-if="tipoCarta != 1" @click="tipoCarta--">Izquierda -</button>
+      <button v-if="tipoCarta != 3" @click="tipoCarta++">Derecha +</button>
+      <div class="cards">
         <div class="row">
           <div class="col-md-12">
             <h2 style="color: white" class="title">Programadores</h2>
           </div>
-          <Cartas
+          <div
             v-for="datos in programadores"
             :key="datos.id"
-            :cartaJugar="datos"
-          />
+            @click="seleccionarCarta(datos)"
+          >
+            <Cartas :cartaJugar="datos" />
+          </div>
         </div>
       </div>
-      <div class="cards">
+      <!-- <div class="cards">
         <div class="row">
           <div class="col-md-12">
             <h2 style="color: white" class="title">Módulos</h2>
@@ -36,15 +40,7 @@
             :cartaJugar="datos"
           />
         </div>
-      </div>
-      <div class="botonDash">
-        <label for="dos" class="dos"
-          ><i
-            class="fas fa-arrow-right"
-            style="font-size: 65px; margin-left: 2px"
-          ></i
-        ></label>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -59,12 +55,19 @@ export default {
   data() {
     return {
       cartasJson: infoCartas.cartas,
+      tipoCarta: 1,
     };
+  },
+  methods: {
+    seleccionarCarta(carta) {
+      this.$emit("seleccionar", carta);
+    },
   },
   computed: {
     programadores: function () {
+      let tipo = this.tipoCarta;
       return this.cartasJson.filter(function (u) {
-        if (u.tipo == 1) return u.tipo;
+        if (u.tipo == tipo) return u.tipo;
       });
     },
     modulos: function () {

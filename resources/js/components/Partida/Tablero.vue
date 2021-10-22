@@ -5,14 +5,28 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Quien</th>
+              <th>Cartas</th>
               <th>Notas</th>
             </tr>
           </thead>
           <tbody style="text-align: center">
             <tr v-for="carta in json" :key="carta.id">
               <td>{{ carta.nombre }}</td>
-              <td></td>
+              <td v-if="prueba(carta.id)">
+                <b
+                  v-if="
+                    prueba(carta.id).respuesta_user_partida.user_nickname ==
+                    usuarioActual
+                  "
+                  class="text-green"
+                >
+                  ✔ {{ prueba(carta.id).respuesta_user_partida.user_nickname }}
+                </b>
+                <b v-else class="text-green">
+                  ✔ {{ prueba(carta.id).respuesta_user_partida.user_nickname }}
+                </b>
+              </td>
+              <td v-else class="text-red">✘</td>
             </tr>
           </tbody>
         </table>
@@ -22,32 +36,30 @@
 </template>
 <script>
 import cartas from "../../../../public/json/cartas.json";
-import Storage from "../../utilities/Storage.js";
 export default {
+  props: ["usuarioActual"],
   data() {
     return {
-      currentUser: {
-        nickname: null,
-      },
-      token: null,
       json: cartas.cartas,
+      tablero: [],
     };
   },
   mounted() {
-    this.checkCurrentUser();
     this.obtenerTablero();
   },
   methods: {
+    prueba(id) {
+      return this.tablero.find((item) => item.carta_id === id);
+    },
     obtenerTablero() {
-      this.checkCurrentUser();
       let datos = {
         partida_id: this.$route.params.id,
-        user_nickname: this.currentUser.nickname,
+        user_nickname: this.usuarioActual,
       };
       axios
         .post("/api/obtener-tablero", datos)
         .then((res) => {
-          console.log(res);
+          this.tablero = res.data.data;
         })
         .catch((err) => {
           this.$swal({
@@ -55,45 +67,6 @@ export default {
             title: "Ha ocurrido un error:\n" + err,
           });
         });
-    },
-    obtenerGanador(){
-      this.checkCurrentUser();
-      let datos = {
-        partida_id: this.$route.params.id,
-        user_nickname: this.currentUser.nickname,
-      };
-      axios.
-      post("api/obtener-ganador", datos)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        this.$swal({
-          icon: "error",
-          title: "Ha ocurrido un error:\n" + err,
-        });
-      });
-    },
-    checkCurrentUser() {
-      if (Storage.has("token")) {
-        this.token = Storage.get("token", false);
-        window.axios.defaults.headers.common[
-          "Authorization"
-        ] = `Bearer ${this.token}`;
-        this.axios
-          .get("/api/user")
-          .then((res) => {
-            this.currentUser = res.data;
-          })
-          .catch((err) => {
-            console.log("Error autenticación: " + err);
-            Storage.remove("token");
-            this.$router.push("/");
-          });
-      } else {
-        this.currentUser = {};
-        this.token = null;
-      }
     },
   },
 };
