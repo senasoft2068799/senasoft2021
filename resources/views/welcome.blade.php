@@ -20,7 +20,7 @@
 <body style=" height: auto;">
     <div id="app">
     </div>
-    <audio autoplay controls loop>
+    <audio controls loop>
         <source src="{{ asset('music/Disfigure-Blank.mp3') }}">
     </audio>
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
