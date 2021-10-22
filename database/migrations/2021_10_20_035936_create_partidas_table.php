@@ -21,6 +21,9 @@ class CreatePartidasTable extends Migration
             $table->integer("programador_carta_id");
             $table->integer("modulo_carta_id");
             $table->integer("error_carta_id");
+            $table->unsignedBigInteger('guia_turno_id')->nullable();
+            $table->foreign("guia_turno_id")
+                ->references("id")->on("guia_turnos");
             $table->tinyInteger("estado")->default(2);
             $table->timestamps();
         });
