@@ -78,6 +78,8 @@ export default {
     }
   },
   methods: {
+    //Una vez el usuario ya haya seleccionado las cartas a preguntar y haya dado clic en el botón de hacer pregunta
+    //Se hará la siguiente función
     hacerPregunta() {
       if (this.cartasSeleccionadas) {
         if (

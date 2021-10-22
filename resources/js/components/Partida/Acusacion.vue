@@ -29,6 +29,7 @@ export default {
     };
   },
   methods: {
+    //Este método funciona para que el usuario pueda seleccionar las cartas a acusar
     seleccionarCarta(event) {
       if (event.tipo == 1) {
         this.cartasSeleccionadas.programador = event;

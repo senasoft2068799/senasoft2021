@@ -59,11 +59,13 @@ export default {
   },
   methods: {
     crearPartida() {
+      //Aquí se muestra el modal de creando partida
       this.$swal({
         title: "Creando partida...",
       });
       this.$swal.showLoading();
       this.checkCurrentUser();
+      //Una vez creada la partida, hará lo siguiente generando un código hexadecimal aleatoriamente
       axios
         .post("/api/crear-partida", this.currentUser)
         .then((res) => {
@@ -72,6 +74,7 @@ export default {
           Storage.record("partida", res.data.msg, false); //Aquí se envía el código a localStorage
           this.$router.push(`/sala/${res.data.msg}`);
         })
+        //Si se produce algún error, se muestra al usuario por medio de esta función
         .catch((err) => {
           this.$swal({
             icon: "error",
@@ -80,6 +83,7 @@ export default {
         });
     },
     unirsePartida() {
+      //Como en la anterior función se muestra el modal de cargando
       this.$swal({
         title: `Conéctandose a la partida (${this.partida_id})...`,
       });
@@ -89,6 +93,8 @@ export default {
         partida_id: this.partida_id,
         user_nickname: this.currentUser.nickname,
       };
+      //Una vez se tenga los requisitos necesarios que son el usuario, token y el código de la partida a ingresar
+      //hará lo siguiente
       axios
         .post("/api/unirse-partida", datos)
         .then((res) => {
@@ -108,6 +114,7 @@ export default {
             }
           }
         })
+        //Si hay un error, se motrará al usuario
         .catch((err) => {
           if (err.response.status === 422) {
             this.errors.record(err.response.data.errors);
@@ -129,6 +136,8 @@ export default {
         });
     },
     checkCurrentUser() {
+      //Este método principalmente será para verificar que el usuario se encuentre registrado en el sistema
+      //Este se valida por medio de un token que genera automáticamente laravel en el almacenamiento de aplicación y vue lo trae con Storage
       if (Storage.has("token")) {
         this.token = Storage.get("token", false);
         window.axios.defaults.headers.common[

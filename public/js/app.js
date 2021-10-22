@@ -2303,9 +2303,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //Este método funciona para cuando el usuario seleccione una carta, se mostrará en la vista
     seleccionarCarta: function seleccionarCarta() {
       this.prueba = this.cartaJugar.nombre;
-      this.$emit("seleccionar", this.cartaJugar); // console.log(this.prueba);
+      this.$emit("seleccionar", this.cartaJugar);
     }
   }
 });
@@ -2484,11 +2485,13 @@ __webpack_require__.r(__webpack_exports__);
     crearPartida: function crearPartida() {
       var _this = this;
 
+      //Aquí se muestra el modal de creando partida
       this.$swal({
         title: "Creando partida..."
       });
       this.$swal.showLoading();
-      this.checkCurrentUser();
+      this.checkCurrentUser(); //Una vez creada la partida, hará lo siguiente generando un código hexadecimal aleatoriamente
+
       axios.post("/api/crear-partida", this.currentUser).then(function (res) {
         // Storage.record("partida", res.data, false);
         _this.$swal.close();
@@ -2496,7 +2499,8 @@ __webpack_require__.r(__webpack_exports__);
         _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].record("partida", res.data.msg, false); //Aquí se envía el código a localStorage
 
         _this.$router.push("/sala/".concat(res.data.msg));
-      })["catch"](function (err) {
+      }) //Si se produce algún error, se muestra al usuario por medio de esta función
+      ["catch"](function (err) {
         _this.$swal({
           icon: "error",
           title: "Ha ocurrido un error:\n" + err
@@ -2506,6 +2510,7 @@ __webpack_require__.r(__webpack_exports__);
     unirsePartida: function unirsePartida() {
       var _this2 = this;
 
+      //Como en la anterior función se muestra el modal de cargando
       this.$swal({
         title: "Con\xE9ctandose a la partida (".concat(this.partida_id, ")...")
       });
@@ -2514,7 +2519,9 @@ __webpack_require__.r(__webpack_exports__);
       var datos = {
         partida_id: this.partida_id,
         user_nickname: this.currentUser.nickname
-      };
+      }; //Una vez se tenga los requisitos necesarios que son el usuario, token y el código de la partida a ingresar
+      //hará lo siguiente
+
       axios.post("/api/unirse-partida", datos).then(function (res) {
         if (res.data.allowed) {
           _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].record("partida", res.data.msg, false);
@@ -2533,7 +2540,8 @@ __webpack_require__.r(__webpack_exports__);
             });
           }
         }
-      })["catch"](function (err) {
+      }) //Si hay un error, se motrará al usuario
+      ["catch"](function (err) {
         if (err.response.status === 422) {
           _this2.errors.record(err.response.data.errors);
 
@@ -2557,6 +2565,8 @@ __webpack_require__.r(__webpack_exports__);
     checkCurrentUser: function checkCurrentUser() {
       var _this3 = this;
 
+      //Este método principalmente será para verificar que el usuario se encuentre registrado en el sistema
+      //Este se valida por medio de un token que genera automáticamente laravel en el almacenamiento de aplicación y vue lo trae con Storage
       if (_utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].has("token")) {
         this.token = _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("token", false);
         window.axios.defaults.headers.common["Authorization"] = "Bearer ".concat(this.token);
@@ -2621,6 +2631,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //Este método funciona para que el usuario pueda seleccionar las cartas a acusar
     seleccionarCarta: function seleccionarCarta(event) {
       if (event.tipo == 1) {
         this.cartasSeleccionadas.programador = event;
@@ -3066,6 +3077,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    //Una vez el usuario ya haya seleccionado las cartas a preguntar y haya dado clic en el botón de hacer pregunta
+    //Se hará la siguiente función
     hacerPregunta: function hacerPregunta() {
       var _this = this;
 
@@ -3240,6 +3253,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
+    //Estas funciones son para dividr los tipos de cartas para así poder mostrarlas
     programadores: function programadores() {
       var tipo = this.tipoCarta;
       return this.cartasJson.filter(function (u) {
@@ -3297,6 +3311,7 @@ __webpack_require__.r(__webpack_exports__);
     PanelCartas: _PanelCartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     FormPregunta: _FormPregunta_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
+  //Este método es para verificar el usuario que está realizando la pregunta
   mounted: function mounted() {
     this.checkCurrentUser();
   },
@@ -3314,6 +3329,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //Este método es para que el usuario pueda seleccionar una carta del tablero
+    //Este se divide en los tipos de carta que hay que son: programador, módulo y error
     seleccionarCarta: function seleccionarCarta(event) {
       if (event.tipo == 1) {
         this.cartasSeleccionadas.programador = event;
@@ -3323,6 +3340,8 @@ __webpack_require__.r(__webpack_exports__);
         this.cartasSeleccionadas.error = event;
       }
     },
+    //Este método principalmente será para verificar que el usuario se encuentre registrado en el sistema
+    //Este se valida por medio de un token que genera automáticamente laravel en el almacenamiento de aplicación y vue lo trae con Storage
     checkCurrentUser: function checkCurrentUser() {
       var _this = this;
 

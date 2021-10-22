@@ -21,6 +21,7 @@ export default {
     PanelCartas,
     FormPregunta,
   },
+  //Este método es para verificar el usuario que está realizando la pregunta
   mounted() {
     this.checkCurrentUser();
   },
@@ -38,6 +39,8 @@ export default {
     };
   },
   methods: {
+    //Este método es para que el usuario pueda seleccionar una carta del tablero
+    //Este se divide en los tipos de carta que hay que son: programador, módulo y error
     seleccionarCarta(event) {
       if (event.tipo == 1) {
         this.cartasSeleccionadas.programador = event;
@@ -47,6 +50,8 @@ export default {
         this.cartasSeleccionadas.error = event;
       }
     },
+    //Este método principalmente será para verificar que el usuario se encuentre registrado en el sistema
+    //Este se valida por medio de un token que genera automáticamente laravel en el almacenamiento de aplicación y vue lo trae con Storage
     checkCurrentUser() {
       if (Storage.has("token")) {
         this.token = Storage.get("token", false);

@@ -27,10 +27,10 @@ export default {
     };
   },
   methods: {
+    //Este método funciona para cuando el usuario seleccione una carta, se mostrará en la vista
     seleccionarCarta() {
       this.prueba = this.cartaJugar.nombre;
       this.$emit("seleccionar", this.cartaJugar);
-      // console.log(this.prueba);
     },
   },
 };
