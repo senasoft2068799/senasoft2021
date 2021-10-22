@@ -56,6 +56,24 @@ export default {
           });
         });
     },
+    obtenerGanador(){
+      this.checkCurrentUser();
+      let datos = {
+        partida_id: this.$route.params.id,
+        user_nickname: this.currentUser.nickname,
+      };
+      axios.
+      post("api/obtener-ganador", datos)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        this.$swal({
+          icon: "error",
+          title: "Ha ocurrido un error:\n" + err,
+        });
+      });
+    },
     checkCurrentUser() {
       if (Storage.has("token")) {
         this.token = Storage.get("token", false);

@@ -6,10 +6,10 @@
           ¡Aquí tenemos a nuestro ganador!
         </h1>
         <br /><br />
-        <h1 style="color: white">Nombre del jugador</h1>
+        <h1 style="color: white">{{currentUser.nickname}}</h1>
         <i class="fas fa-trophy" style="color: white; font-size: 100px"></i>
         <h2 style="color: white">
-          ¡Felicidades "nombreJugador", eres el ganador de la partida!
+          ¡Felicidades "{{currentUser.nickname}}", eres el ganador de la partida!
         </h2>
         <div>
           <div class="col-md-12">

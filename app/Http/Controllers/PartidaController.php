@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Partida;
-use App\Models\User;
-use App\Models\UserPartida;
+use App\Models\Pregunta;
 use Illuminate\Http\Request;
 
 class PartidaController extends Controller
@@ -99,6 +98,23 @@ class PartidaController extends Controller
             return response()->json(["start" => true, "users" => $partida->users]);
         } else {
             return response()->json(["start" => false, "users" => $partida->users]);
+        }
+    }
+
+    public function obtenerGanador(Request $request)
+    {
+        //Se obtiene el registro de la partida actual a través del id
+        $partida = Partida::find($request->partida_id);
+        //Se guarda en un arreglo las cartas que estan ocultas
+        $cartas = [$partida->programador_carta_id, $partida->modulo_carta_id, $partida->error_carta_id];
+        info($cartas);
+        $usuario = $request->nickname;
+        //Se obtiene el registro del usuario actual a través del id
+        $cartasUsuario = Pregunta::find($usuario);
+        //Se compara los valores almacenados en los arrays
+        $coincidencias = array_intersect($cartas, $cartasUsuario);
+        if ($coincidencias == true) {
+            return $usuario;
         }
     }
 
