@@ -102,8 +102,18 @@ export default {
           axios
             .post("/api/enviar-pregunta", datos)
             .then((res) => {
-              // Storage.record("partida", res.data, false);
               this.$swal.close();
+              if (datos.tipo_pregunta == 0) {
+                if (res.data.correct) {
+                  //GANAR
+                } else {
+                  //PERDER
+                }
+                this.$swal({
+                  icon: "info",
+                  title: res.data.msg,
+                });
+              }
               this.$router.push(`/partida/${this.$route.params.id}`);
             })
             .catch((err) => {
