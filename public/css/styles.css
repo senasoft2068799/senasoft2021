@@ -364,13 +364,20 @@ input[type="radio"]
   position: relative;
   display: inline-block;
   width: 180px;
-  background: #03a9f4;
   margin-top: 15px;
   border-radius: 5rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
   font-family: var(--main-font);
   color: white;
+}
+
+.boton-azul {
+  background: #03a9f4;
+}
+
+.boton-rojo{
+  background: #ff568f;
 }
 
 .botonPreguntas:hover

@@ -54,7 +54,7 @@ export const routes = [
 
     {
         name: "Decision",
-        path: "/decision",
+        path: "/decision/:id",
         component: Decision,
         meta: { requiresAuth: true }
     },
