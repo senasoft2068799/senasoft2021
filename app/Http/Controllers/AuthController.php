@@ -15,7 +15,7 @@ class AuthController extends Controller
         $request->validate([
             "nickname" => "required|string|alpha_dash|unique:users|min:4|max:12",
             "password" => "required|min:4|max:20|confirmed",
-            "password_confirmation" => "required"
+            "password_confirmation" => "required" 
         ]);
 
         //Se crea el usuario y se encripta la contraseña

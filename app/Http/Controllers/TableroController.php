@@ -71,7 +71,6 @@ class TableroController extends Controller
 
     public function obtenerTablero(Request $request)
     {
-        info($request);
         $userPartida = UserPartida::where("user_nickname", $request->user_nickname)->where("partida_id", $request->partida_id)->first();
         return TableroResource::collection($userPartida->tablero_pregunta);
         // $partida = Partida::find($request->partida_id);

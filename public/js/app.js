@@ -2187,7 +2187,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2276,6 +2275,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2417,6 +2421,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
+/* harmony import */ var _utilities_Errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utilities/Errors.js */ "./resources/js/utilities/Errors.js");
+//
+//
+//
 //
 //
 //
@@ -2457,9 +2465,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      errors: new _utilities_Errors_js__WEBPACK_IMPORTED_MODULE_1__["default"](),
       currentUser: {
         nickname: null
       },
@@ -2524,10 +2534,24 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       })["catch"](function (err) {
-        _this2.$swal({
-          icon: "error",
-          title: "Ha ocurrido un error:\n" + err
-        });
+        if (err.response.status === 422) {
+          _this2.errors.record(err.response.data.errors);
+
+          _this2.$swal({
+            icon: "error",
+            title: "Los datos ingresados no son válidos."
+          });
+        } else if (err.response.status === 500) {
+          _this2.$swal({
+            icon: "error",
+            title: "Este código de partida no esta disponible o no existe"
+          });
+        } else {
+          _this2.$swal({
+            icon: "error",
+            title: "Ha ocurrido un error:\n" + err
+          });
+        }
       });
     },
     checkCurrentUser: function checkCurrentUser() {
@@ -2675,7 +2699,7 @@ __webpack_require__.r(__webpack_exports__);
         } else if (_this.informacionTurno.jugador_respuesta == _this.currentUser.nickname) {
           _this.respuesta();
         } else {
-          console.log("wait"); //Espera
+          console.log("No te toca turno aún."); //Espera
         }
       })["catch"](function (err) {
         console.log(err);
@@ -2766,15 +2790,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  methods: {
+    decidir: function decidir(tipo_pregunta) {
+      this.$router.push("/pregunta/".concat(this.$route.params.id, "?tipo=").concat(tipo_pregunta));
+    }
+  }
+});
 
 /***/ }),
 
@@ -2964,6 +2986,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Cartas.vue */ "./resources/js/components/Cartas.vue");
+/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3010,11 +3048,69 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "FormPregunta",
-  props: ["cartasSeleccionadas"],
+  props: ["cartasSeleccionadas", "usuarioActual"],
   components: {
     Cartas: _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      tipo: 1
+    };
+  },
+  mounted: function mounted() {
+    if (this.$route.query.tipo) {
+      this.tipo = this.$route.query.tipo;
+    }
+  },
+  methods: {
+    hacerPregunta: function hacerPregunta() {
+      var _this = this;
+
+      if (this.cartasSeleccionadas) {
+        if (this.cartasSeleccionadas.programador && this.cartasSeleccionadas.modulo && this.cartasSeleccionadas.error) {
+          var datos = {
+            carta_programador: this.cartasSeleccionadas.programador,
+            carta_modulo: this.cartasSeleccionadas.modulo,
+            carta_error: this.cartasSeleccionadas.error,
+            user_nickname: this.usuarioActual,
+            partida_id: this.$route.params.id,
+            tipo_pregunta: this.tipo
+          };
+          this.$swal({
+            title: "Enviando..."
+          });
+          this.$swal.showLoading();
+          axios.post("/api/enviar-pregunta", datos).then(function (res) {
+            // Storage.record("partida", res.data, false);
+            _this.$swal.close();
+
+            _this.$router.push("/partida/".concat(_this.$route.params.id));
+          })["catch"](function (err) {
+            _this.$swal({
+              icon: "error",
+              title: "Ha ocurrido un error:\n" + err
+            });
+          });
+        } else {
+          this.swalError();
+        }
+      } else {
+        this.swalError();
+      }
+    },
+    swalError: function swalError() {
+      this.$swal({
+        icon: "error",
+        title: "Debes seleccionar un programador, un módulo y un error."
+      });
+    },
+    preguntar: function preguntar() {
+      console.log("Preguntando");
+    },
+    acusar: function acusar() {}
   }
 });
 
@@ -3178,6 +3274,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _PanelCartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PanelCartas.vue */ "./resources/js/components/Preguntas/PanelCartas.vue");
 /* harmony import */ var _FormPregunta_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormPregunta.vue */ "./resources/js/components/Preguntas/FormPregunta.vue");
+/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
 //
 //
 //
@@ -3188,6 +3285,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3195,13 +3297,20 @@ __webpack_require__.r(__webpack_exports__);
     PanelCartas: _PanelCartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     FormPregunta: _FormPregunta_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
+  mounted: function mounted() {
+    this.checkCurrentUser();
+  },
   data: function data() {
     return {
       cartasSeleccionadas: {
         programador: null,
         modulo: null,
         error: null
-      }
+      },
+      currentUser: {
+        nickname: null
+      },
+      token: null
     };
   },
   methods: {
@@ -3212,6 +3321,25 @@ __webpack_require__.r(__webpack_exports__);
         this.cartasSeleccionadas.modulo = event;
       } else if (event.tipo == 3) {
         this.cartasSeleccionadas.error = event;
+      }
+    },
+    checkCurrentUser: function checkCurrentUser() {
+      var _this = this;
+
+      if (_utilities_Storage_js__WEBPACK_IMPORTED_MODULE_2__["default"].has("token")) {
+        this.token = _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_2__["default"].get("token", false);
+        window.axios.defaults.headers.common["Authorization"] = "Bearer ".concat(this.token);
+        this.axios.get("/api/user").then(function (res) {
+          _this.currentUser = res.data;
+        })["catch"](function (err) {
+          console.log("Error autenticación: " + err);
+          _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_2__["default"].remove("token");
+
+          _this.$router.push("/");
+        });
+      } else {
+        this.currentUser = {};
+        this.token = null;
       }
     }
   }
@@ -3662,7 +3790,7 @@ var routes = [{
   }
 }, {
   name: "Decision",
-  path: "/decision",
+  path: "/decision/:id",
   component: _components_Partida_Decision_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
   meta: {
     requiresAuth: true
@@ -44596,7 +44724,7 @@ var render = function() {
                   _vm._v(
                     "\n          " +
                       _vm._s(_vm.errors.get("nickname")) +
-                      "\n        "
+                      " \n        "
                   )
                 ])
               : _vm._e()
@@ -44748,7 +44876,7 @@ var render = function() {
                   }
                 }
               }),
-              _vm._v("Crear\n        usuario")
+              _vm._v("Crear usuario")
             ]
           )
         ]),
@@ -44785,53 +44913,55 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "contenedor" }, [
-    _c(
-      "div",
-      {
-        staticClass: "carta",
-        staticStyle: {
-          "margin-top": "0px",
-          "padding-top": "0px",
-          height: "250px"
-        }
-      },
-      [
-        _c("div", { staticClass: "box" }, [
-          _c("div", { staticClass: "content" }, [
-            _c("img", { attrs: { src: "" } }),
-            _vm._v(" "),
-            _c("h3", [_vm._v(_vm._s(_vm.cartaJugar.nombre))]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.prueba,
-                  expression: "prueba"
-                }
-              ],
-              staticStyle: { display: "none" },
-              attrs: { type: "text" },
-              domProps: { value: _vm.prueba },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+  return _c("div", { staticClass: "col-md-12" }, [
+    _c("div", { staticClass: "contenedor" }, [
+      _c(
+        "div",
+        {
+          staticClass: "carta",
+          staticStyle: {
+            "margin-top": "0px",
+            "padding-top": "0px",
+            height: "250px"
+          }
+        },
+        [
+          _c("div", { staticClass: "box" }, [
+            _c("div", { staticClass: "content" }, [
+              _c("img", { attrs: { src: "" } }),
+              _vm._v(" "),
+              _c("h3", [_vm._v(_vm._s(_vm.cartaJugar.nombre))]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.prueba,
+                    expression: "prueba"
                   }
-                  _vm.prueba = $event.target.value
+                ],
+                staticStyle: { display: "none" },
+                attrs: { type: "text" },
+                domProps: { value: _vm.prueba },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.prueba = $event.target.value
+                  }
                 }
-              }
-            }),
-            _vm._v(" "),
-            _c("button", { staticStyle: { color: "white" } }, [
-              _vm._v("Seleccionar")
+              }),
+              _vm._v(" "),
+              _c("button", { staticStyle: { color: "white" } }, [
+                _vm._v("Seleccionar")
+              ])
             ])
           ])
-        ])
-      ]
-    )
+        ]
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -45015,6 +45145,16 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
+                _vm.errors.has("partida_id")
+                  ? _c("p", { staticClass: "form-p" }, [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(_vm.errors.get("partida_id")) +
+                          "\n              "
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
                 _c(
                   "button",
                   {
@@ -45191,15 +45331,15 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "button",
-                      { staticClass: "btn" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "preguntas" } } },
-                          [_vm._v("Hacer pregunta")]
-                        )
-                      ],
-                      1
+                      {
+                        staticClass: "btn",
+                        on: {
+                          click: function($event) {
+                            return _vm.decidir(1)
+                          }
+                        }
+                      },
+                      [_vm._v("Preguntar")]
                     )
                   ])
                 ])
@@ -45218,15 +45358,15 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "button",
-                      { staticClass: "btn" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "Acusacion" } } },
-                          [_vm._v("Acusar")]
-                        )
-                      ],
-                      1
+                      {
+                        staticClass: "btn",
+                        on: {
+                          click: function($event) {
+                            return _vm.decidir(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Acusar")]
                     )
                   ])
                 ])
@@ -45716,11 +45856,33 @@ var render = function() {
                     attrs: { type: "text", disabled: "" }
                   }),
               _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "botonPreguntas", attrs: { type: "submit" } },
-                [_vm._v("Realizar pregunta")]
-              )
+              _vm.tipo == 1
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "botonPreguntas boton-azul",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.hacerPregunta()
+                        }
+                      }
+                    },
+                    [_vm._v("\n        Realizar pregunta\n      ")]
+                  )
+                : _c(
+                    "button",
+                    {
+                      staticClass: "botonPreguntas boton-rojo",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.hacerPregunta()
+                        }
+                      }
+                    },
+                    [_vm._v("\n        Realizar acusación\n      ")]
+                  )
             ]
           )
         ]
@@ -46028,9 +46190,14 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("FormPregunta", {
-        attrs: { cartasSeleccionadas: _vm.cartasSeleccionadas }
-      }),
+      _vm.currentUser
+        ? _c("FormPregunta", {
+            attrs: {
+              cartasSeleccionadas: _vm.cartasSeleccionadas,
+              usuarioActual: _vm.currentUser.nickname
+            }
+          })
+        : _vm._e(),
       _vm._v(" "),
       _c("center", [
         _c(

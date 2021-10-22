@@ -64,6 +64,10 @@ class PartidaController extends Controller
 
     public function unirsePartida(Request $request)
     {
+        $request->validate([
+            "partida_id" => "required|min:6|max:6|required"
+        ]);
+
         // Se busca una partida por su id, y se guarda la cantidad de jugadores en una variable.
         $partida = Partida::find($request->partida_id);
         $cantidadJugadores = $partida->users()->count();

@@ -55,7 +55,7 @@ export default {
           ) {
             this.respuesta();
           } else {
-            console.log("wait");
+            console.log("No te toca turno aún.");
             //Espera
           }
         })
