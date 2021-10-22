@@ -31,9 +31,6 @@ class PreguntaController extends Controller
     }
     public static function pregunta($pregunta)
     {
-<<<<<<< HEAD
-        
-=======
         $up = $pregunta->user_partida;
         $partida = $up->partida;
         $jugadores = $partida->users();
@@ -41,7 +38,6 @@ class PreguntaController extends Controller
             info($jugador);
         }
         // GuiaTurnoController::siguienteTurno($partida);
->>>>>>> 105b6b39445609458732a9e743d20035c14a969f
     }
 
     public static function acusacion($pregunta)
