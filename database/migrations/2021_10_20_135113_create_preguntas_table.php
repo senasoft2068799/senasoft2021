@@ -19,6 +19,7 @@ class CreatePreguntasTable extends Migration
             $table->integer('modulo_carta_id');
             $table->integer('error_carta_id');
             $table->boolean('tipo_pregunta')->default(true);
+            $table->timestamps();
         });
     }
 

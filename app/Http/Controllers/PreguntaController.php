@@ -31,6 +31,12 @@ class PreguntaController extends Controller
     }
     public static function pregunta($pregunta)
     {
+        $up = $pregunta->user_partida;
+        $partida = $up->partida;
+        $jugadores = $partida->users();
+        foreach ($jugadores as $jugador) {
+            info($jugador);
+        }
         // GuiaTurnoController::siguienteTurno($partida);
     }
 
