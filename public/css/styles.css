@@ -527,3 +527,16 @@ td {
 .text-red{
   color: red;
 }
+
+.h2Preguntas
+{
+  font-size: 1rem; 
+  margin-top: 40px;
+}
+
+.inputPreguntas
+{
+  color: green; 
+  margin-top: 40px; 
+  margin-left: 20px;
+}

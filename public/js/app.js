@@ -2990,8 +2990,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "FormPregunta",
@@ -3556,7 +3554,8 @@ var routes = [{
   }
 }, {
   name: "preguntas",
-  path: "/pregunta/:id",
+  // path: "/pregunta/:id",
+  path: "/pregunta",
   component: _components_Preguntas_Preguntas_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
   meta: {
     requiresAuth: true
@@ -45429,9 +45428,9 @@ var render = function() {
       staticStyle: {
         "padding-top": "0px",
         "margin-top": "0px",
-        "max-width": "480px",
+        "max-width": "880px",
         width: "80%",
-        height: "42px"
+        height: "50px"
       }
     },
     [
@@ -45446,6 +45445,10 @@ var render = function() {
             "div",
             { staticClass: "form-group", staticStyle: { display: "flex" } },
             [
+              _c("h2", { staticClass: "h2Preguntas" }, [
+                _vm._v("El programador")
+              ]),
+              _vm._v(" "),
               _vm.cartasSeleccionadas.programador
                 ? _c("input", {
                     directives: [
@@ -45456,8 +45459,7 @@ var render = function() {
                         expression: "cartasSeleccionadas.programador.nombre"
                       }
                     ],
-                    staticClass: "form-input",
-                    staticStyle: { "margin-top": "60px" },
+                    staticClass: "form-input inputPreguntas",
                     attrs: { type: "text", disabled: "" },
                     domProps: {
                       value: _vm.cartasSeleccionadas.programador.nombre
@@ -45480,11 +45482,9 @@ var render = function() {
                     attrs: { type: "text", disabled: "" }
                   }),
               _vm._v(" "),
-              _c(
-                "h2",
-                { staticStyle: { padding: "10px", "font-size": "30px" } },
-                [_vm._v("|")]
-              ),
+              _c("h2", { staticClass: "h2Preguntas" }, [
+                _vm._v("generó en el módulo")
+              ]),
               _vm._v(" "),
               _vm.cartasSeleccionadas.modulo
                 ? _c("input", {
@@ -45496,8 +45496,7 @@ var render = function() {
                         expression: "cartasSeleccionadas.modulo.nombre"
                       }
                     ],
-                    staticClass: "form-input",
-                    staticStyle: { "margin-top": "60px" },
+                    staticClass: "form-input inputPreguntas",
                     attrs: { type: "text", disabled: "" },
                     domProps: { value: _vm.cartasSeleccionadas.modulo.nombre },
                     on: {
@@ -45518,11 +45517,7 @@ var render = function() {
                     attrs: { type: "text", disabled: "" }
                   }),
               _vm._v(" "),
-              _c(
-                "h2",
-                { staticStyle: { padding: "10px", "font-size": "30px" } },
-                [_vm._v("|")]
-              ),
+              _c("h2", { staticClass: "h2Preguntas" }, [_vm._v("un error")]),
               _vm._v(" "),
               _vm.cartasSeleccionadas.error
                 ? _c("input", {
@@ -45534,8 +45529,7 @@ var render = function() {
                         expression: "cartasSeleccionadas.error.nombre"
                       }
                     ],
-                    staticClass: "form-input",
-                    staticStyle: { "margin-top": "60px" },
+                    staticClass: "form-input inputPreguntas",
                     attrs: { type: "text", disabled: "" },
                     domProps: { value: _vm.cartasSeleccionadas.error.nombre },
                     on: {
