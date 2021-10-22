@@ -46,21 +46,5 @@ class GuiaTurnoController extends Controller
         $guia["respuesta_user_nickname"] = $users[$indexUsuarioRespuesta]["nickname"];
 
         $guia->save();
-
-
-        // $prueba = $users[array_keys(array_column($users, "nickname"), $usuarioPregunta)];
-        // info(array_column($users, "nickname"), "diana");
-
-
-        // $lastUser = array_shift($users);
-        // array_push($lastUser);
-        // info("----");
-        // info($lastUser);
-        // info("----");
-        // info("----");
-        // info("FIN");
-        // info($users);
-        // $guia = $partida->guia_turno;
-        // array_shift();
     }
 };

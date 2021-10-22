@@ -61,38 +61,6 @@
       </div>
       <button type="submit" class="form-submit">Entrar</button>
     </form>
-
-    <!-- <form @submit.prevent="auth()">
-      <div>
-        <label for="nickname">Nick</label>
-        <input type="text" id="nickname" v-model="formData.nickname" />
-        <small class="text-danger" v-if="errors.has('nickname')">
-          {{ errors.get("nickname") }}
-        </small>
-      </div>
-      <div>
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" v-model="formData.password" />
-        <small class="text-danger" v-if="errors.has('password')">
-          {{ errors.get("password") }}
-        </small>
-      </div>
-      <div v-if="newUser">
-        <label for="password">Confirmar contraseña</label>
-        <input
-          type="password"
-          id="password"
-          v-model="formData.password_confirmation"
-        />
-        <small class="text-danger" v-if="errors.has('password_confirmation')">
-          {{ errors.get("password_confirmation") }}
-        </small>
-      </div>
-      <div>
-        <label><input type="checkbox" v-model="newUser" />Crear usuario</label>
-      </div>
-      <button type="submit">Iniciar</button>
-    </form> -->
   </div>
 </template>
 <script>

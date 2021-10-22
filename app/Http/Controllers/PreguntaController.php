@@ -44,7 +44,6 @@ class PreguntaController extends Controller
     {
         $up = $pregunta->user_partida;
         $partida = $up->partida;
-        info(($partida["programador_carta_id"] == $pregunta["programador_carta_id"]));
         if (($partida["programador_carta_id"] == $pregunta["programador_carta_id"])
             && ($partida["modulo_carta_id"] == $pregunta["modulo_carta_id"])
             && ($partida["error_carta_id"] == $pregunta["error_carta_id"])

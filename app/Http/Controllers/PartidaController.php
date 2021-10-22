@@ -20,13 +20,6 @@ class PartidaController extends Controller
         //Se buscan las columnas de las cartas que contengan el tipo 1, 2 y 3, para separarlas en variables
         // Luego, se selecciona un array aleatorio de cada tipo y se ingresan en el arreglo de cartas ocultas
 
-
-        // $programadores = array_keys(array_column($cartas, 'tipo'), 1);
-        // array_push($cartasOcultas, $cartas[$programadores[array_rand($programadores)]]);
-        // $modulos = array_keys(array_column($cartas, 'tipo'), 2);
-        // array_push($cartasOcultas, $cartas[$modulos[array_rand($modulos)]]);
-        // $errores = array_keys(array_column($cartas, 'tipo'), 3);
-        // array_push($cartasOcultas, $cartas[$errores[array_rand($errores)]]);
         $programadores = array_keys(array_column($cartas, 'tipo'), 1);
         $carta1 = CartasController::obtenerPorIndice(CartasController::obtenerRandom($programadores));
         array_push($cartasOcultas, $carta1);
@@ -119,52 +112,10 @@ class PartidaController extends Controller
     {
         // Se obtiene el registro de la partida actual a través del id
         $partida = Partida::find($request->partida_id);
-        // $userPartida = UserPartida::where("user_nickname", $request->user_nickname)->where("partida_id", $request->partida_id)->firstOrFail();
-        // info($userPartida["id"]);
-        // $ultimaPregunta = Pregunta::where("user_partidas_id", $userPartida["id"]);
-        // PartidaController::comprobarGanador($partida, $cartasPreguntadas);
-        // $usuario = $request->nickname;
-        // //Se obtiene el registro del usuario actual a través del id
-        // $cartasUsuario = Pregunta::find($usuario);
-        // info($cartasUsuario);
-        // //Se compara los valores almacenados en los arrays
-        // $coincidencias = array_intersect($cartas, $cartasUsuario);
-        // if ($coincidencias == true) {
-        //     return $usuario;
-        // }
     }
 
     public static function comprobarGanador($partida, $cartasLst)
     {
         $cartasOcultas = [$partida->programador_carta_id, $partida->modulo_carta_id, $partida->error_carta_id];
-        info($cartasOcultas);
-        // $cartasOcultas = $pa
-        // $coincidencias = array_intersect($cartas, $cartasUsuario);
-        // if ($coincidencias == true) {
-        //     return $usuario;
-        // }
-
-        //Se guarda en un arreglo las cartas que estan ocultas
-        // $cartas = [$partida->programador_carta_id, $partida->modulo_carta_id, $partida->error_carta_id];
-        // info($cartas);
-        // $usuario = $request->nickname;
-        // //Se obtiene el registro del usuario actual a través del id
-        // $cartasUsuario = Pregunta::where("user_partidas_id", $usuario)->where;
-        // //Se compara los valores almacenados en los arrays
-        // $coincidencias = array_intersect($cartas, $cartasUsuario);
-        // if ($coincidencias == true) {
-        //     return $usuario;
-        // }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Partida  $partida
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Partida $partida)
-    {
-        //
     }
 }
