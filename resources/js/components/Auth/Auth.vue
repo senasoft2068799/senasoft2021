@@ -56,8 +56,7 @@
       </div>
       <div>
         <label style="float: left" class="form-check"
-          ><input type="checkbox" v-model="newUser"/>Crear
-          usuario</label
+          ><input type="checkbox" v-model="newUser" />Crear usuario</label
         >
       </div>
       <button type="submit" class="form-submit">Entrar</button>

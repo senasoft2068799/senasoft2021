@@ -2187,7 +2187,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2681,7 +2680,7 @@ __webpack_require__.r(__webpack_exports__);
         } else if (_this.informacionTurno.jugador_respuesta == _this.currentUser.nickname) {
           _this.respuesta();
         } else {
-          console.log("wait"); //Espera
+          console.log("No te toca turno aún."); //Espera
         }
       })["catch"](function (err) {
         console.log(err);
@@ -2772,15 +2771,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  methods: {
+    decidir: function decidir(tipo_pregunta) {
+      this.$router.push("/pregunta/".concat(this.$route.params.id, "?tipo=").concat(tipo_pregunta));
+    }
+  }
+});
 
 /***/ }),
 
@@ -2970,6 +2967,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Cartas.vue */ "./resources/js/components/Cartas.vue");
+/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3018,11 +3029,69 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "FormPregunta",
-  props: ["cartasSeleccionadas"],
+  props: ["cartasSeleccionadas", "usuarioActual"],
   components: {
     Cartas: _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      tipo: 1
+    };
+  },
+  mounted: function mounted() {
+    if (this.$route.query.tipo) {
+      this.tipo = this.$route.query.tipo;
+    }
+  },
+  methods: {
+    hacerPregunta: function hacerPregunta() {
+      var _this = this;
+
+      if (this.cartasSeleccionadas) {
+        if (this.cartasSeleccionadas.programador && this.cartasSeleccionadas.modulo && this.cartasSeleccionadas.error) {
+          var datos = {
+            carta_programador: this.cartasSeleccionadas.programador,
+            carta_modulo: this.cartasSeleccionadas.modulo,
+            carta_error: this.cartasSeleccionadas.error,
+            user_nickname: this.usuarioActual,
+            partida_id: this.$route.params.id,
+            tipo_pregunta: this.tipo
+          };
+          this.$swal({
+            title: "Enviando..."
+          });
+          this.$swal.showLoading();
+          axios.post("/api/enviar-pregunta", datos).then(function (res) {
+            // Storage.record("partida", res.data, false);
+            _this.$swal.close();
+
+            _this.$router.push("/partida/".concat(_this.$route.params.id));
+          })["catch"](function (err) {
+            _this.$swal({
+              icon: "error",
+              title: "Ha ocurrido un error:\n" + err
+            });
+          });
+        } else {
+          this.swalError();
+        }
+      } else {
+        this.swalError();
+      }
+    },
+    swalError: function swalError() {
+      this.$swal({
+        icon: "error",
+        title: "Debes seleccionar un programador, un módulo y un error."
+      });
+    },
+    preguntar: function preguntar() {
+      console.log("Preguntando");
+    },
+    acusar: function acusar() {}
   }
 });
 
@@ -3118,6 +3187,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _PanelCartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PanelCartas.vue */ "./resources/js/components/Preguntas/PanelCartas.vue");
 /* harmony import */ var _FormPregunta_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormPregunta.vue */ "./resources/js/components/Preguntas/FormPregunta.vue");
+/* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
 //
 //
 //
@@ -3128,6 +3198,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3135,13 +3210,20 @@ __webpack_require__.r(__webpack_exports__);
     PanelCartas: _PanelCartas_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     FormPregunta: _FormPregunta_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
+  mounted: function mounted() {
+    this.checkCurrentUser();
+  },
   data: function data() {
     return {
       cartasSeleccionadas: {
         programador: null,
         modulo: null,
         error: null
-      }
+      },
+      currentUser: {
+        nickname: null
+      },
+      token: null
     };
   },
   methods: {
@@ -3152,6 +3234,25 @@ __webpack_require__.r(__webpack_exports__);
         this.cartasSeleccionadas.modulo = event;
       } else if (event.tipo == 3) {
         this.cartasSeleccionadas.error = event;
+      }
+    },
+    checkCurrentUser: function checkCurrentUser() {
+      var _this = this;
+
+      if (_utilities_Storage_js__WEBPACK_IMPORTED_MODULE_2__["default"].has("token")) {
+        this.token = _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_2__["default"].get("token", false);
+        window.axios.defaults.headers.common["Authorization"] = "Bearer ".concat(this.token);
+        this.axios.get("/api/user").then(function (res) {
+          _this.currentUser = res.data;
+        })["catch"](function (err) {
+          console.log("Error autenticación: " + err);
+          _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_2__["default"].remove("token");
+
+          _this.$router.push("/");
+        });
+      } else {
+        this.currentUser = {};
+        this.token = null;
       }
     }
   }
@@ -3581,7 +3682,8 @@ var routes = [{
   }
 }, {
   name: "preguntas",
-  path: "/pregunta/:id",
+  // path: "/pregunta/:id",
+  path: "/pregunta",
   component: _components_Preguntas_Preguntas_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
   meta: {
     requiresAuth: true
@@ -3602,7 +3704,7 @@ var routes = [{
   }
 }, {
   name: "Decision",
-  path: "/decision",
+  path: "/decision/:id",
   component: _components_Partida_Decision_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
   meta: {
     requiresAuth: true
@@ -44616,7 +44718,7 @@ var render = function() {
                   }
                 }
               }),
-              _vm._v("Crear\n        usuario")
+              _vm._v("Crear usuario")
             ]
           )
         ]),
@@ -45063,15 +45165,15 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "button",
-                      { staticClass: "btn" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "preguntas" } } },
-                          [_vm._v("Hacer pregunta")]
-                        )
-                      ],
-                      1
+                      {
+                        staticClass: "btn",
+                        on: {
+                          click: function($event) {
+                            return _vm.decidir(1)
+                          }
+                        }
+                      },
+                      [_vm._v("Preguntar")]
                     )
                   ])
                 ])
@@ -45090,15 +45192,15 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "button",
-                      { staticClass: "btn" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "Acusacion" } } },
-                          [_vm._v("Acusar")]
-                        )
-                      ],
-                      1
+                      {
+                        staticClass: "btn",
+                        on: {
+                          click: function($event) {
+                            return _vm.decidir(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Acusar")]
                     )
                   ])
                 ])
@@ -45466,9 +45568,9 @@ var render = function() {
       staticStyle: {
         "padding-top": "0px",
         "margin-top": "0px",
-        "max-width": "480px",
+        "max-width": "880px",
         width: "80%",
-        height: "42px"
+        height: "50px"
       }
     },
     [
@@ -45483,6 +45585,10 @@ var render = function() {
             "div",
             { staticClass: "form-group", staticStyle: { display: "flex" } },
             [
+              _c("h2", { staticClass: "h2Preguntas" }, [
+                _vm._v("El programador")
+              ]),
+              _vm._v(" "),
               _vm.cartasSeleccionadas.programador
                 ? _c("input", {
                     directives: [
@@ -45493,8 +45599,7 @@ var render = function() {
                         expression: "cartasSeleccionadas.programador.nombre"
                       }
                     ],
-                    staticClass: "form-input",
-                    staticStyle: { "margin-top": "60px" },
+                    staticClass: "form-input inputPreguntas",
                     attrs: { type: "text", disabled: "" },
                     domProps: {
                       value: _vm.cartasSeleccionadas.programador.nombre
@@ -45517,11 +45622,9 @@ var render = function() {
                     attrs: { type: "text", disabled: "" }
                   }),
               _vm._v(" "),
-              _c(
-                "h2",
-                { staticStyle: { padding: "10px", "font-size": "30px" } },
-                [_vm._v("|")]
-              ),
+              _c("h2", { staticClass: "h2Preguntas" }, [
+                _vm._v("generó en el módulo")
+              ]),
               _vm._v(" "),
               _vm.cartasSeleccionadas.modulo
                 ? _c("input", {
@@ -45533,8 +45636,7 @@ var render = function() {
                         expression: "cartasSeleccionadas.modulo.nombre"
                       }
                     ],
-                    staticClass: "form-input",
-                    staticStyle: { "margin-top": "60px" },
+                    staticClass: "form-input inputPreguntas",
                     attrs: { type: "text", disabled: "" },
                     domProps: { value: _vm.cartasSeleccionadas.modulo.nombre },
                     on: {
@@ -45555,11 +45657,7 @@ var render = function() {
                     attrs: { type: "text", disabled: "" }
                   }),
               _vm._v(" "),
-              _c(
-                "h2",
-                { staticStyle: { padding: "10px", "font-size": "30px" } },
-                [_vm._v("|")]
-              ),
+              _c("h2", { staticClass: "h2Preguntas" }, [_vm._v("un error")]),
               _vm._v(" "),
               _vm.cartasSeleccionadas.error
                 ? _c("input", {
@@ -45571,8 +45669,7 @@ var render = function() {
                         expression: "cartasSeleccionadas.error.nombre"
                       }
                     ],
-                    staticClass: "form-input",
-                    staticStyle: { "margin-top": "60px" },
+                    staticClass: "form-input inputPreguntas",
                     attrs: { type: "text", disabled: "" },
                     domProps: { value: _vm.cartasSeleccionadas.error.nombre },
                     on: {
@@ -45593,11 +45690,33 @@ var render = function() {
                     attrs: { type: "text", disabled: "" }
                   }),
               _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "botonPreguntas", attrs: { type: "submit" } },
-                [_vm._v("Realizar pregunta")]
-              )
+              _vm.tipo == 1
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "botonPreguntas boton-azul",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.hacerPregunta()
+                        }
+                      }
+                    },
+                    [_vm._v("\n        Realizar pregunta\n      ")]
+                  )
+                : _c(
+                    "button",
+                    {
+                      staticClass: "botonPreguntas boton-rojo",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.hacerPregunta()
+                        }
+                      }
+                    },
+                    [_vm._v("\n        Realizar acusación\n      ")]
+                  )
             ]
           )
         ]
@@ -45741,9 +45860,14 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("FormPregunta", {
-        attrs: { cartasSeleccionadas: _vm.cartasSeleccionadas }
-      }),
+      _vm.currentUser
+        ? _c("FormPregunta", {
+            attrs: {
+              cartasSeleccionadas: _vm.cartasSeleccionadas,
+              usuarioActual: _vm.currentUser.nickname
+            }
+          })
+        : _vm._e(),
       _vm._v(" "),
       _c("center", [
         _c(
@@ -61451,7 +61575,7 @@ Vue.compile = compileToFunctions;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\xampp\\\\htdocs\\\\senasoft\\\\senasoft2021"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\xampp\\\\htdocs\\\\senasoft\\\\senasoft2021","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\xampp\\\\htdocs\\\\senasoft2021\\\\edd\\\\senasoft2021"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\xampp\\\\htdocs\\\\senasoft2021\\\\edd\\\\senasoft2021","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ }),
 

@@ -15,11 +15,7 @@
                   el programador que hizo el error, el módulo en el que se
                   desarrolló y por último el tipo de error que tiene.
                 </p>
-                <button class="btn">
-                  <router-link :to="{ name: 'preguntas' }"
-                    >Hacer pregunta</router-link
-                  >
-                </button>
+                <button class="btn" @click="decidir(1)">Preguntar</button>
               </div>
             </div>
           </div>
@@ -37,11 +33,7 @@
                   Si es así, o ya te sabes el programador que causó el error, el
                   módulo y el tipo de error, ¡podrás ganar la partida!
                 </p>
-                <button class="btn">
-                  <router-link :to="{ name: 'Acusacion' }"
-                    >Acusar</router-link
-                  >
-                </button>
+                <button class="btn" @click="decidir(0)">Acusar</button>
               </div>
             </div>
           </div>
@@ -51,5 +43,13 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    decidir(tipo_pregunta) {
+      this.$router.push(
+        `/pregunta/${this.$route.params.id}?tipo=${tipo_pregunta}`
+      );
+    },
+  },
+};
 </script>
