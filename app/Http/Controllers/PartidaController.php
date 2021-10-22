@@ -74,7 +74,7 @@ class PartidaController extends Controller
         if ($partida->users->contains($request->user_nickname)) {
             // Si la partida contiene el jugador que está ingresando, retorna un mensaje de error, de lo contrario comprueba la cantidad de jugadores
             //TODO Comprobar que el jugador este desconectado antes de enviar el response
-            return response()->json(["allowed" => false, "msg" => "El jugador ya se encuentra en la partida.", "join" => true]);
+            return response()->json(["allowed" => false, "msg" => "El jugador ya se encuentra en la partida."]);
         } else {
             if ($cantidadJugadores < 4) {
                 // Si hay menos de 4 jugadores, registra el nuevo jugador a la partida. de lo contrario, informa que ya hay 4 jugadores.

@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
       <div class="table-responsive">
         <table class="table">
           <thead>
@@ -32,11 +32,16 @@
         </table>
       </div>
     </div>
+    <Cartas />
   </div>
 </template>
 <script>
 import cartas from "../../../../public/json/cartas.json";
+import Cartas from "./CartasTablero.vue";
 export default {
+  components: {
+    Cartas
+  },
   props: ["usuarioActual"],
   data() {
     return {

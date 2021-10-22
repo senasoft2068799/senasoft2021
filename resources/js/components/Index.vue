@@ -37,6 +37,11 @@
           </div>
         </div>
       </div>
+      <div style="text-align: center">
+        <router-link :to="{ name: 'Reglas' }" class="btn-reglas"
+          >Reglas <i class="fas fa-book"></i
+        ></router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -105,7 +110,8 @@ export default {
           } else {
             if (res.data.join) {
               this.$swal.close();
-              //this.$router.push(`/partida/${res.data.msg}`);
+              console.log("INDEX VUE");
+              this.$router.push(`/partida/${res.data.msg}`);
             } else {
               this.$swal({
                 icon: "info",
