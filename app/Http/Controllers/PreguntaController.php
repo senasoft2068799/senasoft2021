@@ -11,6 +11,7 @@ class PreguntaController extends Controller
 {
     public function hacerPregunta(Request $request)
     {
+        // Se busca el id de jugador partida respectivo
         $userPartida = UserPartida::where("user_nickname", $request->user_nickname)->where("partida_id", $request->partida_id)->first();
         $pregunta = Pregunta::create(
             [
@@ -21,6 +22,7 @@ class PreguntaController extends Controller
                 "tipo_pregunta" => $request->tipo_pregunta
             ]
         );
+        // Si la pregunta es 1, se hace a los demás usuarios. De lo contrario, se hace acusación
         if ($pregunta->tipo_pregunta == 1) {
             return PreguntaController::pregunta($pregunta);
         } else {
@@ -29,7 +31,17 @@ class PreguntaController extends Controller
     }
     public static function pregunta($pregunta)
     {
+<<<<<<< HEAD
         
+=======
+        $up = $pregunta->user_partida;
+        $partida = $up->partida;
+        $jugadores = $partida->users();
+        foreach ($jugadores as $jugador) {
+            info($jugador);
+        }
+        // GuiaTurnoController::siguienteTurno($partida);
+>>>>>>> 105b6b39445609458732a9e743d20035c14a969f
     }
 
     public static function acusacion($pregunta)

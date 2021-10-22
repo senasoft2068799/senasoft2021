@@ -32,16 +32,12 @@
         </table>
       </div>
     </div>
-    <Cartas />
+    <!-- <Cartas /> -->
   </div>
 </template>
 <script>
 import cartas from "../../../../public/json/cartas.json";
-import Cartas from "./CartasTablero.vue";
 export default {
-  components: {
-    Cartas
-  },
   props: ["usuarioActual"],
   data() {
     return {
