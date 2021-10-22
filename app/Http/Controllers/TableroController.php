@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TableroResource;
 use App\Models\Partida;
 use App\Models\Tablero;
 use App\Models\UserPartida;
 use Illuminate\Http\Request;
 
 class TableroController extends Controller
-{  
+{
     public static function repartirCartas($partida_id)
     {
         // Se crea la partida, se consultan los jugadores y se obtiene el .json de cartas
@@ -71,6 +72,8 @@ class TableroController extends Controller
     public function obtenerTablero(Request $request)
     {
         info($request);
+        $userPartida = UserPartida::where("user_nickname", $request->user_nickname)->where("partida_id", $request->partida_id)->first();
+        return TableroResource::collection($userPartida->tablero_pregunta);
         // $partida = Partida::find($request->partida_id);
         // $cantidadJugadores = $partida->users()->count();
         // if ($partida->users->contains($request->user_nickname)) {
