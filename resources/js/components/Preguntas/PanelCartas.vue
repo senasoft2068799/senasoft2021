@@ -1,12 +1,13 @@
 <template>
   <div>
     <div class="main-card">
-      <button v-if="tipoCarta != 1" @click="tipoCarta--">Izquierda -</button>
-      <button v-if="tipoCarta != 3" @click="tipoCarta++">Derecha +</button>
+      <button v-if="tipoCarta != 1" @click="tipoCarta--" class="flecha" style="margin-right: 500px;"><i class="fas fa-arrow-left"></i></button>
       <div class="cards">
         <div class="row">
           <div class="col-md-12">
-            <h2 style="color: white" class="title">Programadores</h2>
+            <h2 v-if="tipoCarta == 1" style="color: white" class="title">Programadores</h2>
+            <h2 v-if="tipoCarta == 2" style="color: white" class="title">Módulos</h2>
+            <h2 v-if="tipoCarta == 3" style="color: white" class="title">Errores</h2>
           </div>
           <div
             v-for="datos in programadores"
@@ -17,30 +18,7 @@
           </div>
         </div>
       </div>
-      <!-- <div class="cards">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 style="color: white" class="title">Módulos</h2>
-          </div>
-          <Cartas
-            v-for="datos in modulos"
-            :key="datos.id"
-            :cartaJugar="datos"
-          />
-        </div>
-      </div>
-      <div class="cards">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 style="color: white" class="title">Errores</h2>
-          </div>
-          <Cartas
-            v-for="datos in errores"
-            :key="datos.id"
-            :cartaJugar="datos"
-          />
-        </div>
-      </div> -->
+      <button v-if="tipoCarta != 3" @click="tipoCarta++" class="flecha" style="margin-left: 550px;"><i class="fas fa-arrow-right"></i></button>
     </div>
   </div>
 </template>

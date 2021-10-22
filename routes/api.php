@@ -34,4 +34,5 @@ Route::middleware('api')->group(function () {
     Route::get("lista-espera/{partida}", [PartidaController::class, "listaEspera"]);
     Route::post("obtener-tablero", [TableroController::class, "obtenerTablero"]);
     Route::get("informacion-turno/{partida}", [GuiaTurnoController::class, "informacionTurno"]);
+    Route::post("enviar-pregunta", [PreguntaController::class, "hacerPregunta"]);
 });

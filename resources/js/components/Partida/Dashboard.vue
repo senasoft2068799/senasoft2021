@@ -7,6 +7,7 @@
           v-if="currentUser.nickname != null"
         />
       </div>
+      <div class="loader"></div>
       <div class="col-md-6">
         <!-- <Cartas /> -->
       </div>
@@ -55,7 +56,7 @@ export default {
           ) {
             this.respuesta();
           } else {
-            console.log("wait");
+            console.log("No te toca turno aún.");
             //Espera
           }
         })
@@ -86,9 +87,11 @@ export default {
     },
     pregunta() {
       this.$router.push(`/decision/${this.$route.params.id}`);
+      clearInterval(this.interval);
     },
     respuesta() {
       this.$router.push(`/respuesta/${this.$route.params.id}`);
+      clearInterval(this.interval);
     },
   },
 };
