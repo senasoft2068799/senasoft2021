@@ -3192,11 +3192,7 @@ __webpack_require__.r(__webpack_exports__);
         icon: "error",
         title: "Debes seleccionar un programador, un módulo y un error."
       });
-    },
-    preguntar: function preguntar() {
-      console.log("Preguntando");
-    },
-    acusar: function acusar() {}
+    }
   }
 });
 

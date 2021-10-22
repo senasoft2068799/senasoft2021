@@ -136,10 +136,6 @@ export default {
         title: "Debes seleccionar un programador, un módulo y un error.",
       });
     },
-    preguntar() {
-      console.log("Preguntando");
-    },
-    acusar() {},
   },
 };
 </script>
