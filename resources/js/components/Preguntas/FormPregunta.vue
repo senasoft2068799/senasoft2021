@@ -4,7 +4,7 @@
     style="
       padding-top: 0px;
       margin-top: 0px;
-      max-width: 780px;
+      max-width: 480px;
       width: 80%;
       height: 42px;
     "
@@ -15,6 +15,7 @@
           type="text"
           class="form-input"
           disabled
+          style="margin-top: 60px;"
           v-if="cartasSeleccionadas.programador"
           v-model="cartasSeleccionadas.programador.nombre"
         />
@@ -24,6 +25,7 @@
           type="text"
           class="form-input"
           disabled
+          style="margin-top: 60px;"
           v-if="cartasSeleccionadas.modulo"
           v-model="cartasSeleccionadas.modulo.nombre"
         />
@@ -33,6 +35,7 @@
           type="text"
           class="form-input"
           disabled
+          style="margin-top: 60px;"
           v-if="cartasSeleccionadas.error"
           v-model="cartasSeleccionadas.error.nombre"
         />
