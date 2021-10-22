@@ -112,6 +112,7 @@ export default {
                   title: res.data.msg,
                 });
               }
+              console.log("FORM PREGUNTA");
               this.$router.push(`/partida/${this.$route.params.id}`);
             })
             .catch((err) => {

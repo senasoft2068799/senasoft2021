@@ -37,12 +37,13 @@ export default {
     return {
       code: this.$route.params.id,
       jugadores: [],
+      intervalo: null,
       //Aquí se puede añadir el local storage para restaurar la partida
     };
   },
   mounted() {
     this.getListaEspera();
-    this.interval = setInterval(
+    this.intervalo = setInterval(
       function () {
         this.getListaEspera();
       }.bind(this),
@@ -56,6 +57,8 @@ export default {
         .then((res) => {
           this.jugadores = res.data.users;
           if (res.data.start) {
+            console.log("SALA");
+            clearInterval(this.intervalo);
             this.$router.push(`/partida/${this.$route.params.id}`);
           }
         })
