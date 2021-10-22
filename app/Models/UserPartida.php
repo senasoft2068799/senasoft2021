@@ -20,8 +20,13 @@ class UserPartida extends Model
         return $this->belongsTo(Partida::class);
     }
 
-    public function tablero()
+    public function tablero_pregunta()
     {
-        return $this->belongsTo(Tablero::class);
+        return $this->hasMany(Tablero::class, "pregunta_user_partidas_id");
+    }
+
+    public function tablero_respuesta()
+    {
+        return $this->hasMany(Tablero::class, "respuesta_user_partidas_id");
     }
 }
