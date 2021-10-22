@@ -9,6 +9,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <script src="https://kit.fontawesome.com/f483bbf11c.js" crossorigin="anonymous"></script>
     <title>Encuentra el bug - SenaSOFT</title>
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon" />
     <link href="{{ asset('css/bootstrap-grid.min.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" type="text/css" rel="stylesheet" />
 
@@ -19,6 +20,9 @@
 <body style=" height: auto;">
     <div id="app">
     </div>
+    <audio autoplay controls loop>
+        <source src="{{ asset('music/Disfigure-Blank.mp3') }}">
+    </audio>
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
