@@ -5,6 +5,11 @@
   --main-font: 'Exo 2', sans-serif;
   --second-font: 'Lusitana', serif;
 }
+
+*
+{
+  font-family: var(--main-font);
+}
  
  /* Diseño de fondo */
  body
@@ -294,7 +299,7 @@
 
 .contenedor-preguntas .main-card
 {
-    width: 300%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     transition: all 1s ease;
@@ -306,14 +311,9 @@
     margin-left: -100%;
 }
 
- #tres:checked ~ .main-card
-{
-    margin-left: -300%;
-}
-
 .main-card .cards
 {
-    width: calc(100% / 4 - 10px);
+    width: calc(100% / 1 - 10px);
     display: flex;
     justify-content: space-between;
     margin: 0 20px;
@@ -544,4 +544,8 @@ td {
 /* Diseño de textos */
 .text-green {
   color: green;
+}
+
+.text-red{
+  color: red;
 }
