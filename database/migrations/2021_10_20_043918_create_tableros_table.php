@@ -26,7 +26,6 @@ class CreateTablerosTable extends Migration
                 ->references("id")->on("user_partidas")
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

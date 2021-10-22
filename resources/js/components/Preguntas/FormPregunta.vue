@@ -78,6 +78,8 @@ export default {
     }
   },
   methods: {
+    //Una vez el usuario ya haya seleccionado las cartas a preguntar y haya dado clic en el botón de hacer pregunta
+    //Se hará la siguiente función
     hacerPregunta() {
       if (this.cartasSeleccionadas) {
         if (
@@ -100,8 +102,18 @@ export default {
           axios
             .post("/api/enviar-pregunta", datos)
             .then((res) => {
-              // Storage.record("partida", res.data, false);
               this.$swal.close();
+              if (datos.tipo_pregunta == 0) {
+                if (res.data.correct) {
+                  //GANAR
+                } else {
+                  //PERDER
+                }
+                this.$swal({
+                  icon: "info",
+                  title: res.data.msg,
+                });
+              }
               this.$router.push(`/partida/${this.$route.params.id}`);
             })
             .catch((err) => {

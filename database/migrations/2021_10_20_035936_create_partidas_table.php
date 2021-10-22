@@ -25,7 +25,6 @@ class CreatePartidasTable extends Migration
             $table->foreign("guia_turno_id")
                 ->references("id")->on("guia_turnos");
             $table->tinyInteger("estado")->default(2);
-            $table->timestamps();
         });
     }
 

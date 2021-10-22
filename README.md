@@ -20,6 +20,26 @@
     <li>npm run watch</li>
 </ul>
 
+<h1>Tecnologías usadas en este proyecto</h1>
+<ul>
+    <li>Vuejs 3<i class="fab fa-vuejs"></i></li>
+    <li>Laravel 8<i class="fab fa-laravel"></i></li>
+</ul>
+
+<h1>Base de datos usada en este proyecto</h1>
+<p>Este es un modelo entidad relación, el cual nos permite visualizar la base de datos para el desarrollo del juego de una forma más detallada.</p>
+<img src="https://drive.google.com/file/d/1-qkzQXiYUiWNCczJa16-FyvK7H2fORuV/view?usp=sharing" alt="Base de datos del proyecto">
+
+<h1>DFD (Diagrama de Flujo de Datos)</h1>
+<p>Los DFD o Diagrama de Flujo de Datos nos permite trazar y visualizar el flujo de la información que se maneja en el juego, en este existen 3 niveles:</p>
+<ul>
+    <li>Nivel 0: es un diagrama que nos permite ver el flujo de una forma general.</li>
+    <li>Nivel 1: es un diagrama que nos permite ver el flujo de una forma un poco más detalla, en esta se pueden ver los principales componentes y como interactuan entre ellos.</li>
+    <li>Nivel 2: es un diagrama que nos permite ver el flujo de datos en los componentes que existen.</li>
+</ul>
+
+<h2>Para mayor información acerca de nuestra docuemtación, dar clic al siguiente enlace: https://drive.google.com/drive/folders/1dOyO9AoXh--q9mtaRzqECq0lZ_bEPzYP?usp=sharing</h2>
+
 <hr/>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 

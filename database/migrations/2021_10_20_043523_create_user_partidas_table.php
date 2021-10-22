@@ -21,7 +21,6 @@ class CreateUserPartidasTable extends Migration
             $table->string("partida_id", 6)->nullable();
             $table->foreign("partida_id")
                 ->references("id")->on("partidas");
-            $table->timestamps();
         });
     }
 

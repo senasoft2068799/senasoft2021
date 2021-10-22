@@ -42,6 +42,7 @@ export default {
     },
   },
   computed: {
+    //Estas funciones son para dividr los tipos de cartas para así poder mostrarlas
     programadores: function () {
       let tipo = this.tipoCarta;
       return this.cartasJson.filter(function (u) {
