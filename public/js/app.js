@@ -2290,11 +2290,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Carta",
   props: ["cartaJugar"],
@@ -2994,6 +2989,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "FormPregunta",
@@ -3018,28 +3016,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Cartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Cartas.vue */ "./resources/js/components/Cartas.vue");
 /* harmony import */ var _public_json_cartas_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../public/json/cartas.json */ "./public/json/cartas.json");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3117,10 +3093,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _PanelCartas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PanelCartas.vue */ "./resources/js/components/Preguntas/PanelCartas.vue");
 /* harmony import */ var _FormPregunta_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormPregunta.vue */ "./resources/js/components/Preguntas/FormPregunta.vue");
-//
-//
-//
-//
 //
 //
 //
@@ -44656,6 +44628,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+<<<<<<< HEAD
   return _c("div", { staticClass: "col-md-12" }, [
     _c("div", { staticClass: "contenedor" }, [
       _c(
@@ -44693,18 +44666,55 @@ var render = function() {
                       return
                     }
                     _vm.prueba = $event.target.value
-                  }
+=======
+  return _c("div", { staticClass: "contenedor" }, [
+    _c(
+      "div",
+      {
+        staticClass: "carta",
+        staticStyle: {
+          "margin-top": "0px",
+          "padding-top": "0px",
+          height: "250px"
+        }
+      },
+      [
+        _c("div", { staticClass: "box" }, [
+          _c("div", { staticClass: "content" }, [
+            _c("img", { attrs: { src: "" } }),
+            _vm._v(" "),
+            _c("h3", [_vm._v(_vm._s(_vm.cartaJugar.nombre))]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.prueba,
+                  expression: "prueba"
                 }
-              }),
-              _vm._v(" "),
-              _c("button", { staticStyle: { color: "white" } }, [
-                _vm._v("Seleccionar")
-              ])
+              ],
+              staticStyle: { display: "none" },
+              attrs: { type: "text" },
+              domProps: { value: _vm.prueba },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+>>>>>>> 2661eaa6c7853c1943cbdadfabb5570c0e491c19
+                  }
+                  _vm.prueba = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("button", { staticStyle: { color: "white" } }, [
+              _vm._v("Seleccionar")
             ])
           ])
-        ]
-      )
-    ])
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []
@@ -45459,7 +45469,7 @@ var render = function() {
       staticStyle: {
         "padding-top": "0px",
         "margin-top": "0px",
-        "max-width": "780px",
+        "max-width": "480px",
         width: "80%",
         height: "42px"
       }
@@ -45487,6 +45497,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-input",
+                    staticStyle: { "margin-top": "60px" },
                     attrs: { type: "text", disabled: "" },
                     domProps: {
                       value: _vm.cartasSeleccionadas.programador.nombre
@@ -45526,6 +45537,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-input",
+                    staticStyle: { "margin-top": "60px" },
                     attrs: { type: "text", disabled: "" },
                     domProps: { value: _vm.cartasSeleccionadas.modulo.nombre },
                     on: {
@@ -45563,6 +45575,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-input",
+                    staticStyle: { "margin-top": "60px" },
                     attrs: { type: "text", disabled: "" },
                     domProps: { value: _vm.cartasSeleccionadas.error.nombre },
                     on: {
@@ -45624,27 +45637,15 @@ var render = function() {
         ? _c(
             "button",
             {
+              staticClass: "flecha",
+              staticStyle: { "margin-right": "500px" },
               on: {
                 click: function($event) {
                   _vm.tipoCarta--
                 }
               }
             },
-            [_vm._v("Izquierda -")]
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.tipoCarta != 3
-        ? _c(
-            "button",
-            {
-              on: {
-                click: function($event) {
-                  _vm.tipoCarta++
-                }
-              }
-            },
-            [_vm._v("Derecha +")]
+            [_c("i", { staticClass: "fas fa-arrow-left" })]
           )
         : _vm._e(),
       _vm._v(" "),
@@ -45653,7 +45654,31 @@ var render = function() {
           "div",
           { staticClass: "row" },
           [
-            _vm._m(0),
+            _c("div", { staticClass: "col-md-12" }, [
+              _vm.tipoCarta == 1
+                ? _c(
+                    "h2",
+                    { staticClass: "title", staticStyle: { color: "white" } },
+                    [_vm._v("Programadores")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.tipoCarta == 2
+                ? _c(
+                    "h2",
+                    { staticClass: "title", staticStyle: { color: "white" } },
+                    [_vm._v("Módulos")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.tipoCarta == 3
+                ? _c(
+                    "h2",
+                    { staticClass: "title", staticStyle: { color: "white" } },
+                    [_vm._v("Errores")]
+                  )
+                : _vm._e()
+            ]),
             _vm._v(" "),
             _vm._l(_vm.programadores, function(datos) {
               return _c(
@@ -45673,22 +45698,27 @@ var render = function() {
           ],
           2
         )
-      ])
+      ]),
+      _vm._v(" "),
+      _vm.tipoCarta != 3
+        ? _c(
+            "button",
+            {
+              staticClass: "flecha",
+              staticStyle: { "margin-left": "550px" },
+              on: {
+                click: function($event) {
+                  _vm.tipoCarta++
+                }
+              }
+            },
+            [_c("i", { staticClass: "fas fa-arrow-right" })]
+          )
+        : _vm._e()
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c("h2", { staticClass: "title", staticStyle: { color: "white" } }, [
-        _vm._v("Programadores")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -45719,22 +45749,20 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("center", [
-        _c("div", { staticClass: "row-cols-1 row-cols-md-3 g-4 mt-3" }, [
-          _c(
-            "div",
-            { staticClass: "contenedor-preguntas" },
-            [
-              _c("PanelCartas", {
-                on: {
-                  seleccionar: function($event) {
-                    return _vm.seleccionarCarta($event)
-                  }
+        _c(
+          "div",
+          { staticClass: "contenedor-preguntas" },
+          [
+            _c("PanelCartas", {
+              on: {
+                seleccionar: function($event) {
+                  return _vm.seleccionarCarta($event)
                 }
-              })
-            ],
-            1
-          )
-        ])
+              }
+            })
+          ],
+          1
+        )
       ])
     ],
     1
