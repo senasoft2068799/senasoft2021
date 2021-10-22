@@ -30,11 +30,12 @@ export default {
         nickname: null,
       },
       token: null,
+      intervalo: null,
     };
   },
   mounted() {
     this.checkCurrentUser();
-    this.interval = setInterval(
+    this.intervalo = setInterval(
       function () {
         this.preguntarJugador();
       }.bind(this),
@@ -87,12 +88,12 @@ export default {
     },
     pregunta() {
       this.$router.push(`/decision/${this.$route.params.id}`);
-      clearInterval(this.interval);
+      clearInterval(this.intervalo);
     },
-    respuesta() {
-      this.$router.push(`/respuesta/${this.$route.params.id}`);
-      clearInterval(this.interval);
-    },
+    // respuesta() {
+    //   this.$router.push(`/respuesta/${this.$route.params.id}`);
+    //   clearInterval(this.interval);
+    // },
   },
 };
 </script>

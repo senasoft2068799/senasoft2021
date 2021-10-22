@@ -110,7 +110,8 @@ export default {
           } else {
             if (res.data.join) {
               this.$swal.close();
-              //this.$router.push(`/partida/${res.data.msg}`);
+              console.log("INDEX VUE");
+              this.$router.push(`/partida/${res.data.msg}`);
             } else {
               this.$swal({
                 icon: "info",

@@ -2536,8 +2536,11 @@ __webpack_require__.r(__webpack_exports__);
           _this2.$router.push("/sala/".concat(res.data.msg));
         } else {
           if (res.data.join) {
-            _this2.$swal.close(); //this.$router.push(`/partida/${res.data.msg}`);
+            _this2.$swal.close();
 
+            console.log("INDEX VUE");
+
+            _this2.$router.push("/partida/".concat(res.data.msg));
           } else {
             _this2.$swal({
               icon: "info",
@@ -2738,12 +2741,13 @@ __webpack_require__.r(__webpack_exports__);
       currentUser: {
         nickname: null
       },
-      token: null
+      token: null,
+      intervalo: null
     };
   },
   mounted: function mounted() {
     this.checkCurrentUser();
-    this.interval = setInterval(function () {
+    this.intervalo = setInterval(function () {
       this.preguntarJugador();
     }.bind(this), 10000);
   },
@@ -2786,12 +2790,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     pregunta: function pregunta() {
       this.$router.push("/decision/".concat(this.$route.params.id));
-      clearInterval(this.interval);
-    },
-    respuesta: function respuesta() {
-      this.$router.push("/respuesta/".concat(this.$route.params.id));
-      clearInterval(this.interval);
-    }
+      clearInterval(this.intervalo);
+    } // respuesta() {
+    //   this.$router.push(`/respuesta/${this.$route.params.id}`);
+    //   clearInterval(this.interval);
+    // },
+
   }
 });
 
@@ -3166,6 +3170,8 @@ __webpack_require__.r(__webpack_exports__);
                 title: res.data.msg
               });
             }
+
+            console.log("FORM PREGUNTA");
 
             _this.$router.push("/partida/".concat(_this.$route.params.id));
           })["catch"](function (err) {
@@ -3595,13 +3601,14 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       code: this.$route.params.id,
-      jugadores: [] //Aquí se puede añadir el local storage para restaurar la partida
+      jugadores: [],
+      intervalo: null //Aquí se puede añadir el local storage para restaurar la partida
 
     };
   },
   mounted: function mounted() {
     this.getListaEspera();
-    this.interval = setInterval(function () {
+    this.intervalo = setInterval(function () {
       this.getListaEspera();
     }.bind(this), 5000);
   },
@@ -3613,6 +3620,9 @@ __webpack_require__.r(__webpack_exports__);
         _this.jugadores = res.data.users;
 
         if (res.data.start) {
+          console.log("SALA");
+          clearInterval(_this.intervalo);
+
           _this.$router.push("/partida/".concat(_this.$route.params.id));
         }
       })["catch"](function (err) {
