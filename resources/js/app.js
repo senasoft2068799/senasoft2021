@@ -23,12 +23,51 @@ Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(VueSweetalert2, swalOptions);
 
-// Instancias
+// Función autenticación
+function loggedIn() {
+    return Storage.get("token", false);
+    // window.axios.defaults.headers.common[
+    //     "Authorization"
+    // ] = `Bearer ${this.token}`;
+    // this.axios
+    //     .get("/api/user")
+    //     .then((res) => {
+    //         this.currentUser = res.data;
+    //     })
+    //     .catch((err) => {
+    //         console.log("Error autenticación: " + err);
+    //     });
+}
+
+// Instancia router
 
 const router = new VueRouter({
     mode: "history",
     routes: routes
 });
+
+
+// Redireccion por autenticación
+
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        // Se comprueba si el jugador ya inició sesión con el meta (requiresAuth)
+        // De lo contrario, se redirige al login
+        if (!loggedIn()) {
+            next({
+                path: '/auth',
+                query: { redirect: to.fullPath }
+            })
+        } else {
+            next()
+        }
+    } else {
+        next() // Siempre se debe llamar next al finalizar
+    }
+});
+
+// Instancia app
 
 const app = new Vue({
     el: "#app",

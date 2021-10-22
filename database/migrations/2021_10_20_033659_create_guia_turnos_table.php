@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateGuiaTurnosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('nickname', 12)->unique();
-            $table->primary('nickname');
-            $table->string('password');
-            $table->tinyInteger("estado")->default(1);
-            $table->rememberToken();
+        Schema::create('guia_turnos', function (Blueprint $table) {
+            $table->id();
+            $table->string("pregunta_user_nickname");
+            $table->string("respuesta_user_nickname");
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('guia_turnos');
     }
 }

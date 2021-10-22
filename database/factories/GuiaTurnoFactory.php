@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Partida;
+use App\Models\GuiaTurno;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PartidaFactory extends Factory
+class GuiaTurnoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Partida::class;
+    protected $model = GuiaTurno::class;
 
     /**
      * Define the model's default state.
