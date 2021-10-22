@@ -30,7 +30,7 @@ export const routes = [
     {
         name: "sala",
         path: "/sala/:id",
-        component: Sala,
+        component: Sala, 
         meta: { requiresAuth: true }
     },
     {

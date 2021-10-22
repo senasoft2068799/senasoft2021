@@ -2290,6 +2290,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Carta",
   props: ["cartaJugar"],
@@ -2417,6 +2422,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _utilities_Storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utilities/Storage.js */ "./resources/js/utilities/Storage.js");
+/* harmony import */ var _utilities_Errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utilities/Errors.js */ "./resources/js/utilities/Errors.js");
+//
+//
+//
 //
 //
 //
@@ -2457,9 +2466,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      errors: new _utilities_Errors_js__WEBPACK_IMPORTED_MODULE_1__["default"](),
       currentUser: {
         nickname: null
       },
@@ -2524,10 +2535,24 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       })["catch"](function (err) {
-        _this2.$swal({
-          icon: "error",
-          title: "Ha ocurrido un error:\n" + err
-        });
+        if (err.response.status === 422) {
+          _this2.errors.record(err.response.data.errors);
+
+          _this2.$swal({
+            icon: "error",
+            title: "Los datos ingresados no son válidos."
+          });
+        } else if (err.response.status === 500) {
+          _this2.$swal({
+            icon: "error",
+            title: "Este código de partida no esta disponible o no existe"
+          });
+        } else {
+          _this2.$swal({
+            icon: "error",
+            title: "Ha ocurrido un error:\n" + err
+          });
+        }
       });
     },
     checkCurrentUser: function checkCurrentUser() {
@@ -44439,7 +44464,7 @@ var render = function() {
                   _vm._v(
                     "\n          " +
                       _vm._s(_vm.errors.get("nickname")) +
-                      "\n        "
+                      " \n        "
                   )
                 ])
               : _vm._e()
@@ -44628,7 +44653,6 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-<<<<<<< HEAD
   return _c("div", { staticClass: "col-md-12" }, [
     _c("div", { staticClass: "contenedor" }, [
       _c(
@@ -44666,55 +44690,18 @@ var render = function() {
                       return
                     }
                     _vm.prueba = $event.target.value
-=======
-  return _c("div", { staticClass: "contenedor" }, [
-    _c(
-      "div",
-      {
-        staticClass: "carta",
-        staticStyle: {
-          "margin-top": "0px",
-          "padding-top": "0px",
-          height: "250px"
-        }
-      },
-      [
-        _c("div", { staticClass: "box" }, [
-          _c("div", { staticClass: "content" }, [
-            _c("img", { attrs: { src: "" } }),
-            _vm._v(" "),
-            _c("h3", [_vm._v(_vm._s(_vm.cartaJugar.nombre))]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.prueba,
-                  expression: "prueba"
-                }
-              ],
-              staticStyle: { display: "none" },
-              attrs: { type: "text" },
-              domProps: { value: _vm.prueba },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
->>>>>>> 2661eaa6c7853c1943cbdadfabb5570c0e491c19
                   }
-                  _vm.prueba = $event.target.value
                 }
-              }
-            }),
-            _vm._v(" "),
-            _c("button", { staticStyle: { color: "white" } }, [
-              _vm._v("Seleccionar")
+              }),
+              _vm._v(" "),
+              _c("button", { staticStyle: { color: "white" } }, [
+                _vm._v("Seleccionar")
+              ])
             ])
           ])
-        ])
-      ]
-    )
+        ]
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -44897,6 +44884,16 @@ var render = function() {
                     }
                   }
                 }),
+                _vm._v(" "),
+                _vm.errors.has("partida_id")
+                  ? _c("p", { staticClass: "form-p" }, [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(_vm.errors.get("partida_id")) +
+                          "\n              "
+                      )
+                    ])
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "button",

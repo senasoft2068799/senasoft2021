@@ -14,7 +14,7 @@
           <label for="nickname" class="form-label">Nombre de usuario</label>
           <span class="form-line"></span>
           <p class="form-p" v-if="errors.has('nickname')">
-            {{ errors.get("nickname") }}
+            {{ errors.get("nickname") }} 
           </p>
         </div>
       </div>

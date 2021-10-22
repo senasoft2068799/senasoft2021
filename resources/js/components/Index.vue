@@ -28,6 +28,9 @@
                   campo y después da click al botón
                 </p>
                 <input type="text" v-model="partida_id" />
+                <p class="form-p" v-if="errors.has('partida_id')">
+                  {{ errors.get("partida_id") }}
+                </p>
                 <button class="btn" @click="unirsePartida()">Unirme</button>
               </div>
             </div>
@@ -39,9 +42,11 @@
 </template>
 <script>
 import Storage from "../utilities/Storage.js";
+import Errors from "../utilities/Errors.js";
 export default {
   data() {
     return {
+      errors: new Errors(),
       currentUser: {
         nickname: null,
       },
@@ -104,10 +109,23 @@ export default {
           }
         })
         .catch((err) => {
-          this.$swal({
-            icon: "error",
-            title: "Ha ocurrido un error:\n" + err,
-          });
+          if (err.response.status === 422) {
+            this.errors.record(err.response.data.errors);
+            this.$swal({
+              icon: "error",
+              title: "Los datos ingresados no son válidos.",
+            });
+          } else if (err.response.status === 500) {
+            this.$swal({
+              icon: "error",
+              title: "Este código de partida no esta disponible o no existe",
+            });
+          } else {
+            this.$swal({
+              icon: "error",
+              title: "Ha ocurrido un error:\n" + err,
+            });
+          }
         });
     },
     checkCurrentUser() {
