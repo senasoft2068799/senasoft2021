@@ -56,9 +56,7 @@ export default {
         .then((res) => {
           this.jugadores = res.data.users;
           if (res.data.start) {
-            setTimeout(() => {
-              this.$router.push(`/partida/${this.$route.params.id}`);
-            }, 2500);
+            this.$router.push(`/partida/${this.$route.params.id}`);
           }
         })
         .catch((err) => {

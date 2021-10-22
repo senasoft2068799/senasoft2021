@@ -16,4 +16,9 @@ class Partida extends Model
     {
         return $this->belongsToMany(User::class, "user_partidas");;
     }
+
+    public function guia_turno()
+    {
+        return $this->belongsTo(GuiaTurno::class);
+    }
 }

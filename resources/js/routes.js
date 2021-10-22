@@ -5,6 +5,9 @@ import Sala from "./components/Sala/Sala.vue";
 import Preguntas from "./components/Preguntas/Preguntas.vue";
 import Reglas from "./components/Reglas.vue";
 import Dashboard from "./components/Partida/Dashboard.vue";
+import Decision from "./components/Partida/Decision.vue";
+import Acusacion from "./components/Partida/Acusacion.vue";
+import Respuesta from "./components/Partida/Respuesta.vue";
 
 export const routes = [
     {
@@ -20,19 +23,19 @@ export const routes = [
     },
     {
         name: "ganador",
-        path: "/ganador",
+        path: "/ganador/:id",
         component: Ganador,
         meta: { requiresAuth: true }
     },
     {
-        name: "Sala",
+        name: "sala",
         path: "/sala/:id",
         component: Sala,
         meta: { requiresAuth: true }
     },
     {
         name: "preguntas",
-        path: "/preguntas",
+        path: "/pregunta/:id",
         component: Preguntas,
         meta: { requiresAuth: true }
     },
@@ -46,6 +49,27 @@ export const routes = [
         name: "Dashboard",
         path: "/partida/:id",
         component: Dashboard,
+        meta: { requiresAuth: true }
+    },
+
+    {
+        name: "Decision",
+        path: "/decision",
+        component: Decision,
+        meta: { requiresAuth: true }
+    },
+
+    {
+        name: "Acusacion",
+        path: "/acusacion",
+        component: Acusacion,
+        meta: { requiresAuth: true }
+    },
+
+    {
+        name: "Respuesta",
+        path: "/respuesta/:id",
+        component: Respuesta,
         meta: { requiresAuth: true }
     },
 ];

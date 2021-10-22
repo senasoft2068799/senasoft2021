@@ -1,29 +1,12 @@
 <template>
   <div>
-    <FormPregunta />
+    <FormPregunta :cartasSeleccionadas="cartasSeleccionadas" />
     <center>
       <div class="row-cols-1 row-cols-md-3 g-4 mt-3">
-        <input type="radio" name="dot" id="uno" />
-        <input type="radio" name="dot" id="dos" />
-        <input type="radio" name="dot" id="tres" />
         <div class="contenedor-preguntas">
-          <div class="botonDash">
-            <label for="uno" class="uno" style="margin-right: 20px"
-              ><i
-                class="fas fa-arrow-left"
-                style="font-size: 65px; margin-left: 2px"
-              ></i
-            ></label>
-          </div>
-          <PanelCartas />
-          <div class="botonDash">
-            <label for="dos" class="dos" style="margin-left: -150px"
-              ><i
-                class="fas fa-arrow-right"
-                style="font-size: 65px; margin-left: 2px"
-              ></i
-            ></label>
-          </div>
+          <!-- <input type="radio" name="dot" id="uno" />
+          <input type="radio" name="dot" id="dos" /> -->
+          <PanelCartas @seleccionar="seleccionarCarta($event)" />
         </div>
       </div>
     </center>
@@ -39,8 +22,23 @@ export default {
   },
   data() {
     return {
-      programador: "",
+      cartasSeleccionadas: {
+        programador: null,
+        modulo: null,
+        error: null,
+      },
     };
+  },
+  methods: {
+    seleccionarCarta(event) {
+      if (event.tipo == 1) {
+        this.cartasSeleccionadas.programador = event;
+      } else if (event.tipo == 2) {
+        this.cartasSeleccionadas.modulo = event;
+      } else if (event.tipo == 3) {
+        this.cartasSeleccionadas.error = event;
+      }
+    },
   },
 };
 </script>

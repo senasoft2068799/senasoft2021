@@ -7,7 +7,8 @@
             <img :src="'/images/descarga.png'" class="img" alt="jugador1" />
             <h3 class="margin" v-if="jugador">{{ jugador.nickname }}</h3>
             <h3 v-else>Esperando...</h3>
-            <div class="loader">Cargando...</div>
+            <div v-if="!jugador" class="loader"></div>
+            <div v-else><i class="fa fa-check" style="color: green; font-size: 1.8rem;"></i></div>
           </div>
         </div>
       </div>

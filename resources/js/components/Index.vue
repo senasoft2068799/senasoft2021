@@ -92,10 +92,15 @@ export default {
             this.$swal.close();
             this.$router.push(`/sala/${res.data.msg}`);
           } else {
-            this.$swal({
-              icon: "info",
-              title: res.data.msg,
-            });
+            if (res.data.join) {
+              this.$swal.close();
+              //this.$router.push(`/partida/${res.data.msg}`);
+            } else {
+              this.$swal({
+                icon: "info",
+                title: res.data.msg,
+              });
+            }
           }
         })
         .catch((err) => {

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GuiaTurno;
 use App\Models\Partida;
-use App\Models\User;
+use App\Models\Pregunta;
 use App\Models\UserPartida;
 use Illuminate\Http\Request;
 
@@ -52,6 +53,7 @@ class PartidaController extends Controller
                 ]
             );
             // Se registra el jugador1 (Quien creó la partida) en la tabla jugador_partida
+
             $partida->users()->attach($request->nickname);
 
             // Aquí se envía el código a la vista
@@ -67,7 +69,8 @@ class PartidaController extends Controller
         $cantidadJugadores = $partida->users()->count();
         if ($partida->users->contains($request->user_nickname)) {
             // Si la partida contiene el jugador que está ingresando, retorna un mensaje de error, de lo contrario comprueba la cantidad de jugadores
-            return response()->json(["allowed" => false, "msg" => "El jugador ya se encuentra en la partida."]);
+            //TODO Comprobar que el jugador este desconectado antes de enviar el response
+            return response()->json(["allowed" => false, "msg" => "El jugador ya se encuentra en la partida.", "join" => true]);
         } else {
             if ($cantidadJugadores < 4) {
                 // Si hay menos de 4 jugadores, registra el nuevo jugador a la partida. de lo contrario, informa que ya hay 4 jugadores.
@@ -86,10 +89,16 @@ class PartidaController extends Controller
 
     static function iniciarPartida($partida)
     {
-        //Se cambia el estado de la partida y se reparten las cartas de esa partida
+        //Se vincula una guía de turnos llenandola con los turnos iniciales por defecto (Vendría siendo similar a una tabla temporal)
+        $guia_turno = new GuiaTurno();
+        $guia_turno->pregunta_user_nickname = $partida->users[0]["nickname"];
+        $guia_turno->respuesta_user_nickname = $partida->users[1]["nickname"];
+        $guia_turno->save();
+        // Se vincula la guia de turnos, se cambia el estado de la partida (1: en juego - 2: esperando jugadores)
         $partida->estado = 1;
+        $partida->guia_turno()->associate($guia_turno);
         $partida->save();
-        // En vez de mandar la partida completa, se manda el id, para que los jugadores se actualizen correctamente
+        // Se reparten las cartas. En vez de mandar la partida completa, se manda el id, para que los jugadores se actualizen correctamente
         TableroController::repartirCartas($partida["id"]);
     }
 
@@ -102,6 +111,47 @@ class PartidaController extends Controller
         }
     }
 
+    public function obtenerGanador(Request $request)
+    {
+        // Se obtiene el registro de la partida actual a través del id
+        $partida = Partida::find($request->partida_id);
+        // $userPartida = UserPartida::where("user_nickname", $request->user_nickname)->where("partida_id", $request->partida_id)->firstOrFail();
+        // info($userPartida["id"]);
+        // $ultimaPregunta = Pregunta::where("user_partidas_id", $userPartida["id"]);
+        // PartidaController::comprobarGanador($partida, $cartasPreguntadas);
+        // $usuario = $request->nickname;
+        // //Se obtiene el registro del usuario actual a través del id
+        // $cartasUsuario = Pregunta::find($usuario);
+        // info($cartasUsuario);
+        // //Se compara los valores almacenados en los arrays
+        // $coincidencias = array_intersect($cartas, $cartasUsuario);
+        // if ($coincidencias == true) {
+        //     return $usuario;
+        // }
+    }
+
+    public static function comprobarGanador($partida, $cartasLst)
+    {
+        $cartasOcultas = [$partida->programador_carta_id, $partida->modulo_carta_id, $partida->error_carta_id];
+        info($cartasOcultas);
+        // $cartasOcultas = $pa
+        // $coincidencias = array_intersect($cartas, $cartasUsuario);
+        // if ($coincidencias == true) {
+        //     return $usuario;
+        // }
+
+        //Se guarda en un arreglo las cartas que estan ocultas
+        // $cartas = [$partida->programador_carta_id, $partida->modulo_carta_id, $partida->error_carta_id];
+        // info($cartas);
+        // $usuario = $request->nickname;
+        // //Se obtiene el registro del usuario actual a través del id
+        // $cartasUsuario = Pregunta::where("user_partidas_id", $usuario)->where;
+        // //Se compara los valores almacenados en los arrays
+        // $coincidencias = array_intersect($cartas, $cartasUsuario);
+        // if ($coincidencias == true) {
+        //     return $usuario;
+        // }
+    }
 
     /**
      * Remove the specified resource from storage.

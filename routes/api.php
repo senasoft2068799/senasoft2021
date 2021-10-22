@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\TableroController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GuiaTurnoController;
 use App\Http\Controllers\PartidaController;
+use App\Http\Controllers\PreguntaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +30,8 @@ Route::post("logout", [AuthController::class, "logout"])->middleware("auth:sanct
 Route::middleware('api')->group(function () {
     Route::post("crear-partida", [PartidaController::class, "crearPartida"]);
     Route::post("unirse-partida", [PartidaController::class, "unirsePartida"]);
-    //Route::get("tableros", [TableroController::class, "index"]);
+    Route::post("obtener-ganador", [PartidaController::class, "obtenerGanador"]);
     Route::get("lista-espera/{partida}", [PartidaController::class, "listaEspera"]);
     Route::post("obtener-tablero", [TableroController::class, "obtenerTablero"]);
+    Route::get("informacion-turno/{partida}", [GuiaTurnoController::class, "informacionTurno"]);
 });
